@@ -1,0 +1,191 @@
+복습
+
+컬랙션
+ - 크게 컬랙션인터페이스 를 상속과 맵인터페이스 상속으로 나뉨
+ - 컬랙션인터페이스는 값을 저장하고, 맵은 키와 값을 저장
+ - 컬랙션은 index로 구분, key로 구분함
+ - 컬랙션은 리스트와 셋이 있음
+  - 리스트는 중복허용,입력순서 유지
+  - 셋은 반대
+ - 인터페이스는 new가 안되서 구현하는 클래스를 생각해야 함
+array는 추가삭제가 어렵다.- 추가 삭제가 자주일어나면 링크드 리스트를 사용
+ - 셋은 중복허용하지 않음 - 중복비교는 헤시코드로 비교
+ - 같은 값을 new를 두번해도 헤시코드가 다르기때문에 다르게 인식
+ - hashcode와 equals를 오버라이딩해서 중복 없앨 수 있음
+ - 맵은 keyset은 키값만 얻어올수 있음 - 반환형 set임
+ - map.entry는 키하고 값하고 쌍으로 내부적으로 저장됨
+	#프로그램 언어는 병적으로 구분해줘야함
+
+
+DATABASE
+-데이터들을 영구적으로 모아 놓기 위해
+-파일은 중복이 되고 공용 데이터로 사용 불가함
+-오라클에서 만든 11g
+자바언어랑 데이터베이스랑 연결시키는 언어가 jdbc(java data base conectivity)
+RDB-테이블 단위로 만드는 것
+NDB-트리 단위로 만드는 것
+RDB다음 나온게 빅데이터
+데이터가 엄청 많은데 원하는 데이터를 딱 뽑아내는것이 빅데이터
+RDB(관계형 데이터베이스)에서 꺼내오거나 뭐 수정하거나 할때 하는 것이 SQL임
+특성
+ - 정의는 틀을 만들어 주는것(DDL-DATA DEFINITION LANGUAGE)
+ - 조작은 DML,인스턴스(객체개념)을 바꿔 주는 것
+ - 제어는 제약,접근권한 등 (DCL)
+컬럼에 구조를 바꿀때는 ALTER
+데이터날리는게 DROP - 데이터와 구조 모두 날라감
+DELETE는 행만 삭제 되는 것(회원탈퇴)
+SELECT는 회원가입
+검색해 오는것이 SELECT - 제일 많이 쓴다 
+
+서버가 시작이 되어있어야 함
+제어판-큰아이콘-관리도구-서비스-oracleServiceXE(서버가 시작되어있다)-클라이언트가 접속되있다(연결이랑 시작은 다르다) = 시작은 서비스를 제공할 준비가 되어있음/연결은 클라이언트가 연결되어있음
+연결할 때 사용하는것이 OracleXETNSListener 연결하려면 시작되어있어야함(서비스가 시작될 수 있음)
+연결을 할 때 사용 하는 것이 두 가지가 있음
+ - 기본으로 쓸수 있는 클라이언트가 있음 - cmd에서 sqlplus를 입력 - 유저네임은 system이고 비밀번호는 1234 -> 연결이 된것임
+
+기차예매,계좌이체 -> 데이터로 작업하는 것(데이터 조작)
+
+scott.sql
+ - rem은 주석
+ - scott계정을 만들어야 함
+ - 관리자권한으로 만들어야 함(11p)
+ 
+>show user;  - 어느 계정인지 확인
+>alter user scott identified by tiger account unlock;
+>grant connect,resource to scott;
+
+sqldeveloper
+관리자도 scott의 테이블 접근 불가
+속도가 느림
+
+group by
+having
+order by
+join (중복을 없애기 위해 분리 시켜야 하는데 정규화하는 것 )
+(나눠진 테이블에서 결과를 모아서 한번에 보기 위해서 조인을 사용)
+
+order by순서가 가장 꼴찌임
+
+열별칭(alias)
+원래 행의 이름을 바꿀 수 있음 as ~
+이 문장을 실행할때만 별칭이 붙었다가 없어지는 것임
+테이블 이름에도 별칭을 줄 수 있음
+
+distinct 중복된 값을 없어짐
+
+||는 자바에서 +역할을 함
+
+in연산자 between and(이상이하) 연산자는 디비에만 있는 연산자
+
+접속과 시작은 다른 것임
+
+그룹바이에서 나온것만 셀렉트에 사용 할 수 있음
+
+
+1.from절에서 어떠한 테이블에서 가져오는 데이터인지 확인
+2.where 절에서 검색 조건에 일치하지 않는 행을 제외
+3.group by 절에서 명시된 행의 고유 값을 하나의 그룹으로 모음
+4.having 절이 검색 조건에 일치하지 않는 행을 추가로 제외
+5.select 문에서 출력할 컬럼들을 확인
+6. order by 절에서 정렬 작업을 하고 비로소 출력
+
+er다이어그램은 설계단계에서 사용(ERDiagram)
+관계 relation 테이블이 단독으로 따로따로 존재하지 않고 업무상으로 합쳐져서 보여지기 때문에 관계가 있음
+
+select * from tab;
+
+select * from emp;
+
+select empno from emp;
+
+select empno, ename from emp;
+
+select * from emp;
+
+select ename,job,deptno from emp
+where ename = 'SMITH';
+
+--desc는 내림차순, asc는 써도 되고 안써도 됨
+select * from emp
+order by ename asc;
+
+
+select * from emp
+where job ='CLERK' 
+order by ename;
+
+select empno,ename from emp;
+
+select distinct deptno from emp;
+
+select ename || ' ' || 'is a ' ||''|| job as "Employee Details"
+from emp;
+
+select empno, ename, sal*12 annsal from emp
+order by annsal desc;
+
+select * from emp
+where deptno = 10 and sal >= 3000;
+
+select * from emp
+where deptno <=30 and deptno >=10;
+
+select * from emp
+where deptno between 10 and 30;
+
+select * from  emp
+where deptno = 10 or sal >= 3000;
+
+select * from  emp
+where deptno = 10 or deptno = 30;
+
+--10또는30인 것
+select * from  emp
+where deptno in (10, 30);
+
+select * from  emp
+where ename like 'J%';
+
+select * from  emp
+where ename like '%R';
+
+select * from  emp
+where ename like '%A%';
+
+select * from  emp
+where job not in ('CLERK', 'SALESMAN');
+
+select * from  emp
+where comm is not null;
+
+--count는 null값을 제외하고 나옴
+select count(*),count(comm),max(sal),count(sal),count(mgr), sum(sal) from emp;
+
+--group by의 경우 selct절에는 그룹지어진 행만 나올 수 있음
+select deptno, sum(sal) from emp
+group by deptno;
+
+select job, sum(sal) from emp
+group by job;
+
+select deptno, sum(sal) from emp
+group by deptno
+having sum(sal) >=7000; 
+
+select deptno, sum(sal) from emp
+group by deptno
+having deptno =20; 
+
+select deptno, sum(sal) 합 from emp
+group by deptno
+having deptno =20; 
+
+--oracle
+select e.deptno,e.ename, d.dname
+from emp e, dept d
+where e.deptno=d.deptno and e.deptno = 10;
+
+--ansi방법
+select e.deptno,ename,dname
+from emp e inner join dept d on e.deptno=d.deptno
+where e.deptno = 20;

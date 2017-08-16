@@ -1,0 +1,46 @@
+형상관리
+
+라이브러리랑 소스코드를 합쳐서 결과를 내는 것을 build라 함
+ - 빌드 버전 , 배포된 버전,  ->다 다른 버전을 통합관리하는게 형상관리
+
+svn보다 좋아진 것이 git
+ - git서버가 있어야하는데 github가 제공함
+ - 오픈소스를 받아서 내가 수정을 하면 됨
+github에서 repository를 잘알아야함
+ - 내 소스코드와 다른 소스코드를 합쳐주기도 함
+
+
+www.bootstrapk.com
+ - www.startbootstrap.com
+ - https://placeholder.com/ (그림 사이즈 넣어주는 사이트
+ - 반응형 웹 
+
+sql developer
+ansi조인 - mysql에서 쓰는 거랑 같음
+오라클조인
+ - 오라클용 조인 문법(오라클에서만 쓸 수 있음)
+조인은 from이 확장 되는 것임
+5select /1 from /2 where /3 group by /4 having /6 order by
+
+outer join
+left조인은 왼쪽 테이블이 기준 (right는 반대)
+left조인만 생략가능하고 right는 생략 불가능
+
+subquery
+()안에 있는 쿼리문부터 실행됨
+
+all은 ()안의 값들보다 다 큰것
+any는 ()안의 값들중에 하나보다 큰것
+
+자주쓰는걸 view를 만들어 놓음
+
+insert, delete, update는 커밋을 안하면 자동 롤백 됨
+
+rollback은 아무것도 일어나지 않은것처럼 nothing
+이클립스는 자동커밋
+
+savepoint 다음에 나오는 실행된 문장이 rollback to savepoint하면 롤백됨
+
+
+trello
+github

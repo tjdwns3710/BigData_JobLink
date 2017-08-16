@@ -1,0 +1,145 @@
+-설치
+1.Oracle Database Express Edition 11g Release 2 for Windows x32
+2.sql developer
+3.Eclipse IDE for Java EE Developers
+4.Tomcat 9[32-bit Windows zip]
+크롬이 설치 되어있는지 확인
+
+- 영타 300 정도
+
+보통 다 웹을 사용한다 
+web을 기반으로 서비스를 제공해준다 보통
+데이터베이스의 역할은 데이터를 영구적으로 저장
+중앙처리장치(cpu)
+저장장치(데이터저장,램,하드,
+ :램[임시적]은 휘발성,하드[영구적]는 지우고싶을때 지운다
+입출력
+
+데이터베이스는 공유가 된다->네트웍상에서 돌아가야한다.
+n/w -> client[2번역할]/server[1번역할]
+
+빅데이터는 실시간이 중요하다
+관계형데이터는 신뢰성이 좋다.
+
+- java programming
+자바는 서비스를 구현하는데 쓰는 기본적인 언어
+
+-jdbc
+java database connectivity
+
+-servlet & jsp
+jsp는 web상에서 서비스할때 동적프로그램과 연동
+java server page
+server application
+web에서 사용하기 위한
+
+-html5
+web에 태그
+
+-css3
+옷을 입히는 작업 스타일
+
+-javascript
+동적
+
+-jquery
+자바스크립스를 쉽게 쓰기위한 라이브러리
+js가 뒤에 붙는 것은 자바스크립스 라이브러리
+
+-java framework
+자바는 쌀이고 프레임웤은 햇반이다.
+틀을 갖춰놓고 하라는데로 해야한다.
+spring framework가 가장 핫하다.정부쪽에 관련된 기업은 다 이것을 쓴다.
+
+-project
+PMBOK는 프로젝트 관리하는 프로그램 5가지
+요즘은 github.com
+
+
+
+2교시
+eclipse
+
+eclipse가 중요한게 아니다. 
+java8이다.
+기계어로 바뀌는걸 compile [jdk의 javac.exe]
+
+open perspective
+ :개발환경을 바꿔주는 것이다.
+ :java EE는 web에서 진행되는 것이다.
+
+web[network상에서 돌아가는 서비스중에 하나]
+ :Internet[network]의 대표 protocol은 tcp/ip
+ :http protocol을 기본으로 사용하는게 web
+ :web client[web browser]는 서버로 요청(request)할 때 URL(프로토콜명://  IP/DN : PORT# / 파일명,경로명)을 사용
+  :IP와 DN을 바꿔주는게 DNS
+ :web server는 클라이언트로 응답(response)
+ :필기1쪽
+
+실행을 많이 해라.
+문제를 쪼개서 설명하듯이 코딩->크게 분류를 나누고 -> 그걸 또 분류로 나눠서 세세하게 설명한다.
+입력이뭔지 출력이뭔지
+
+
+13시
+java programming(110p)
+:객체지향언어(객체(object)가 중요,현실세계를 객체단위로) <-> 절차지향언어(함수를 기반으로,순서)
+:c에서 함수를 java에서는 method
+:데이터 저장과 처리를 두 가지 다 할 수있어야한다. object(객체)는 field(데이터 저장),method(데이터 처리)
+:reuse(재사용) 틀인 class(설계도 개념)에서  object를 뽑아내는 것
+:바이트코드(기계어)의 확장자는 .class
+:.jvm(java virtual machine)는 소프트웨어에서 실행되는 것
+ :JRE에 jvm이 포함되어있다.
+ :자바는 윈도우에서도 리눅스에서도 돌아간다.(platform의 독립적) -> jvm때문에
+ :class loader(여러개의 class들을 불러들이는 작업)
+ :클래스(method),스택,힙 영역은 꼭 기억해야 한다.
+
+:class이름은 대문자로 시작,여러 단어면 각 단어의 첫글자만 대문자(117p)
+:method뒤에는 바로 (), {}는 영역, []은 배열,<>은 generic
+:문장끝날때;
+:필드랑 메소드는 소문자로 시작 -> camel표기법
+:package이름은 다 소문자
+	#이클립스는 자동 컴파일이다.
+:main이 있어야한다.
+:출력할 때 : sysout에서 ctrl+space
+
+120p
+데이터타입 (기본형 / 참조형) -  변수를 선언할때 사용
+	#자바는 유니코드를 쓴다.
+RAM을 찾아가서 값이 있으면 기본형이고 주소가 있으면 참조형
+	#""안에 있는것은 그대로 출력만 된다
+	#자바는 변수선언을 중간에서 해도된다.
+연산자 우선순위에서 = 이 마지막이다.
+	#문자(char)랑 문자열(String)은 다른것이다.
+변수 선언 => 자료형(데이터타입) 변수명;
+
+135p
+제어문(조건문[if,switch], 반복문[for,while], 분기문[break,continue,return])
+
+조건문
+ if(조건식)
+    조건식이 참일 때 실행하는 문장;
+ 
+ else if(그 밖의 어떠한 경우라면
+
+else [뒤에는 조건 안 붙는다.]
+조건이 종속적이면 if 따로쓰고 배태적이면 하나의 if문에 넣는다
+{}는 2개이상의 문장일때 사용한다
+
+ switch(조건식){
+  case 값1: ~~~;
+          break;
+
+반복문
+for(초기식;조건식;증감식) [~~동안 반복시켜라]
+	조건문;
+for( ; ; ) -> 무한루프
+
+sum = sum + i -> 차곡차곡 누적시키는 것
+
+
+while(조건식)
+while(true) -> 무한루프
+
+	#하는역할이 다르면 변수를 따로 선언해줘야 한다.
+	#

@@ -1,0 +1,13 @@
+StudentInsertTest2
+
+select *
+from student
+where id = '1';
+preparestatement는 '1'(값)이 바뀌는 경우는 굳이 매번 컴파일을 안함
+statement는 매번 값이 바뀔때마다 컴파일을 계속 함
+-속도와 보안이 prepare가 더 빠르다
+-++++를 안써도 됨
+
+StudentSelectTest
+
+행별로 접근해야함

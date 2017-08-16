@@ -1,0 +1,19 @@
+$(document)  -  html태그를 jquery객체로 인식 시켜주는 것
+
+예
+$("h1"). 이렇게 하는게 html태그를 jquery객체로 인식시키는 형식 그럼 . 뒤에 jquery메소드들을
+사용할 수 있음
+
+.css
+.css 이걸 체인잉이라고 함
+
+.누르면 객체뜨게 플러그인 설치 help - 이클립스 마켓플레이스 - term검색 - term eclipse
+다설치되면 프로젝트에서 - configure - convert to tern - jquery 선택
+
+클릭을 하면 일을 하게 하는게 보통 함수로 만들어 놓음
+함수를 호출 해줘야함 - .on에서 콜백함수 넣어줘야함 사용자가 이벤트를 발생시키면 자동으로 호출
+
+attr(	,	) - 뭔가 설정해줄때 (set개념)
+attr(	) -> get개념
+val(	) -> value="" (set개념)
+val() -> get개념

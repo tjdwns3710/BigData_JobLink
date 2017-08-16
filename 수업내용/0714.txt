@@ -1,0 +1,15 @@
+
+parsing - dom,sasx게이터
+
+클라이언트가 요청하는 방식이 get,post방식이 있음
+
+
+submit버튼은 이름과 값이 둘다 있어야 함
+
+was(톰캣)
+jsp->servlet->html로 결국 바뀌는 것이다
+
+html은 브라우저에서 다 해석된다(css, html)
+
+클라이언트에 저장되는걸 쿠키
+서버에 저장되는걸 세션

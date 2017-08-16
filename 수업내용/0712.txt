@@ -1,0 +1,48 @@
+<div>와 <span>은 디브가 부모 스팬은 자식
+
+min.css - 압축되어있는것
+.css
+
+--------------------------------------------
+특강
+데이터를 통해 세상을 이해하고 고객을 이해할수 있어야한다
+데이터가 중요하구만
+understanding the world
+--------------------------------------------
+
+압축시켜주는 사이트가 있다
+csscompressor.com
+
+자바스크립트 압축
+javascriptcompressor.com
+
+https://startbootstrap.com/template-categories/all/
+
+테스트하는 사이트
+jsfiddle.net
+
+&nbsp
+
+인라인태그는 width를 지정할 수 없음 (p태그) 근데 width를 지정하고 싶으면 
+p태그를 블락태그로 바꿔 줘야함 그게 display 속정임
+
+인라인을 블락으로 블락을 인라인으로 바꿀 수 있음
+
+
+
+--------------
+jquery를 사용하려면 라이브러리를 받아야함
+
+실시간으로 최근버전으로 업데이트를 하기위해서 구글cdn을 받아서 주소를 넣는 방법이있고 다운받는 방법
+http://jquery.com/  -  다운로드 - Download the compressed, production jQuery 3.2.1 랑
+Download the uncompressed, development jQuery 3.2.1 이거 받아라 - js폴더에 넣어라 
+
+이 라이브러리를 고칠필요가없어서 min을 쓰는게 좋음
+
+자바스크립트가 바디의 태그들을 인식해야함 근데 <head>안의 자바스크립트는 <body>의 태그의 존재를 알 수 없음
+
+$(document).ready();이걸 쓰면 내부적으로 바디의 dom트리가 다 완성이 되면
+매개변수 펑션이 호출이 됨(매개변수로 펑션을 가지게 되있음
+
+$는 jQuery랑 같음
+자바스크립트 대소문자 구분함
