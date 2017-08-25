@@ -1,0 +1,60 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Thu Aug 17 14:28:40 2017
+
+@author: chunghwan
+"""
+import pandas as pd
+from pandas import DataFrame
+dataset = pd.read_csv('C:/Users/chunghwan/Desktop/Data/final_trim.txt',delimiter='\t')
+
+from sklearn.cross_validation import train_test_split
+import numpy
+
+data_x = dataset.drop(['창업위험도'], axis=1)
+data_y = dataset['창업위험도']
+
+#테스트 셋
+test_data = data_x[48001:]
+test_data.shape
+
+#트레이닝 셋
+train_data = data_x[:48000]
+train_data.shape
+
+#테스트 셋
+test_label = data_y[48001:]
+
+#트레이닝 셋
+train_label = data_y[:48000]
+
+from sklearn.neural_network import MLPClassifier
+#뉴럴 네트워크 개수
+mlp = MLPClassifier(hidden_layer_sizes=(100,50))
+mlp.fit(train_data,train_label)
+print("Training score: %s" % mlp.score(train_data, train_label))
+
+
+pred = mlp.predict(test_data)
+set(pred)
+#교차표의 행 합, 열 합 추가하기 margins =True
+confusion_matrix = pd.crosstab(test_label,pred,rownames=['True'],
+                               colnames=['Predicted'], margins=True)
+print(confusion_matrix)
+accuracy = (confusion_matrix[0][0]+confusion_matrix[1][1])/ 995
+print(accuracy)
+
+#랜덤포레스트
+import pandas as pd
+import numpy as np
+from sklearn.cross_validation import train_test_split
+from sklearn.ensemble import RandomForestClassifier
+data = pd.read_csv('C:/Users/chunghwan/Desktop/Data/final_trim.txt',delimiter='\t')
+
+x = data.drop(['창업위험도'], axis=1)
+y = data['창업위험도']
+
+x_train,x_test,y_train,y_test = train_test_split(x,y, test_size=0.3, random_state=0)
+
+forest = RandomForestClassifier(n_estimators = 10000, random_state=0)
+forest.fit(x_train,y_train)
