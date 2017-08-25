@@ -1,0 +1,80 @@
+package kdata.project.service;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.sql.SQLException;
+import java.util.List;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+
+import kdata.project.dao.BoardDAO;
+import kdata.project.dto.Comments;
+
+public class CommentsWriteService implements UserService {
+
+   @Override
+   public NextPage execute(HttpServletRequest request, HttpServletResponse response) {
+      System.out.println("커맨트 쓰기 서비스");
+      String id = request.getParameter("id");
+      String comments = request.getParameter("comments");
+      String num = request.getParameter("num");
+      int result = 0;
+      /*System.out.println(id);
+      System.out.println(comments);
+      System.out.println(num);*/
+      
+      try {
+		result = BoardDAO.getInstance().insertComments(new Comments(id,comments,Integer.parseInt(num)));
+	} catch (NumberFormatException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	} catch (SQLException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
+      
+      System.out.println(result);
+      
+      List<Comments> list = null;
+      
+	try {
+		list = BoardDAO.getInstance().selectComments(Integer.parseInt(num));
+		System.out.println("after :"+list.size());
+		
+		System.out.println("jason--------------");
+		JSONArray array = new JSONArray();
+		System.out.println(array);
+		
+		for(Comments c:list) {
+			JSONObject obj = new JSONObject();
+			obj.put("commentNum", c.getCommentsNum());
+			obj.put("id", c.getId());
+			obj.put("content", c.getContent());
+			obj.put("date", String.valueOf(c.getDate()));
+			array.add(obj);
+		}
+		
+		System.out.println(array);
+		
+		/*JSONObject obj2 = new JSONObject();
+		obj.put("id", "test2");
+		obj.put("id", "hohoho");
+		array.add(obj2);
+		*/
+		PrintWriter out = response.getWriter();
+		
+		out.print(array);
+		
+		
+	} catch (SQLException | IOException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
+	System.out.println(list);
+      return null;
+   }
+}

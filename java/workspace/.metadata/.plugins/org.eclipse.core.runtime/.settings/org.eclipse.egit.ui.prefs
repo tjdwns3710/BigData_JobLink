@@ -1,0 +1,15 @@
+BranchProjectTracker__C\:\\Users\\cse\\Desktop\\bigdata\\BaseballProjectGit\\.git_Baseball=<?xml version\="1.0" encoding\="UTF-8"?>\r\n<projects branch\="Baseball">\r\n<project>\\BaseballProject</project>\r\n</projects>
+BranchProjectTracker__C\:\\Users\\cse\\Desktop\\bigdata\\BaseballProjectGit\\.git_BaseballBranch=<?xml version\="1.0" encoding\="UTF-8"?>\r\n<projects branch\="BaseballBranch">\r\n<project>\\BaseballProject</project>\r\n</projects>
+BranchProjectTracker__C\:\\Users\\cse\\Desktop\\bigdata\\BaseballProjectGit\\.git_master=<?xml version\="1.0" encoding\="UTF-8"?>\r\n<projects branch\="master">\r\n<project>\\BaseballProject</project>\r\n</projects>
+BranchProjectTracker__C\:\\Users\\cse\\Desktop\\bigdata\\ProjectGit\\.git_branchTest=<?xml version\="1.0" encoding\="UTF-8"?>\r\n<projects branch\="branchTest">\r\n<project>\\BaseballGitTest</project>\r\n<project>\\BaseballProject</project>\r\n</projects>
+BranchProjectTracker__C\:\\Users\\cse\\Desktop\\bigdata\\ProjectGit\\.git_master=<?xml version\="1.0" encoding\="UTF-8"?>\r\n<projects branch\="master">\r\n<project>\\BaseballGitTest</project>\r\n</projects>
+BranchProjectTracker__C\:\\Users\\cse\\Desktop\\bigdata\\git\\.git_master=<?xml version\="1.0" encoding\="UTF-8"?>\r\n<projects branch\="master">\r\n<project>\\gitTest</project>\r\n<project>/</project>\r\n</projects>
+BranchProjectTracker__C\:\\Users\\cse\\Desktop\\gittest\\.git_master=<?xml version\="1.0" encoding\="UTF-8"?>\r\n<projects branch\="master">\r\n<project>\\Day0630</project>\r\n</projects>
+BranchProjectTracker__C\:\\Users\\cse\\Desktop\\gittest\\.git_test1=<?xml version\="1.0" encoding\="UTF-8"?>\r\n<projects branch\="test1">\r\n<project>\\Day0630</project>\r\n</projects>
+BranchProjectTracker__C\:\\Users\\cse\\Desktop\\gittest\\GitTest\\.git_master=<?xml version\="1.0" encoding\="UTF-8"?>\r\n<projects branch\="master">\r\n<project>/</project>\r\n</projects>
+BranchProjectTracker__C\:\\Users\\cse\\Desktop\\workgit\\Test\\.git_master=<?xml version\="1.0" encoding\="UTF-8"?>\r\n<projects branch\="master">\r\n<project>\\Group4</project>\r\n</projects>
+commit_dialog_history_messages=<?xml version\="1.0" encoding\="UTF-8"?>\r\n<messages>\r\n<message>223</message>\r\n<message>jun</message>\r\n<message>111</message>\r\n<message>Merge branch &apos;master&apos; of https\://github.com/tjdwns3710/Practice.git into&\#x0A;test1&\#x0A;&\#x0A;Conflicts\:&\#x0A;&\#x09;Day0630/src/kdata/sort/SortTest.java&\#x0A;</message>\r\n<message>333</message>\r\n<message>222</message>\r\n<message>11</message>\r\n<message>0720_3</message>\r\n<message>0720_2</message>\r\n<message>0720_1</message>\r\n</messages>
+eclipse.preferences.version=1
+resourcehistory_graph_split=500,500
+resourcehistory_rev_split=700,300
+show_initial_config_dialog=false

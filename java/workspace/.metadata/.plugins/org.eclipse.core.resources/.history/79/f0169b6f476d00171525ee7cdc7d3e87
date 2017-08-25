@@ -1,0 +1,5 @@
+package project.baseball.dto;
+
+public class PlayerBallDTO {
+
+}

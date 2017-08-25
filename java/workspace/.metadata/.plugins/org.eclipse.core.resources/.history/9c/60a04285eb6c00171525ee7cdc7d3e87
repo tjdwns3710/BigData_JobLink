@@ -1,0 +1,29 @@
+package kdata.project.dao;
+
+public class BoardDAO {
+   
+   // ΩÃ±€≈œ ∆–≈œ
+   private static BoardDAO dao = new BoardDAO();
+   
+   private BoardDAO() {
+      
+   }
+   
+   public static BoardDAO getInstance() {
+      return dao;
+   }
+   
+   // ¥Ò±€ æ≤±‚
+   public void insertComments() {
+      
+   }
+   
+   // ¥Ò±€ ∏ÆΩ∫∆Æ
+   public void selectComments() {
+      
+   }
+   // ¥Ò±€ ªË¡¶
+   public void deleteComments() {
+      
+   }
+}

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="./js/jquery-3.2.1.js"></script>
+<script>
+	$(function(){
+		$("#form1").on("submit", function(e){
+			
+			if($("#id").val() == "" ) {
+				alert("위에 아이디를 입력하세요");
+				$("#id").focus();
+				e.preventDefault();
+			}else if($("#password").val() == ""){
+				alert("위에 비밀번호를 입력하세요");
+				$("#password").focus();
+				e.preventDefault();
+			 }else{
+					$("#form1").submit();
+				} 
+		});	
+		
+		$("#form2").on("submit", function(f){
+			
+			if($("#id1").val() == "") {
+				alert("아래 아이디를 입력하세요");
+				$("#id1").focus();
+				f.preventDefault();
+			}else if($("#password1").val() == ""){
+				alert("아래 비밀번호를 입력하세요");
+				$("#password1").focus();
+				f.preventDefault();
+			 }else{
+					$("#form2").submit();
+				} 
+		});
+		});
+</script>
+</head>
+<body>
+	<form action="LoginServlet" method="get" id="form1">
+		로그인 by Servlet
+		<ul>
+			<!-- servlet, html이나 css 또는 java script로 받을 때는 name으로 받고, jquery로 받을 때는 id로 받기 -->
+			<li>아이디 : <input type="text" name="id" id="id"> 
+			<li>비밀번호 : <input type="text" name="password" id="password"> 
+			
+		</ul>
+		
+		<input type="submit" value="로그인" name="login" id="login">
+	</form>
+	
+	<form action="login.jsp" id="form2">
+		로그인 by jsp
+		<ul>
+			<!-- servlet, html이나 css 또는 java script로 받을 때는 name으로 받고, jquery로 받을 때는 id로 받기 -->
+			<li>아이디 : <input type="text" name="id" id="id1"> 
+			<li>비밀번호 : <input type="text" name="password" id="password1"> 
+			
+		</ul>
+		 <!-- submit을 누르면 form태그 내에 있는 것들이 넘어간다. -->
+		<input type="submit" value="로그인" name="login" id="login">
+	</form>
+	
+</body>
+</html>

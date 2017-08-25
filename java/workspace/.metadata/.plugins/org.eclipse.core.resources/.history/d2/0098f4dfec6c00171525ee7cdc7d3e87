@@ -1,0 +1,91 @@
+package kdata.project.dao;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+
+import kdata.project.dto.Comments;
+import kdata.project.dto.User;
+import kdata.project.util.DBUtil;
+
+public class BoardDAO {
+   
+   // ΩÃ±€≈œ ∆–≈œ
+   private static BoardDAO dao = new BoardDAO();
+   
+   private BoardDAO() {
+      
+   }
+   
+   public static BoardDAO getInstance() {
+      return dao;
+   }
+   
+   // ¥Ò±€ æ≤±‚
+   public int insertComments(Comments comments) throws SQLException {
+	   System.out.println("");
+	   
+	   Connection con = null;
+	   PreparedStatement pstmt = null;
+	   int result = 0;
+	   
+	   con = DBUtil.getConnection();
+	   
+	   try {
+			String sql = "insert into comments values(comment_seq.nextval,?,?,default,?)";
+			pstmt = con.prepareStatement(sql);
+			
+			pstmt.setString(1,comments.getId());
+			pstmt.setString(2,comments.getContent());
+			pstmt.setInt(3,comments.getNum());
+			
+			result = pstmt.executeUpdate();
+		}finally {
+			DBUtil.close(pstmt,con);
+		}
+		return result;
+	   
+   }
+   
+   // ¥Ò±€ ∏ÆΩ∫∆Æ
+   public List<Comments> selectComments() {
+	   Connection con = null;
+	   ResultSet rs = null;
+	   PreparedStatement pstmt = null;
+		
+	   List<Comments> list = new ArrayList<>();
+		
+	   try {
+		   con = DBUtil.getConnection();
+			
+		   String sql = "select * from Comments order by id";
+		   pstmt = con.prepareStatement(sql);
+			
+		   rs = pstmt.executeQuery();
+			
+		   while(rs.next()) {
+			   Comments comments = new Comments();
+			   comments.set(rs.getString("id"));
+			   comments.setId(rs.getString("id"));
+			   comments.setName(rs.getString("name"));
+			   comments.setProfile(rs.getString("profile"));
+			   comments.setRegDate(rs.getDate("reg_date"));
+				
+			   list.add(u);
+		   }
+			
+	   } finally {
+		   DBUtil.close(rs, pstmt, con);
+	   }
+		
+	   return list;
+   }
+   // ¥Ò±€ ªË¡¶
+   public void deleteComments() {
+      
+	   
+   }
+}

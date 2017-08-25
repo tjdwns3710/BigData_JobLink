@@ -1,0 +1,14 @@
+@charset "UTF-8";
+
+
+/* 둘이 비교 */
+/* div >span {color:blue}
+
+div span {color:blue} */
+
+
+/* .test > li {color:gray} */
+
+#aaa ~ li {color:red}
+
+.test > li + li {color:orange}

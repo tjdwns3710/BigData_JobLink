@@ -1,0 +1,67 @@
+package project.baseball.service;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import project.baseball.dao.UserDAO;
+import project.baseball.dto.PlayerBallDTO;
+
+public class PlayerHRService implements UserService {
+
+   @Override
+   public NextPage execute(HttpServletRequest request, HttpServletResponse response) {
+      System.out.println("2. PlayerHRService execuete");
+      String player = request.getParameter("player");
+      
+      // 2. DB 처리
+      List<PlayerBallDTO> list = new ArrayList<>();
+      
+      try {
+         list = UserDAO.getInstance().Search_Player_All_Ball(player);
+      } catch (SQLException e) {
+         // TODO Auto-generated catch block
+         e.printStackTrace();
+      }
+      
+      for(int i=0;i<list.size();i++) {
+         System.out.println(list);
+      }
+      
+      
+      
+      PrintWriter out;
+	try {
+		out = response.getWriter();
+		out.print("[\"A\", 16]");
+	} catch (IOException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
+      
+      
+      
+      
+      // 3. DB결과 처리
+     /* request.setAttribute("list", list);
+      
+      Map<String, String> map = new HashMap<>();
+      map.put("A", value)
+      request.setAttribute("map", map);
+      System.out.println(list.size());
+
+      // 4. 이동할 다음 페이지 처리
+      NextPage nextPage = new NextPage();
+      nextPage.setPageName("./user/search.jsp");
+      // request유지 시킨다.
+      nextPage.setRedirect(false);*/
+      
+      return null;
+   }
+}

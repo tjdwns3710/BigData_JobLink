@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<form>
+		<fieldset>
+			<legend>학생추가</legend>
+			<ul>
+				<li>학번: <input type="text" >
+				<li>이름: <input type="text">
+				<li>성별: 
+			</ul>
+			
+			<input type="submit" values="추가">
+			<input type="reset" values="취소">
+		
+		</fieldset>	
+	
+	</form>
+
+</body>
+</html>

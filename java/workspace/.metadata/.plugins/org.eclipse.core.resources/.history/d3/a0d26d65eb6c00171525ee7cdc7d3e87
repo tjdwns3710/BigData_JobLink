@@ -1,0 +1,19 @@
+package kdata.project.service;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+public class CommentsWriteService implements UserService {
+
+   @Override
+   public NextPage execute(HttpServletRequest request, HttpServletResponse response) {
+      System.out.println("커맨트 쓰기 서비스");
+      String id = request.getParameter("id");
+      String comments = request.getParameter("comments");
+      String num = request.getParameter("num");
+      System.out.println(id);
+      System.out.println(comments);
+      System.out.println(num);
+      return null;
+   }
+}

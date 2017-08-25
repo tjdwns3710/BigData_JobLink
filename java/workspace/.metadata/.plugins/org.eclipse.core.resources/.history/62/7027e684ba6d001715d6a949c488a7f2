@@ -1,0 +1,141 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title> Bare - Start Bootstrap Template </title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <style>
+    body {
+        padding-top: 70px;
+        /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
+    }
+    #bs-example-navbar-collapse-11{position : absolute; top : 10px; left : 750px; z-index:1;}
+    #section { position : absolute; top : 0px; left : 1500px;}
+    img { position : absolute; top :1px; left :1000px;}
+    </style>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+
+    <!-- 그래프 -->
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load("current", {packages:["corechart"]});
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['Task', 'Hours per Day'],
+          ['Work',     11],
+          ['Eat',      2],
+          ['Commute',  2],
+          ['a', 2],
+          ['B', 2],
+          ['c', 2],
+        ]);
+
+        var options = {
+          title: 'My Daily Activities',
+          pieHole: 0.4,
+        };
+
+        var chart = new google.visualization.PieChart(document.getElementById('donutchart'));
+        chart.draw(data, options);
+      }
+    </script>
+<style>
+body{
+background : url('back2.jpg');
+background-repeat : no-repeat;
+background-size : cover;
+};
+
+</style>
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="링크걸어야함"> NAJURA </a>
+            </div>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Page Content -->
+        <div class="row">
+            <div class="col-lg-12">
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-11">
+		    <ul class="nav navbar-nav">
+		    <li>
+			<a href="홈런.html"> 홈런 </a>
+                    </li>
+                    <li>
+			<a href="파울.html"> 파울 </a>
+                    </li>
+                </ul>
+            </div>
+    <div class="container">
+        <div class="row">
+	<div id="donutchart" style="width: 500px; height: 500px;"></div>
+        </div>
+        <!-- /.row -->
+
+    </div>
+    <!-- /.container -->
+<img src = "좌석/a.png" width = 500px height = 500px>
+
+<select id="section">
+
+    <option value=""> 구단 선택 </option>
+    <option value=""> 두산 </option>
+    <option value=""> NC </option>
+    <option value=""> 넥센 </option>
+    <option value=""> LG </option>
+    <option value=""> KIA </option>
+    <option value=""> SK </option>
+    <option value=""> 한화 </option>
+    <option value=""> 롯데 </option>
+    <option value=""> 삼성 </option>
+    <option value=""> KT </option>
+
+</select>
+
+
+
+
+    <!-- jQuery Version 1.11.1 -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+</body>
+
+</html>

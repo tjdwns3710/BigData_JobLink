@@ -1,0 +1,15 @@
+package kdata.project.service;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+public class CommentsDeleteService implements UserService {
+
+	@Override
+	public NextPage execute(HttpServletRequest request, HttpServletResponse response) {
+		System.out.println("커멘트 삭제 서비스");
+		
+		return null;
+	}
+
+}

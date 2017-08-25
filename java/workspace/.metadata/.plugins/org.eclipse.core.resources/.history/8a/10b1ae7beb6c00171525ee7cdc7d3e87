@@ -1,0 +1,26 @@
+package kdata.project.service;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import kdata.project.dao.BoardDAO;
+import kdata.project.dto.Comments;
+
+public class CommentsWriteService implements UserService {
+
+   @Override
+   public NextPage execute(HttpServletRequest request, HttpServletResponse response) {
+      System.out.println("커맨트 쓰기 서비스");
+      String id = request.getParameter("id");
+      String comments = request.getParameter("comments");
+      String num = request.getParameter("num");
+      
+      /*System.out.println(id);
+      System.out.println(comments);
+      System.out.println(num);*/
+      
+      BoardDAO.getInstance().insertComments(new Comments(id,comments,(Integer)num));
+      
+      return null;
+   }
+}

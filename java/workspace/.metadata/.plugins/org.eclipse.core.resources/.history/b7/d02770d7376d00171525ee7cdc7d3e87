@@ -1,0 +1,6 @@
+package project.baseball.service;
+
+public class Snippet {
+	-- 특정 구장에 떨어진 좌석별 홈런의 개수
+}
+

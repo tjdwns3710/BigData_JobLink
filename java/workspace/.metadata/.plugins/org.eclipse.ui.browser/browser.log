@@ -1,0 +1,79 @@
+
+7월 11, 2017 09:42:36.65 NEW SESSION
+7월 11, 2017 09:42:36.65 [10092:10216:0711/094236.649:ERROR:backend_impl.cc(1021)] Critical error found -8
+7월 11, 2017 09:42:36.68 [10092:10216:0711/094236.680:ERROR:backend_impl.cc(1021)] Critical error found -8
+7월 11, 2017 09:42:37.69 [10092:10216:0711/094237.692:ERROR:entry_impl.cc(962)] Failed to save user data
+7월 11, 2017 09:42:37.69 [10092:10216:0711/094237.692:ERROR:entry_impl.cc(962)] Failed to save user data
+7월 11, 2017 09:42:38.45 [10092:10216:0711/094238.451:ERROR:backend_impl.cc(1021)] Critical error found -8
+7월 11, 2017 15:59:47.57 [10092:10232:0711/155947.570:ERROR:audio_manager_base.cc(264)] Invalid audio output parameters received; using fake audio path. Channels: 0, Sample Rate: 0, Bits Per Sample: 0, Frames Per Buffer: 0
+7월 11, 2017 16:01:08.82 [10092:10232:0711/160108.821:ERROR:audio_manager_base.cc(264)] Invalid audio output parameters received; using fake audio path. Channels: 0, Sample Rate: 0, Bits Per Sample: 0, Frames Per Buffer: 0
+7월 11, 2017 16:47:34.99 [10092:10232:0711/164734.998:ERROR:audio_manager_base.cc(264)] Invalid audio output parameters received; using fake audio path. Channels: 0, Sample Rate: 0, Bits Per Sample: 0, Frames Per Buffer: 0
+
+7월 17, 2017 15:02:25.00 NEW SESSION
+7월 17, 2017 15:02:25.00 [5696:4940:0717/150224.980:ERROR:audio_manager_base.cc(264)] Invalid audio output parameters received; using fake audio path. Channels: 0, Sample Rate: 0, Bits Per Sample: 0, Frames Per Buffer: 0
+7월 17, 2017 15:57:42.15 [5696:4940:0717/155742.153:ERROR:audio_manager_base.cc(264)] Invalid audio output parameters received; using fake audio path. Channels: 0, Sample Rate: 0, Bits Per Sample: 0, Frames Per Buffer: 0
+7월 17, 2017 16:28:02.71 [5696:496:0717/162802.710:ERROR:ssl_client_socket_impl.cc(1054)] handshake failed; returned -1, SSL error code 1, net_error -101
+7월 17, 2017 16:28:06.02 [5696:496:0717/162806.028:ERROR:ssl_client_socket_impl.cc(1054)] handshake failed; returned -1, SSL error code 1, net_error -101
+7월 17, 2017 16:29:09.56 [5696:496:0717/162909.565:ERROR:ssl_client_socket_impl.cc(1054)] handshake failed; returned -1, SSL error code 1, net_error -101
+7월 17, 2017 16:29:12.88 [5696:496:0717/162912.883:ERROR:ssl_client_socket_impl.cc(1054)] handshake failed; returned -1, SSL error code 1, net_error -101
+
+7월 18, 2017 12:40:00.96 NEW SESSION
+7월 18, 2017 12:40:00.96 [5384:2600:0718/124000.917:ERROR:ssl_client_socket_impl.cc(1054)] handshake failed; returned -1, SSL error code 1, net_error -101
+7월 18, 2017 12:40:04.24 [5384:2600:0718/124004.240:ERROR:ssl_client_socket_impl.cc(1054)] handshake failed; returned -1, SSL error code 1, net_error -101
+7월 18, 2017 12:41:07.71 [5384:2600:0718/124107.716:ERROR:ssl_client_socket_impl.cc(1054)] handshake failed; returned -1, SSL error code 1, net_error -101
+7월 18, 2017 12:41:11.03 [5384:2600:0718/124111.037:ERROR:ssl_client_socket_impl.cc(1054)] handshake failed; returned -1, SSL error code 1, net_error -101
+7월 18, 2017 12:55:50.40 [5384:9168:0718/125550.402:ERROR:audio_manager_base.cc(264)] Invalid audio output parameters received; using fake audio path. Channels: 0, Sample Rate: 0, Bits Per Sample: 0, Frames Per Buffer: 0
+7월 18, 2017 14:13:47.71 [5384:2600:0718/141347.713:ERROR:ssl_client_socket_impl.cc(1054)] handshake failed; returned -1, SSL error code 1, net_error -101
+7월 18, 2017 14:13:51.03 [5384:2600:0718/141351.030:ERROR:ssl_client_socket_impl.cc(1054)] handshake failed; returned -1, SSL error code 1, net_error -101
+7월 18, 2017 14:14:54.46 [5384:2600:0718/141454.469:ERROR:ssl_client_socket_impl.cc(1054)] handshake failed; returned -1, SSL error code 1, net_error -101
+7월 18, 2017 14:14:57.78 [5384:2600:0718/141457.788:ERROR:ssl_client_socket_impl.cc(1054)] handshake failed; returned -1, SSL error code 1, net_error -101
+
+7월 19, 2017 10:18:08.65 NEW SESSION
+7월 19, 2017 10:18:08.65 [5640:8404:0719/101808.610:ERROR:audio_manager_base.cc(264)] Invalid audio output parameters received; using fake audio path. Channels: 0, Sample Rate: 0, Bits Per Sample: 0, Frames Per Buffer: 0
+7월 19, 2017 10:21:46.00 [5640:8404:0719/102146.001:ERROR:audio_manager_base.cc(264)] Invalid audio output parameters received; using fake audio path. Channels: 0, Sample Rate: 0, Bits Per Sample: 0, Frames Per Buffer: 0
+7월 19, 2017 10:29:37.93 [5640:8404:0719/102937.937:ERROR:audio_manager_base.cc(264)] Invalid audio output parameters received; using fake audio path. Channels: 0, Sample Rate: 0, Bits Per Sample: 0, Frames Per Buffer: 0
+7월 19, 2017 11:12:18.56 [5640:8404:0719/111218.565:ERROR:audio_manager_base.cc(264)] Invalid audio output parameters received; using fake audio path. Channels: 0, Sample Rate: 0, Bits Per Sample: 0, Frames Per Buffer: 0
+7월 19, 2017 11:14:06.70 [5640:8404:0719/111406.705:ERROR:audio_manager_base.cc(264)] Invalid audio output parameters received; using fake audio path. Channels: 0, Sample Rate: 0, Bits Per Sample: 0, Frames Per Buffer: 0
+7월 19, 2017 11:14:39.09 [5640:8404:0719/111439.093:ERROR:audio_manager_base.cc(264)] Invalid audio output parameters received; using fake audio path. Channels: 0, Sample Rate: 0, Bits Per Sample: 0, Frames Per Buffer: 0
+7월 19, 2017 11:15:06.01 [5640:8404:0719/111506.017:ERROR:audio_manager_base.cc(264)] Invalid audio output parameters received; using fake audio path. Channels: 0, Sample Rate: 0, Bits Per Sample: 0, Frames Per Buffer: 0
+7월 19, 2017 11:15:21.35 [5640:8404:0719/111521.354:ERROR:audio_manager_base.cc(264)] Invalid audio output parameters received; using fake audio path. Channels: 0, Sample Rate: 0, Bits Per Sample: 0, Frames Per Buffer: 0
+7월 19, 2017 11:17:24.64 [5640:8404:0719/111724.640:ERROR:audio_manager_base.cc(264)] Invalid audio output parameters received; using fake audio path. Channels: 0, Sample Rate: 0, Bits Per Sample: 0, Frames Per Buffer: 0
+7월 19, 2017 11:19:00.18 [5640:8404:0719/111900.184:ERROR:audio_manager_base.cc(264)] Invalid audio output parameters received; using fake audio path. Channels: 0, Sample Rate: 0, Bits Per Sample: 0, Frames Per Buffer: 0
+7월 19, 2017 11:22:05.61 [5640:8404:0719/112205.610:ERROR:audio_manager_base.cc(264)] Invalid audio output parameters received; using fake audio path. Channels: 0, Sample Rate: 0, Bits Per Sample: 0, Frames Per Buffer: 0
+7월 19, 2017 14:24:43.31 [5640:8404:0719/142443.310:ERROR:audio_manager_base.cc(264)] Invalid audio output parameters received; using fake audio path. Channels: 0, Sample Rate: 0, Bits Per Sample: 0, Frames Per Buffer: 0
+7월 19, 2017 18:43:00.56 [5640:8404:0719/184300.535:ERROR:audio_manager_base.cc(264)] Invalid audio output parameters received; using fake audio path. Channels: 0, Sample Rate: 0, Bits Per Sample: 0, Frames Per Buffer: 0
+7월 19, 2017 19:42:57.27 [5640:8404:0719/194257.274:ERROR:audio_manager_base.cc(264)] Invalid audio output parameters received; using fake audio path. Channels: 0, Sample Rate: 0, Bits Per Sample: 0, Frames Per Buffer: 0
+7월 19, 2017 20:47:48.38 [5640:8576:0719/204748.385:ERROR:ssl_client_socket_impl.cc(1054)] handshake failed; returned -1, SSL error code 1, net_error -101
+7월 19, 2017 20:47:51.70 [5640:8576:0719/204751.703:ERROR:ssl_client_socket_impl.cc(1054)] handshake failed; returned -1, SSL error code 1, net_error -101
+7월 19, 2017 20:48:55.20 [5640:8576:0719/204855.204:ERROR:ssl_client_socket_impl.cc(1054)] handshake failed; returned -1, SSL error code 1, net_error -101
+7월 19, 2017 20:48:58.52 [5640:8576:0719/204858.524:ERROR:ssl_client_socket_impl.cc(1054)] handshake failed; returned -1, SSL error code 1, net_error -101
+
+7월 21, 2017 12:50:03.33 NEW SESSION
+7월 21, 2017 12:50:03.33 [8812:8952:0721/125002.675:ERROR:backend_impl.cc(1021)] Critical error found -8
+7월 21, 2017 12:50:03.37 [8812:8956:0721/125002.676:ERROR:shader_disk_cache.cc(237)] Failed to create shader cache entry: -2
+7월 21, 2017 12:50:03.38 [8812:8952:0721/125002.676:ERROR:backend_impl.cc(1021)] Critical error found -8
+7월 21, 2017 12:50:03.38 [8812:8952:0721/125002.676:ERROR:entry_impl.cc(1037)] No file for a0014db2
+7월 21, 2017 12:50:07.59 [8812:8952:0721/125007.592:ERROR:backend_impl.cc(1021)] Critical error found -8
+
+7월 21, 2017 13:43:04.86 NEW SESSION
+7월 21, 2017 13:43:04.86 [7848:6772:0721/134304.825:ERROR:backend_impl.cc(1021)] Critical error found -8
+7월 21, 2017 13:43:04.88 [7848:6772:0721/134304.888:ERROR:backend_impl.cc(1021)] Critical error found -8
+7월 21, 2017 13:43:04.90 [7848:6772:0721/134304.899:ERROR:backend_impl.cc(1021)] Critical error found -8
+7월 21, 2017 13:43:06.76 [7848:6772:0721/134306.762:ERROR:entry_impl.cc(962)] Failed to save user data
+7월 21, 2017 13:43:06.76 [7848:6772:0721/134306.762:ERROR:entry_impl.cc(962)] Failed to save user data
+
+7월 21, 2017 15:16:22.45 NEW SESSION
+7월 21, 2017 15:16:22.45 [6284:6412:0721/151622.425:ERROR:shader_disk_cache.cc(237)] Failed to create shader cache entry: -2
+7월 21, 2017 15:16:23.00 [6284:6408:0721/151623.003:ERROR:backend_impl.cc(1021)] Critical error found -8
+7월 21, 2017 15:16:24.17 [6284:6408:0721/151624.177:ERROR:entry_impl.cc(962)] Failed to save user data
+7월 21, 2017 15:16:24.22 [6284:6408:0721/151624.177:ERROR:entry_impl.cc(962)] Failed to save user data
+7월 21, 2017 15:18:39.14 [6284:6412:0721/151839.140:ERROR:shader_disk_cache.cc(237)] Failed to create shader cache entry: -2
+
+7월 21, 2017 15:36:00.43 NEW SESSION
+7월 21, 2017 15:36:00.43 [9168:9296:0721/153600.386:ERROR:shader_disk_cache.cc(237)] Failed to create shader cache entry: -2
+7월 21, 2017 15:36:00.44 [9168:9292:0721/153600.387:ERROR:backend_impl.cc(1021)] Critical error found -8
+7월 21, 2017 15:36:01.74 [9168:9292:0721/153601.747:ERROR:entry_impl.cc(962)] Failed to save user data
+7월 21, 2017 15:36:01.74 [9168:9292:0721/153601.747:ERROR:entry_impl.cc(962)] Failed to save user data
+
+7월 21, 2017 16:01:33.42 NEW SESSION
+7월 21, 2017 16:01:33.42 [516:2824:0721/160133.427:ERROR:shader_disk_cache.cc(237)] Failed to create shader cache entry: -2

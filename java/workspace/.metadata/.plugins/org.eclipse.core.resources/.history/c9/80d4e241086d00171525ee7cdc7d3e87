@@ -1,0 +1,108 @@
+package kdata.project.dao;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+
+import kdata.project.dto.Comments;
+import kdata.project.dto.User;
+import kdata.project.util.DBUtil;
+
+public class BoardDAO {
+   
+   // ΩÃ±€≈œ ∆–≈œ
+   private static BoardDAO dao = new BoardDAO();
+   
+   private BoardDAO() {
+      
+   }
+   
+   public static BoardDAO getInstance() {
+      return dao;
+   }
+   
+   // ¥Ò±€ æ≤±‚
+   public int insertComments(Comments comments) throws SQLException {
+	   System.out.println("");
+	   
+	   Connection con = null;
+	   PreparedStatement pstmt = null;
+	   int result = 0;
+	   
+	   con = DBUtil.getConnection();
+	   
+	   try {
+			String sql = "insert into comments values(comment_seq.nextval,?,?,default,?)";
+			pstmt = con.prepareStatement(sql);
+			
+			pstmt.setString(1,comments.getId());
+			System.out.println(comments.getId());
+			pstmt.setString(2,comments.getContent());
+			System.out.println(comments.getContent());
+			pstmt.setInt(3,comments.getNum());
+			System.out.println(comments.getNum());
+			System.out.println(pstmt);
+			result = pstmt.executeUpdate();
+		}finally {
+			DBUtil.close(pstmt,con);
+		}
+		return result;
+	   
+   }
+   
+   // ¥Ò±€ ∏ÆΩ∫∆Æ
+   public List<Comments> selectComments(int num) throws SQLException {
+	   Connection con = null;
+	   ResultSet rs = null;
+	   PreparedStatement pstmt = null;
+		
+	   List<Comments> list = new ArrayList<>();
+		
+	   try {
+		   con = DBUtil.getConnection();
+			
+		   String sql = "select * from Comments where num = ?";
+		   pstmt = con.prepareStatement(sql);
+		   pstmt.setInt(1, num);
+		   rs = pstmt.executeQuery();
+			
+		   while(rs.next()) {
+			   Comments comments = new Comments(
+			   rs.getInt(1),
+			   rs.getString("id"),
+			   rs.getString("content"),
+			   rs.getDate("write_date"),
+			   rs.getInt(5)
+					   );
+			   list.add(comments);
+		   }
+			System.out.println(list);
+	   } finally {
+		   DBUtil.close(rs, pstmt, con);
+	   }
+		
+	   return list;
+   }
+   // ¥Ò±€ ªË¡¶
+   public int deleteComments(int commentsNum) throws SQLException {
+	   Connection con = null;
+	   PreparedStatement pstmt = null;
+	   int result = 0;
+	   
+	   con = DBUtil.getConnection();
+	   
+	   String sql = "delete from Comments where comment_num = ?";
+	   pstmt = con.prepareStatement(sql);
+	   pstmt.setInt(1, commentsNum);
+	   
+	   result = pstmt.executeUpdate();
+	   
+	   DBUtil.close(pstmt,con);
+	   
+	   return result;
+	   
+   }
+}

@@ -1,0 +1,10 @@
+#url.properties
+#URL=ServiceClass
+selectAll.project=project.baseball.service.SelectAllService
+selectList.project=project.baseball.service.SelectListService
+selectStdBall.project=project.baseball.service.SelectStdBallService
+userSearch.project=project.baseball.service.UserSearchService
+player.project=project.baseball.service.PlayerAllBallService
+
+playerH.project=project.baseball.service.PlayerHRService
+playerF.project=project.baseball.service.PlayerFoulService

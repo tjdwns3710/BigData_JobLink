@@ -1,0 +1,20 @@
+package kdata.project.service;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import kdata.project.dao.BoardDAO;
+
+public class CommentsDeleteService implements UserService {
+
+	@Override
+	public NextPage execute(HttpServletRequest request, HttpServletResponse response) {
+		System.out.println("커멘트 삭제 서비스");
+		String commentsNum = request.getParameter("commentsNum");
+		
+		BoardDAO.getInstance().deleteComments();
+		
+		return null;
+	}
+
+}

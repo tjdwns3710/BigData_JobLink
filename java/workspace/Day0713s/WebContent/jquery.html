@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="./js/jquery-3.2.1.js"></script>
+<script>
+
+	$(function(){
+		
+		//$("*").css("color","red");
+		
+		//$("h1").css("color","red");
+		
+		$("#test").css("color","red");
+		
+		$("[type='text']")
+			.css("border-style","solid")
+			.css("border-color","red");
+		
+		//eq안에는 순서 
+		//$("ol > li").eq(0).css("color","red");
+		
+		//$("ol > li").parent().parent().find("p").css("color","red").
+		
+		//밑의 두줄은 똑같은 결과가 나옴
+		//위에는 고정이고,동적으로 써야 할때는 밑에것
+		//$("ol > li:even").css("color","pink");
+		$("ol > li").filter(":even").css("color","gray");
+		
+		
+	
+	});
+
+</script>
+</head>
+<body>
+	<h1>안녕하세요</h1>
+	<h1 id="test">안녕하세요</h1>
+	<p>안녕하세요</p>
+	
+	<input type="text">
+	<input type="password">
+	
+	<ul>
+		<li>피자
+		<li>파스타
+	</ul>
+	
+	<ol>
+		<li>피자
+		<li>파스타
+		<li>치킨
+	</ol>
+</body>
+</html>

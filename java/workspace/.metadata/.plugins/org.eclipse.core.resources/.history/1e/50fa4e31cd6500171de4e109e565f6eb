@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<form>
+		<fieldset>
+			<legend>학생추가</legend>
+			<ul>
+				<li>학번:
+			</ul>
+		
+		</fieldset>	
+	
+	</form>
+
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="./js/jquery-3.2.1.js"></script>
+<script>
+	
+	$(function(){
+		//var a = ["김성준","툴지드","홍길동","재니준"];
+		
+		//객체 배열
+		//num이 필드 이름이라고 생각해라
+		var a = [{num:1,name:"홍길동"},{num:2,name:"홍자미"}];
+		
+		console.log(a.length);
+		
+		/* for(var i=0;i<a.length;i++)
+			console.log(a[i]); */
+		
+		//a하나 꺼내와서 펑션 이렇게 네개
+		//item이 객체임
+		/* $.each(a, function(index, item){
+			//오브젝트를 받을때는 하나만 써서 콘솔로그 해라
+			console.log(item.name);
+			$("span").append(item.name+"<br>");
+		}); */
+			
+		
+		$("li").each(function(index,item){
+			//console.log(item);
+			console.log($(item));
+			$(item).css("color","red");
+		});
+	});
+</script>
+</head>
+<body>
+	<span></span>
+	
+	<input type="button" value="버튼">
+	
+	<ul>
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+		<li>3</li>
+	</ul>
+</body>
+</html>

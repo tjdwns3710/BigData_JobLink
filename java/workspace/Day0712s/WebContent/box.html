@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	div {
+		/* display:inline; */
+		border-bottom-style:solid;
+		/* width:200px; */
+		padding:10px;
+		margin:50px;
+	}
+	span {
+		/* display:block; */
+		border-style:solid;
+		/* width:200px; */
+		padding:10px;
+		margin:50px;
+	}
+	ul{
+		background-color:gray;
+	}
+	
+	#menu > li {
+		display:inline-block;
+		border-style:solid;
+		width:100px;
+	}
+	
+	li > a:link{text-decoration:none}
+	li > a:visited{text-decoration:none}
+	/* 마우스 모양 바뀌는것 */
+	li > a:hover{text-decoration:underline}
+</style>
+</head>
+<body>
+
+	<!-- 블락 -->
+	<div>div</div>
+	<!-- 인라인 --> 
+	<span>span</span>
+
+	<a href="http://localhost:7777/Day0712s/box.html">홈으로 이동</a>
+	
+	<ul id="menu">
+		<li><a href="http://www.naver.com">네이버</a>
+		<li><a href="http://www.google.com">구글</a>
+		<li><a href="http://www.daum.net">다음</a>
+	</ul>
+	
+	<ul>
+		<li>피자
+		<li>파스타
+	</ul>
+</body>
+</html>

@@ -1,0 +1,51 @@
+package kdata.sort;
+
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
+
+public class SortTest {
+
+	public static void main(String[] args) {
+		//정렬을 하려면 익명을 써야 함
+		//int[] ar = new int[] {1,2,3};
+		
+		//asList의 Integer... 이거는 가변 매개변수(갯수는 알아서)
+		//int라고 쓰면 안됨 -오브젝트 상속받은애만 쓸 수 있는데 int는 오브젝트 상속 안받음
+		//리스트가 컬랙션으로 바뀐거임
+		List<Integer> list = Arrays.asList(5, 3, 10, 1, 2);
+		System.out.println(list);
+		
+		/*
+		//방법1.오름차순
+		Collections.sort(list);
+		System.out.println(list);
+		*/
+		
+		/*
+		//방법2.내림차순으로 하고싶음
+		//두번째는 인터페이스라서 new를 못 씀
+		//클래스를 만들어서 comparator를 상속받아서 씀
+		Collections.sort(list,new MyComparator());
+		System.out.println(list);
+		*/
+		
+		//방법3.comparator는 인터페이스라 new가 안됨
+		//익명 사용
+		//그래서 이름이 없는 클래스를 new해서 사용
+		//new하는 동시에 정의를 해줘야함
+		Collections.sort(list,new Comparator<Integer>(){
+
+			@Override
+			public int compare(Integer o1, Integer o2) {
+				// 오름차순
+				return o1 - o2;
+			}
+			
+		});
+		
+		System.out.println(list);
+	}
+
+}

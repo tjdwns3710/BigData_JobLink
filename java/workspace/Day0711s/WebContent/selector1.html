@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+/* 선택자 {속성명:값; 속성명:값} */
+
+/* *는 전체 선택자
+* { color:#000000 ; background-color:darkGray }*/
+
+/* 태그선택자 */
+/* h1 { color:red; background-color:gold} 
+b {background-color:darkred}*/
+
+/* 클래스는 임의로 이름을 만드는것 (.찍고)가상
+내가 만들어주려는것을 선택하는 것*/
+.ccc {color:red}
+
+/* #과 .은 css에서 차이가 없는데 자바스크립트에서는
+#는 하나만 들어가야 한다 
+가독성을 위해*/
+#iii{color:orange}
+
+[type=text] {background-color:gold; border-style:solide}
+[type=text]:hover {background-color:red}
+[type=text]:focus {background-color:blue}
+[tyaaaaape=password] {background-color:yellow}
+
+
+a:link {text-decoration:none}
+
+/* 방문했던 사이트에 밑줄 안 넣겠다 */
+a:visited { text-decoration:none}
+a:hover { text-decoration:underline}
+
+/* p태그의 첫번째 글자 */
+p:first-letter{
+	border-style:dashed; border-width:5px;
+	border-radius:5px;
+}
+
+
+.ccc:first-letter{
+	border-style:dashed; border-width:5px;
+	border-radius:5px;
+}
+
+</style>
+</head>
+<body>
+selector1.html
+<h1 class="ccc">안녕하세요.</h1>
+<h1 id="iii">반갑습니다.</h1>
+
+<p>동해물과 백두산이</p>
+<b>굵게<br></b>
+
+<input type="text">
+<input type="password"><br>
+
+<a href="http://www.naver.com">네이버</a>
+
+</body>
+</html>

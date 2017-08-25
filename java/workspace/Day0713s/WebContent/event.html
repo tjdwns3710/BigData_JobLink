@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+	#txt {color:gray};
+</style>
+<script src="./js/jquery-3.2.1.js"></script>
+<script>
+	//문서가 시작되면 실행되는것
+	$(function(){
+		alert("시작");
+		
+		//클릭하고 이벤트 생기게 하는 것
+		//동적으로 만들어지는 것은 on
+		//없던애들을 만들어내는 것이 동적인것
+		//처음부터 계속 만들어져있는게 정적인것
+		//두개 같은 것임
+		/* $("#btn").on("click", function(){
+			alert("버튼 클릭");
+		}); */
+		/* $("#btn").click(function(){
+			alert("버튼 클릭");
+		}); */
+		
+		//버튼은 클릭했을때 실행되는것
+		$("#btn").click(function(){
+			
+			//set개념 버튼 누르면 이 같이 들어감
+			//$("#txt").val("버튼내용을 입력하세요");
+			
+			//get개념 
+			//alert($("#txt").val());
+			
+			//인풋태그아닐때 쓰는 것이 text(),html()이 있음
+			//$("span").text( $("#txt").val() );
+			
+			//html은 태그를 읽음, text는 못읽음
+			//$("span").html("<h1>" + $("#txt").val() + "</h1>");
+			//$("span").text("<h1>" + $("#txt").val() + "</h1>");
+			
+			//span을 가리킴
+			//console.log($(this).parent());
+			
+			//input#txt 가리킴
+			//console.log($(this).prev().prev());
+			
+			//span을 가리킴
+			//console.log($(this).prev().prev().next());
+			
+			//버튼을 누르면span 색이바뀜
+			//$(this).prev().prev().next().css("color","red");
+			
+			var a = $("#txt").val() - $(".in").val()
+			console.log(a);
+
+			
+			$(this).next().text(a);
+		});
+		
+		
+	});
+</script>
+</head>
+<body>
+
+	<input type="text" id="txt">
+	<input type="text" class="in">
+	<input type="button" value="이벤트 연습" id="btn">
+	<!-- <input type="text" class="out"> -->
+	<span></span>
+
+</body>
+</html>

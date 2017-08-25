@@ -1,0 +1,48 @@
+package project.baseball.service;
+
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import project.baseball.dao.UserDAO;
+import project.baseball.dto.PlayerBallDTO;
+
+public class PlayerAllBallService implements UserService {
+
+   @Override
+   public NextPage execute(HttpServletRequest request, HttpServletResponse response) {
+      System.out.println("2. SelectStdBallService execuete");
+      // 1. 파라미터인 플레이어 이름 받기
+      String player = request.getParameter("player");
+      System.out.println("player이름: " + player);
+      // 2. DB 처리
+      List<PlayerBallDTO> list = new ArrayList<>();
+      
+      try {
+         list = UserDAO.getInstance().Search_Player_All_Ball(player);
+      } catch (SQLException e) {
+         // TODO Auto-generated catch block
+         e.printStackTrace();
+      }
+      
+      for(int i=0;i<list.size();i++) {
+         System.out.println(list);
+      }
+      
+      request.setAttribute("list", list);
+      System.out.println(list.size());
+      // 3. DB결과 처리
+      
+
+      
+      NextPage nextPage = new NextPage();
+      nextPage.setPageName("./user/list.jsp");
+      // request유지 시킨다.
+      nextPage.setRedirect(false);
+      
+      return null;
+   }
+}

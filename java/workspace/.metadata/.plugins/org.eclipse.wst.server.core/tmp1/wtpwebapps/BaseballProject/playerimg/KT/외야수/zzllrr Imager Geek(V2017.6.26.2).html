@@ -1,0 +1,875 @@
+<!DOCTYPE html>
+<!-- saved from url=(0060)chrome-extension://gfjhimhkjmipphnaminnnnjpnlneeplk/out.html -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>zzllrr Imager Geek(V2017.6.26.2)</title>
+
+<link rel="stylesheet" href="chrome-extension://gfjhimhkjmipphnaminnnnjpnlneeplk/css/common.css">
+<link rel="stylesheet" href="chrome-extension://gfjhimhkjmipphnaminnnnjpnlneeplk/css/popout.css">
+<link rel="stylesheet" href="chrome-extension://gfjhimhkjmipphnaminnnnjpnlneeplk/css/out.css">
+<script src="chrome-extension://gfjhimhkjmipphnaminnnnjpnlneeplk/js/lib/jQ.js"></script>
+<script src="chrome-extension://gfjhimhkjmipphnaminnnnjpnlneeplk/js/lib/Base64.js"></script>
+<script src="chrome-extension://gfjhimhkjmipphnaminnnnjpnlneeplk/js/lib/MD5.js"></script>
+<script src="chrome-extension://gfjhimhkjmipphnaminnnnjpnlneeplk/js/lib/zlr.js"></script>
+<script src1="js/lib/apng-canvas.min.js"></script>
+<script src="chrome-extension://gfjhimhkjmipphnaminnnnjpnlneeplk/js/dat/INI.js"></script>
+<script src="chrome-extension://gfjhimhkjmipphnaminnnnjpnlneeplk/js/dat/DONOR.js"></script>
+<script src="chrome-extension://gfjhimhkjmipphnaminnnnjpnlneeplk/js/dat/Auth.js"></script>
+<script src="chrome-extension://gfjhimhkjmipphnaminnnnjpnlneeplk/js/cfg/cfg.js"></script>
+<script src="chrome-extension://gfjhimhkjmipphnaminnnnjpnlneeplk/js/cfg/zig.js"></script>
+<script src="chrome-extension://gfjhimhkjmipphnaminnnnjpnlneeplk/js/cfg/vip0.js"></script>
+<script src="chrome-extension://gfjhimhkjmipphnaminnnnjpnlneeplk/js/cfg/vip.js"></script>
+<script src="chrome-extension://gfjhimhkjmipphnaminnnnjpnlneeplk/js/htm/popout.js"></script>
+<script src="chrome-extension://gfjhimhkjmipphnaminnnnjpnlneeplk/js/htm/out.js"></script>
+<script src="chrome-extension://gfjhimhkjmipphnaminnnnjpnlneeplk/js/htm/weib.js"></script>
+
+</head>
+<body tabindex="0">
+<div id="ZIG">
+    <div id="ZIGVIP" hidden="">
+		<table id="VIPTable" align="center"><tbody><tr>
+        	<td><textarea id="VIPURLs" placeholder="Contact zzllrr@gmail.com to upgrade"></textarea>
+            	<div>
+                    <input type="button" id="VIPminiB" value="↘">
+					<select id="VIPWeb"><script src="chrome-extension://gfjhimhkjmipphnaminnnnjpnlneeplk/js/cfg/web.js"></script><option value="more">contact zzllrr@gmail.com to upgrade</option></select>
+					<select id="VIPWebs" hidden=""></select>
+                    <input type="number" id="VIPpages" min="0" value="1" hidden="" style="display: none;">
+                    <input type="button" id="VIPminiT" value="↗">
+            		<input type="button" id="VIPGO" value="GO">
+
+                	</div>
+                <div id="vip_opt"></div>
+            	<div id="Sina_weibo" hidden="">
+                	<input type="button" id="VIPChk" value="?">
+                	<input type="button" id="VIPOpt" value="→" title="Set">
+                    </div>
+            	</td>
+        	<td id="VIPUrls"></td>
+        	</tr></tbody></table>
+    			</div>
+
+	<div id="imgr" hidden="">
+		<div id="nav">
+            <div id="advImgr" hidden="">
+                <div id="getUrls">
+                    <textarea id="imgrCode" placeholder="return url array" hidden="" data-saveas="imgrSaveAs"></textarea>
+                    <div hidden="">
+                    	<div id="imgrURLfilter">
+                    		URL
+							<span class="Y">include</span>
+							<input type="text" id="imgrY" placeholder=".jpg">
+							<span class="N">exclude</span>
+							<input type="text" id="imgrN" placeholder=".gif">
+							<span class="R">regExp</span>
+							<input type="text" id="imgrR" placeholder=".(jpg|png)$">
+                    		<span id="IMGR0"><span class="CODE0" data-code="%7B%22name%22%3A%22URL%22%2C%22code%22%3A%22return%2520urlArr%2528%2527a%255Bhref%255D%2527%2529%22%7D">URL</span><span class="CODE0" data-code="%7B%22name%22%3A%22src%22%2C%22code%22%3A%22return%2520urlArr%2528%2527%255Bsrc%255D%2527%252C%2527src%2527%2529.concat%2528urlArr%2528%2527%255Bdata-src%255D%2527%252C%2527data-src%2527%2529%252CurlArr%2528%2527%255Bdata-url%255D%2527%252C%2527data-url%2527%2529%2529%22%7D">src</span><span class="CODE0" data-code="%7B%22name%22%3A%22MP4%22%2C%22code%22%3A%22return%2520urlArr%2528%2527%255Bsrc*%253Dmp4%255D%2527%252C%2527src%2527%2529%22%7D">MP4</span><span class="CODE0" data-code="%7B%22name%22%3A%22MP3%22%2C%22code%22%3A%22return%2520urlArr%2528%2527%255Bsrc*%253Dmp3%255D%2527%252C%2527src%2527%2529%22%7D">MP3</span><span class="CODE0" data-code="%7B%22name%22%3A%22Image%2520urls%22%2C%22code%22%3A%22return%2520urlArr%2528%2527img%255Bsrc%255D%2527%252C%2527src%2527%2529%22%7D">Image</span><span class="CODE0" data-code="%7B%22name%22%3A%22Image%2520links%22%2C%22code%22%3A%22return%2520urlArr%2528%2527a%255Bhref%255D%253Ahas%2528img%2529%2527%2529%22%7D">Image links</span></span>
+                    		</div>
+                    	<mark title="API">urlArr()</mark>
+						<label><input type="checkbox" id="local">locally</label>
+						<select id="imgrs"><option value="0">--codes--</option><option value="1">163网易相册</option><option value="2">meilijie美丽街</option><option value="3">piccsy</option><option value="4">renren公共主页</option></select>
+						<span id="imgrSaveAs" class="SaveAs">SaveAs</span></div>
+					<div>
+						<span class="urlRule1">Get URL</span>
+						<input type="button" id="fetchUrls" hidden="" value="GO" class="hidden">
+						<span class="urlClickOff ClickOff hidden" hidden="">&nbsp;╳&nbsp;</span>
+						</div>
+						</div>
+                <textarea id="urlsImgr" hidden="" placeholder="http://"></textarea>
+                <div id="advInputImgr" hidden="">
+                    <fieldset id="inputUrlsImgr"><legend class="inputUrl">← enter the URL<mark title="API">[*xxx]</mark></legend>
+                        <div class="hidden"><div>
+								<p><span class="urlTip">Please type one URL per line. Optional valid expressions: </span> <mark title="API">[*XXX]</mark></p>
+								<p><span class="multia">a) multi-selection separated by comma</span><br>http://..<mark title="API">[*1,6,8]</mark>.html</p>
+								<p><span class="multib">b) increasing numbers or characters, separated by hyphen</span><br>http://..<mark title="API">[*a-f]</mark>.html<br>
+								http://..<mark title="API">[*01-12]</mark>.html</p>
+								<p><span class="multic">c) composite operations</span><br>http://..<mark title="API">[*1,3-7,a-f]</mark>.html</p></div>
+							<div><input type="button" class="preview" value="preview"></div>
+							<textarea class="urlsPreview" placeholder="result" hidden=""></textarea></div></fieldset>
+                    <div id="timeImgr">
+                        Delay Time(ms)<input type="number" id="timeOutImgr" min="0" step="50"><br>
+                        Interval Time(ms)<input type="number" id="timeIntImgr" min="0" step="50"></div>
+                    <div id="urlToolImgr">
+                        <input type="button" class="openUrls" value="Batch Open URLs">
+                        <input type="button" class="closeUrls" value="Batch Close"></div></div>
+                <div class="clear"></div></div>
+
+			<div id="sav">
+				<label><input type="checkbox" id="imgrLocal">locally</label>
+				<input type="file" id="upImgsImgr" webkitdirectory="" hidden="">
+                <select id="getType">
+                    <option value="getImage" selected="selected">Single-tab</option>
+                    <option value="getImagesTab">Multi-tab</option>
+                    <option value="getImagesWindow">Multi-window</option>
+                    <option value="getImagesInput">via Image URLs</option>
+                    <option value="getImages">Multi-website</option>
+                    <option value="getImages1">Multi-website (delay)</option></select>
+                <input type="button" id="fetch" value="GO" title="Ctrl + Q"></div></div>
+		<div id="filtDIV">
+        	<details id="Filter">
+            	<summary id="filter">Basic Filter</summary>
+                <table id="WHS" align="center"><tbody>
+                	<tr><th id="w"><span id="W" title="reset">W</span></th><th id="h"><span id="H" title="reset">H</span></th><th id="s"><span id="S" title="reset">Size</span></th></tr>
+                	<tr><td><input type="number" id="minW" title="px" step="50" min="0"> ~ <input type="number" id="maxW" title="px" step="50" min="0"></td>
+                		<td><input type="number" id="minH" title="px" step="50" min="0"> ~ <input type="number" id="maxH" title="px" step="50" min="0"></td>
+						<td><input type="number" id="minS" title="KB" step="50" min="0"> ~ <input type="number" id="maxS" title="KB" step="50" min="0"></td></tr>
+						</tbody></table>
+                	<table align="center" id="filterDeep"><tbody><tr><th><span id="E" title="reset">Ext</span></th><th><span id="deep" title="reset">Image Type</span></th></tr>
+                		<tr id="edeep"><td id="e">
+		                	<label><input type="checkbox" id="bmp">bmp</label>
+	                    	<label><input type="checkbox" id="gif">gif</label>
+	                    	<label><input type="checkbox" id="jpg">jpg</label>
+	                    	<label><input type="checkbox" id="jpeg">jpeg</label>
+	                    	<label><input type="checkbox" id="png">png</label>
+							<br><br>
+	                    	<label><input type="checkbox" id="apng">apng</label>
+		                    <label><input type="checkbox" id="svg">svg</label>
+		                    <label><input type="checkbox" id="ico">ico</label>
+	                    	<label><input type="checkbox" id="webp">webp</label>
+	                    	<label><input type="checkbox" id="other">other</label>
+	                    	</td>
+
+		                    <td>
+		                    <label><input type="checkbox" id="selImg">Normal</label>
+		                    <label><input type="checkbox" id="selLink">Link image</label>
+		                    <label><input type="checkbox" id="selText">Text image</label>
+							<br><br>
+		                    <label><input type="checkbox" id="selCss">CSS image</label>
+		                    <label><input type="checkbox" id="selCanvas">Canvas</label>
+		                    <label><input type="checkbox" id="selFavicon">Favicon</label>
+		                    <label><input type="checkbox" id="selMeta">Meta</label>
+
+                    		</td></tr></tbody></table>
+
+
+				<details id="FiltMore">
+					<summary id="filtMore">More filters</summary>
+					<table align="center"><tbody>
+						<tr><td><span id="A" title="reset">Alt</span></td>
+							<td><span class="Y" title="reset">include</span><input type="text" id="altY">
+								<span class="N" title="reset">exclude</span><input type="text" id="altN">
+								<span class="R" title="reset">regExp</span><input type="text" id="altR"></td></tr>
+						<tr><td><span id="T" title="reset">Image Title</span></td>
+							<td><span class="Y" title="reset">include</span><input type="text" id="titleY">
+								<span class="N" title="reset">exclude</span><input type="text" id="titleN">
+								<span class="R" title="reset">regExp</span><input type="text" id="titleR"></td></tr>
+						<tr><td><span id="N" title="reset">Image Name</span></td>
+							<td><span class="Y" title="reset">include</span><input type="text" id="nameY">
+								<span class="N" title="reset">exclude</span><input type="text" id="nameN">
+								<span class="R" title="reset">regExp</span><input type="text" id="nameR"></td></tr>
+						<tr><td><span id="L" title="reset">Image URL</span></td>
+							<td><span class="Y" title="reset">include</span><input type="text" id="urlY">
+								<span class="N" title="reset">exclude</span><input type="text" id="urlN">
+								<span class="R" title="reset">regExp</span><input type="text" id="urlR"></td></tr>
+						<tr><td><span id="L2" title="reset">Link to</span></td>
+							<td><span class="Y" title="reset">include</span><input type="text" id="link2Y">
+								<span class="N" title="reset">exclude</span><input type="text" id="link2N">
+								<span class="R" title="reset">regExp</span><input type="text" id="link2R"></td></tr></tbody></table></details>
+
+			</details>
+
+			<details><summary id="RULE">Image Rules</summary>
+				<div id="RULE0"><select id="RULE0S"><option value="-1" data-rule="">Suggested rules: </option><option value="0" data-rule="%7B%22name%22%3A%22architizer%22%2C%22img0%22%3A%22projects%22%2C%22img1%22%3A%22%2527193x182%2527%252C%2527r990x990%2527%22%2C%22img2%22%3A%22%22%2C%22url2%22%3A%22%22%7D">architizer</option><option value="1" data-rule="%7B%22name%22%3A%22at.im%25u5FAE%25u56FE%22%2C%22img0%22%3A%22%22%2C%22img1%22%3A%22/m_/%252C%2522b_%2522%22%2C%22img2%22%3A%22%22%2C%22url2%22%3A%22%22%7D">at.im微图</option><option value="2" data-rule="%7B%22name%22%3A%22baidu%25u767E%25u5EA6%25u76F8%25u518C%22%2C%22img0%22%3A%22baidu%22%2C%22img1%22%3A%22%2522/abpic/%2522%252C%2522/pic/%2522%22%2C%22img2%22%3A%22%22%2C%22url2%22%3A%22%22%7D">baidu百度相册</option><option value="3" data-rule="%7B%22name%22%3A%22batoto.net%22%2C%22img0%22%3A%22%22%2C%22img1%22%3A%22%22%2C%22img2%22%3A%22%22%2C%22url2%22%3A%22var%2520s%253D%2524%2528%2527%2523page_select%2527%2529.children%2528%2529.length%253Bvar%2520t%253D%2524%2528%2527%2523comic_page%2527%2529.attr%2528%2527src%2527%2529%253Bif%2528/Img-Error%255C.jpg%2524/.test%2528t%2529%2520%257C%257C%2520%2521t%2529%257Breturn%2520%2527%2527%257D%2520else%257Bvar%2520r%253Dt.substr%25280%252Ct.length-10%2529%253Bvar%2520q%253D%255B%255D%253Bfor%2528var%2520i%253D1%253Bi%253Cs+1%253Bi++%2529%257Bq.push%2528r+%2528%2527000000%2527+i+%2527.png%2527%2529.substr%2528-10%2529%2529%257D%2520return%2520q%257D%22%7D">batoto.net</option><option value="4" data-rule="%7B%22name%22%3A%22BlogSpot%22%2C%22img0%22%3A%22%22%2C%22img1%22%3A%22/%255B/%255Ds%255Cd+%255B/%255D/%252C%2522/s1600/%2522%22%2C%22img2%22%3A%22%22%2C%22url2%22%3A%22%22%7D">BlogSpot</option><option value="5" data-rule="%7B%22name%22%3A%22blog.icpcw.com%22%2C%22img0%22%3A%22thumb%22%2C%22img1%22%3A%22/%255C.thumb%255C.jpg/%252C%2522%2522%22%2C%22img2%22%3A%22%22%2C%22url2%22%3A%22%22%7D">blog.icpcw.com</option><option value="6" data-rule="%7B%22name%22%3A%22budou.me%25u5E03%25u515C%22%2C%22img0%22%3A%22%2521mid%22%2C%22img1%22%3A%22%2527%2521mid%2527%252C%2527%2521big%2527%22%2C%22img2%22%3A%22%22%2C%22url2%22%3A%22%22%7D">budou.me布兜</option><option value="7" data-rule="%7B%22name%22%3A%22cguardian%22%2C%22img0%22%3A%22uploadfiles%22%2C%22img1%22%3A%22/%255B/%255D%255Bms%255D%255B/%255D/g%252C%2527/l/%2527%22%2C%22img2%22%3A%22%22%2C%22url2%22%3A%22%22%7D">cguardian</option><option value="8" data-rule="%7B%22name%22%3A%22cosp.jp%22%2C%22img0%22%3A%22thumb%22%2C%22img1%22%3A%22%22%2C%22img2%22%3A%22%2527@%2527.replace%2528%2527/thumb/%2527%252C%2527/images/%2527%2529.replace%2528%2527l.jpg%2527%252C%2527.jpg%2527%2529%22%2C%22url2%22%3A%22%22%7D">cosp.jp</option><option value="9" data-rule="%7B%22name%22%3A%22danhuaer%25u86CB%25u82B1%25u513F%22%2C%22img0%22%3A%22-193x%22%2C%22img1%22%3A%22/-193x%255Cd+/%252C%2527%2527%22%2C%22img2%22%3A%22%22%2C%22url2%22%3A%22%22%7D">danhuaer蛋花儿</option><option value="10" data-rule="%7B%22name%22%3A%22deskcity%25u684C%25u9762%25u57CE%25u5E02%22%2C%22img0%22%3A%22%22%2C%22img1%22%3A%22%2527-small%2527%252C%2527%2527%22%2C%22img2%22%3A%22%22%2C%22url2%22%3A%22%22%7D">deskcity桌面城市</option><option value="11" data-rule="%7B%22name%22%3A%22digu%25u5600%25u5495%22%2C%22img0%22%3A%22196%22%2C%22img1%22%3A%22%2527/196/%2527%252C%2527/480/%2527%22%2C%22img2%22%3A%22%22%2C%22url2%22%3A%22%22%7D">digu嘀咕</option><option value="12" data-rule="%7B%22name%22%3A%22dooland%25u8BFB%25u89C8%22%2C%22img0%22%3A%22dutuBigPic%22%2C%22img1%22%3A%22/%255B/%255D%255Bst%255D_/%252C%2522/%2522%22%2C%22img2%22%3A%22%22%2C%22url2%22%3A%22%22%7D">dooland读览</option><option value="13" data-rule="%7B%22name%22%3A%22douban%25u8C46%25u74E3%25u76F8%25u518C%22%2C%22img0%22%3A%22thumb%22%2C%22img1%22%3A%22%2522/thumb/%2522%252C%2522/photo/%2522%22%2C%22img2%22%3A%22%22%2C%22url2%22%3A%22%22%7D">douban豆瓣相册</option><option value="14" data-rule="%7B%22name%22%3A%22duitang%25u5806%25u7CD6%22%2C%22img0%22%3A%22200_%22%2C%22img1%22%3A%22/thumb%255C.200_.+%255C./%252C%2527%2527%22%2C%22img2%22%3A%22%22%2C%22url2%22%3A%22%22%7D">duitang堆糖</option><option value="15" data-rule="%7B%22name%22%3A%22eol.org%22%2C%22img0%22%3A%22_260_190%22%2C%22img1%22%3A%22%2527_260_190%2527%252C%2527%2527%22%2C%22img2%22%3A%22%22%2C%22url2%22%3A%22%22%7D">eol.org</option><option value="16" data-rule="%7B%22name%22%3A%22favefavefave%22%2C%22img0%22%3A%22%22%2C%22img1%22%3A%22%2522/s/%2522%252C%2522/m/%2522%22%2C%22img2%22%3A%22%22%2C%22url2%22%3A%22%22%7D">favefavefave</option><option value="17" data-rule="%7B%22name%22%3A%22Flickr%22%2C%22img0%22%3A%22%22%2C%22img1%22%3A%22/_%255Bms%255D%255C.jpg/%252C%2522_b.jpg%2522%22%2C%22img2%22%3A%22%22%2C%22url2%22%3A%22%22%7D">Flickr</option><option value="18" data-rule="%7B%22name%22%3A%22Flickr2%22%2C%22img0%22%3A%22_s%22%2C%22img1%22%3A%22/_s/%252C%2527%2527%22%2C%22img2%22%3A%22%22%2C%22url2%22%3A%22%22%7D">Flickr2</option><option value="19" data-rule="%7B%22name%22%3A%22faxianla%25u53D1%25u73B0%25u5566%22%2C%22img0%22%3A%22%22%2C%22img1%22%3A%22/metal%255C.jpg%2524/%252C%2522wood.jpg%2522%22%2C%22img2%22%3A%22%22%2C%22url2%22%3A%22%22%7D">faxianla发现啦</option><option value="20" data-rule="%7B%22name%22%3A%22gentlemint%22%2C%22img0%22%3A%22233x233%22%2C%22img1%22%3A%22%2527.233x233_q85.jpg%2527%252C%2527%2527%22%2C%22img2%22%3A%22%22%2C%22url2%22%3A%22%22%7D">gentlemint</option><option value="21" data-rule="%7B%22name%22%3A%22Google+%22%2C%22img0%22%3A%22%22%2C%22img1%22%3A%22/%255B/%255Dw%255Cd+-h%255Cd+%2528-n%2529*-k%255B/%255D/%252C%2522/s800/%2522%22%2C%22img2%22%3A%22%22%2C%22url2%22%3A%22%22%7D">Google+</option><option value="22" data-rule="%7B%22name%22%3A%22Google+%25A0%2528Super%2520Big%2529%22%2C%22img0%22%3A%22%22%2C%22img1%22%3A%22/%255B/%255Dw%255Cd+-h%255Cd+%2528-n%2529*-k%255B/%255D/%252C%2522/s0/%2522%22%2C%22img2%22%3A%22%22%2C%22url2%22%3A%22%22%7D">Google+&nbsp;(Super Big)</option><option value="23" data-rule="%7B%22name%22%3A%22Google%2520Image%22%2C%22img0%22%3A%22%22%2C%22img1%22%3A%22%22%2C%22img2%22%3A%22%22%2C%22url2%22%3A%22var%2520t%253D%255B%255D%253B%2524%2528%2527img%2527%2529.each%2528function%2528%2529%257Bt.push%2528this.src%2529%253Bvar%2520a%253D%2524%2528this%2529.parent%2528%2527a%2527%2529.attr%2528%2527href%2527%2529%257C%257C%2527%2527%253Bif%2528/imgurl/.test%2528a%2529%2529%257Bt.push%2528fn1%2528a.replace%2528/%2528%255E.*imgurl%253D%2529%257C%2528%2526w%253D.*%2524%2529/g%252C%2527%2527%2529.replace%2528/%2526imgrefurl%253D.*%2524/%252C%2527%2527%2529%2529%2529%257D%257D%2529%253Breturn%2520t%22%7D">Google Image</option><option value="24" data-rule="%7B%22name%22%3A%22Google%2520Picasa%22%2C%22img0%22%3A%22googleusercontent%22%2C%22img1%22%3A%22%2522/s128/%2522%252C%2522/s800/%2522%22%2C%22img2%22%3A%22%22%2C%22url2%22%3A%22%22%7D">Google Picasa</option><option value="25" data-rule="%7B%22name%22%3A%22Google%2520Picasa%2520%2528Super%2520Big%2529%22%2C%22img0%22%3A%22googleusercontent%22%2C%22img1%22%3A%22%2522/s128/%2522%252C%2522/s0/%2522%22%2C%22img2%22%3A%22%22%2C%22url2%22%3A%22%22%7D">Google Picasa (Super Big)</option><option value="26" data-rule="%7B%22name%22%3A%22hellporno%22%2C%22img0%22%3A%2286x107%22%2C%22img1%22%3A%22%252786x107%2527%252C%2527478x599%2527%22%2C%22img2%22%3A%22%22%2C%22url2%22%3A%22%22%7D">hellporno</option><option value="27" data-rule="%7B%22name%22%3A%22hipstamatic%22%2C%22img0%22%3A%22medium%22%2C%22img1%22%3A%22%2527/medium/%2527%252C%2527/original/%2527%22%2C%22img2%22%3A%22%22%2C%22url2%22%3A%22%22%7D">hipstamatic</option><option value="28" data-rule="%7B%22name%22%3A%22huaban%25u82B1%25u74E3%22%2C%22img0%22%3A%22%22%2C%22img1%22%3A%22/_%2528sq%257Cfw%2529%255Cd+/%252C%2527%2527%22%2C%22img2%22%3A%22%22%2C%22url2%22%3A%22%22%7D">huaban花瓣</option><option value="29" data-rule="%7B%22name%22%3A%22icaitu%25u7231%25u91C7%25u56FE%22%2C%22img0%22%3A%22_192%22%2C%22img1%22%3A%22%2527_192%2527%252C%2527_670%2527%22%2C%22img2%22%3A%22%22%2C%22url2%22%3A%22%22%7D">icaitu爱采图</option><option value="30" data-rule="%7B%22name%22%3A%22ikeepu%25u7231%25u5E93%2528%25u4E2D%2529%22%2C%22img0%22%3A%22jpg%22%2C%22img1%22%3A%22%2527jpg_200%2527%252C%2527jpg%2527%22%2C%22img2%22%3A%22%22%2C%22url2%22%3A%22%22%7D">ikeepu爱库(中)</option><option value="31" data-rule="%7B%22name%22%3A%22ikeepu%25u7231%25u5E93%2528%25u5927%2529%22%2C%22img0%22%3A%22%22%2C%22img1%22%3A%22%22%2C%22img2%22%3A%22%22%2C%22url2%22%3A%22var%2520t%253D%255B%255D%253B%2520%2524%2528%2527img%255Bclass%253Dimage%255D%2527%2529.each%2528function%2528%2529%257Bt.push%2528%2527http%253A//file.ikeepu.com/source/%2527%2520+%2520%2524%2528this%2529.parent%2528%2529.attr%2528%2527href%2527%2529.split%2528%2527/show/%2527%2529%255B1%255D%2520+%2520%2527/jpg%2527%2529%257D%2529%253B%2520return%2520t%253B%22%7D">ikeepu爱库(大)</option><option value="32" data-rule="%7B%22name%22%3A%22ivsky%25u5929%25u5802%25u56FE%25u7247%22%2C%22img0%22%3A%22tupian%22%2C%22img1%22%3A%22%2522/m/%2522%252C%2522/img/%2522%22%2C%22img2%22%3A%22%22%2C%22url2%22%3A%22%22%7D">ivsky天堂图片</option><option value="33" data-rule="%7B%22name%22%3A%22jiatuhui%25u5BB6%25u56FE%25u6C47%22%2C%22img0%22%3A%22190x999%22%2C%22img1%22%3A%22%2527190x999%2527%252C%2527502x502%2527%22%2C%22img2%22%3A%22%22%2C%22url2%22%3A%22%22%7D">jiatuhui家图汇</option><option value="34" data-rule="%7B%22name%22%3A%22jimuu%25u79EF%25u6728%22%2C%22img0%22%3A%22%22%2C%22img1%22%3A%22/width_192/%252C%2522width_650%2522%22%2C%22img2%22%3A%22%22%2C%22url2%22%3A%22%22%7D">jimuu积木</option><option value="35" data-rule="%7B%22name%22%3A%22jipin%25u5F00%25u5FC3%25u96C6%25u54C1%22%2C%22img0%22%3A%22200x400%22%2C%22img1%22%3A%22%2527200x400%2527%252C%2527602x602%2527%22%2C%22img2%22%3A%22%22%2C%22url2%22%3A%22%22%7D">jipin开心集品</option><option value="36" data-rule="%7B%22name%22%3A%22Lightbox%22%2C%22img0%22%3A%22_%22%2C%22img1%22%3A%22/%2528_thm%2529%257C%2528_med%2529%255D/%252C%2522_lrg%2522%22%2C%22img2%22%3A%22%22%2C%22url2%22%3A%22%22%7D">Lightbox</option><option value="37" data-rule="%7B%22name%22%3A%22markpic%25u7801%25u56FE%22%2C%22img0%22%3A%22image%22%2C%22img1%22%3A%22/medium_/%252C%2522big_%2522%22%2C%22img2%22%3A%22%22%2C%22url2%22%3A%22%22%7D">markpic码图</option><option value="38" data-rule="%7B%22name%22%3A%22markzhi%25u4E4B%22%2C%22img0%22%3A%22%22%2C%22img1%22%3A%22/metal%255C.jpg%2524/%252C%2522wood.jpg%2522%22%2C%22img2%22%3A%22%22%2C%22url2%22%3A%22%22%7D">markzhi之</option><option value="39" data-rule="%7B%22name%22%3A%22meilishuo%25u7F8E%25u4E3D%25u8BF4%22%2C%22img0%22%3A%22meilishuo%22%2C%22img1%22%3A%22/%255B/%255Dpic%255B/%255D%255B%255E/%255D+%255B/%255D/%252C%2522/pic/_o/%2522%22%2C%22img2%22%3A%22%22%2C%22url2%22%3A%22%22%7D">meilishuo美丽说</option><option value="40" data-rule="%7B%22name%22%3A%22mishang%25u8FF7%25u5C1A%22%2C%22img0%22%3A%22pin%22%2C%22img1%22%3A%22/_p.jpg%2524/%252C%2522.jpg%2522%22%2C%22img2%22%3A%22%22%2C%22url2%22%3A%22%22%7D">mishang迷尚</option><option value="41" data-rule="%7B%22name%22%3A%22modelmayhem%22%2C%22img0%22%3A%22_m%22%2C%22img1%22%3A%22%2527_m.jpg%2527%252C%2527.jpg%2527%22%2C%22img2%22%3A%22%22%2C%22url2%22%3A%22%22%7D">modelmayhem</option><option value="42" data-rule="%7B%22name%22%3A%22mogujie%25u8611%25u83C7%25u8857%22%2C%22img0%22%3A%22x%22%2C%22img1%22%3A%22/jpg_%255Cd+x%255Cd+%255C.jpg/%252C%2522jpg%2522%22%2C%22img2%22%3A%22%22%2C%22url2%22%3A%22%22%7D">mogujie蘑菇街</option><option value="43" data-rule="%7B%22name%22%3A%22my.ology.com%22%2C%22img0%22%3A%22post_%22%2C%22img1%22%3A%22/post_medium/%252C%2522post_large%2522%22%2C%22img2%22%3A%22%22%2C%22url2%22%3A%22%22%7D">my.ology.com</option><option value="44" data-rule="%7B%22name%22%3A%22ouyu.org%25u5076%25u9C7C%22%2C%22img0%22%3A%22ouyu%22%2C%22img1%22%3A%22%2527190x999%2527%252C%2527468x468%2527%22%2C%22img2%22%3A%22%22%2C%22url2%22%3A%22%22%7D">ouyu.org偶鱼</option><option value="45" data-rule="%7B%22name%22%3A%22pconline%25u592A%25u5E73%25u6D0B%25u6444%25u5F71%22%2C%22img0%22%3A%22thumb%22%2C%22img1%22%3A%22/_%255B%255E_%255D*thumb%255C.jpg/%252C%2527.jpg%2527%22%2C%22img2%22%3A%22%22%2C%22url2%22%3A%22%22%7D">pconline太平洋摄影</option><option value="46" data-rule="%7B%22name%22%3A%22pinfun%25u62FC%25u8303%22%2C%22img0%22%3A%22upload%22%2C%22img1%22%3A%22/_b/%252C%2522_c%2522%22%2C%22img2%22%3A%22%22%2C%22url2%22%3A%22%22%7D">pinfun拼范</option><option value="47" data-rule="%7B%22name%22%3A%22pingram.me%22%2C%22img0%22%3A%22distilleryimage%22%2C%22img1%22%3A%22%2527_5.jpg%2527%252C%2527_7.jpg%2527%22%2C%22img2%22%3A%22%22%2C%22url2%22%3A%22%22%7D">pingram.me</option><option value="48" data-rule="%7B%22name%22%3A%22pinspire%22%2C%22img0%22%3A%22_mid%22%2C%22img1%22%3A%22%2527_mid.JPG%2527%252C%2527.JPEG%2527%22%2C%22img2%22%3A%22%22%2C%22url2%22%3A%22%22%7D">pinspire</option><option value="49" data-rule="%7B%22name%22%3A%22Pinterest%22%2C%22img0%22%3A%22236x%255B/%255D%22%2C%22img1%22%3A%22%2527236x/%2527%252C%2527736x/%2527%22%2C%22img2%22%3A%22%22%2C%22url2%22%3A%22%22%7D">Pinterest</option><option value="50" data-rule="%7B%22name%22%3A%22pintutu%25u62FC%25u56FE%25u56FE%22%2C%22img0%22%3A%22%22%2C%22img1%22%3A%22/_b%255C.jpg/%252C%2522_c.jpg%2522%22%2C%22img2%22%3A%22%22%2C%22url2%22%3A%22%22%7D">pintutu拼图图</option><option value="51" data-rule="%7B%22name%22%3A%22pixnet.net%25u75DE%25u5BA2%25u90A6%22%2C%22img0%22%3A%22%22%2C%22img1%22%3A%22%2527_s.jpg%2527%252C%2527_b.jpg%2527%22%2C%22img2%22%3A%22%22%2C%22url2%22%3A%22%22%7D">pixnet.net痞客邦</option><option value="52" data-rule="%7B%22name%22%3A%22poco.cn%22%2C%22img0%22%3A%22_%255Cd%22%2C%22img1%22%3A%22/_%255Cd+%255C.jpg/%252C%2527.jpg%2527%22%2C%22img2%22%3A%22%22%2C%22url2%22%3A%22%22%7D">poco.cn</option><option value="53" data-rule="%7B%22name%22%3A%22Polyvore%22%2C%22img0%22%3A%22%22%2C%22img1%22%3A%22%22%2C%22img2%22%3A%22%2527@%2527.replace%2528%2527l.jpg%2527%252C%2527y.jpg%2527%2529.replace%2528/ak%255Cd/%252C%2527ak%2527%2520+%2520%25281+%2528parseInt%2528%2527@%2527.substr%25289%252C1%2529%2529+1%2529%25252%2529%2529%22%2C%22url2%22%3A%22%22%7D">Polyvore</option><option value="54" data-rule="%7B%22name%22%3A%22poobbs%22%2C%22img0%22%3A%22100.%22%2C%22img1%22%3A%22%2527100.%2527%252C%2527%2527%22%2C%22img2%22%3A%22%22%2C%22url2%22%3A%22%22%7D">poobbs</option><option value="55" data-rule="%7B%22name%22%3A%22qing.weibo.com%22%2C%22img0%22%3A%22%22%2C%22img1%22%3A%22%2527mw600%2527%252C%2527large%2527%22%2C%22img2%22%3A%22%22%2C%22url2%22%3A%22%22%7D">qing.weibo.com</option><option value="56" data-rule="%7B%22name%22%3A%22QQ%25u8BFB%25u56FE%22%2C%22img0%22%3A%22qpic%22%2C%22img1%22%3A%22/160%2524/%252C%25272000%2527%22%2C%22img2%22%3A%22%22%2C%22url2%22%3A%22%22%7D">QQ读图</option><option value="57" data-rule="%7B%22name%22%3A%22QQ%25u76F8%25u518C%22%2C%22img0%22%3A%22%22%2C%22img1%22%3A%22%2527/b/%2527%252C%2527/o/%2527%22%2C%22img2%22%3A%22%22%2C%22url2%22%3A%22%22%7D">QQ相册</option><option value="58" data-rule="%7B%22name%22%3A%22sccnn%25u7D20%25u6750%25u4E2D%25u56FD%22%2C%22img0%22%3A%22-s%22%2C%22img1%22%3A%22%2527-s%2527%252C%2527-%2527%22%2C%22img2%22%3A%22%22%2C%22url2%22%3A%22%22%7D">sccnn素材中国</option><option value="59" data-rule="%7B%22name%22%3A%22sina%25u65B0%25u6D6A%2528%25u5FAE%25u535A%2529%2528%25u76F8%25u518C%2529%22%2C%22img0%22%3A%22%22%2C%22img1%22%3A%22/%255B/%255D%2528small%257Cthumbnail%257Ccmw218%2529%255B/%255D/g%252C%2522/large/%2522%22%2C%22img2%22%3A%22%22%2C%22url2%22%3A%22%22%7D">sina新浪(微博)(相册)</option><option value="60" data-rule="%7B%22name%22%3A%22sina%25u65B0%25u6D6A%25u76F8%25u518C%2528%25u8D85%25u5927%2529%22%2C%22img0%22%3A%22sinaimg%22%2C%22img1%22%3A%22%2522/small/%2522%252C%2522/orignal/%2522%22%2C%22img2%22%3A%22%22%2C%22url2%22%3A%22%22%7D">sina新浪相册(超大)</option><option value="61" data-rule="%7B%22name%22%3A%22sina%25u65B0%25u6D6A%25u56FE%25u5E93%22%2C%22img0%22%3A%22photo%22%2C%22img1%22%3A%22/com%255C.cn%255B/%255Dsquare%255B/%255D/%252C%2527com.cn/orignal/%2527%22%2C%22img2%22%3A%22%22%2C%22url2%22%3A%22%22%7D">sina新浪图库</option><option value="62" data-rule="%7B%22name%22%3A%22sodao%25u641C%25u9053%22%2C%22img0%22%3A%22200x0x1%22%2C%22img1%22%3A%22%2527200x0%2527%252C%2527700x0%2527%22%2C%22img2%22%3A%22%22%2C%22url2%22%3A%22%22%7D">sodao搜道</option><option value="63" data-rule="%7B%22name%22%3A%22Topit.me%22%2C%22img0%22%3A%22m%22%2C%22img1%22%3A%22%22%2C%22img2%22%3A%22%2527@%2527.replace%2528/%255B/%255D%255Bms%255D%255B/%255D/g%252C%2527/l/%2527%2529.replace%2528/%255Bms%255D%255C./g%252C%2527l.%2527%2529.replace%2528/%255B/%255D%255Bms%255D/g%252C%2527/l%2527%2529%22%2C%22url2%22%3A%22%22%7D">Topit.me</option><option value="64" data-rule="%7B%22name%22%3A%22Topit.me1%22%2C%22img0%22%3A%22t%22%2C%22img1%22%3A%22%22%2C%22img2%22%3A%22%2527@%2527.replace%2528%2527t.jpg%2527%252C%2527l.jpg%2527%2529.replace%2528%2527me/t%2527%252C%2527me/l%2527%2529%22%2C%22url2%22%3A%22%22%7D">Topit.me1</option><option value="65" data-rule="%7B%22name%22%3A%22Topit.me2%22%2C%22img0%22%3A%22t%22%2C%22img1%22%3A%22%22%2C%22img2%22%3A%22%2527@%2527.replace%2528%2527t.jpg%2527%252C%2527o.jpg%2527%2529.replace%2528%2527me/t%2527%252C%2527me/o%2527%2529%22%2C%22url2%22%3A%22%22%7D">Topit.me2</option><option value="66" data-rule="%7B%22name%22%3A%22tuita%25u63A8%25u4ED6%22%2C%22img0%22%3A%22%22%2C%22img1%22%3A%22%2522-400.jpg%2522%252C%2522.jpg%2522%22%2C%22img2%22%3A%22%22%2C%22url2%22%3A%22%22%7D">tuita推他</option><option value="67" data-rule="%7B%22name%22%3A%22tumblr%22%2C%22img0%22%3A%22%22%2C%22img1%22%3A%22/_%255Cd+0/g%252C%2527_1280%2527%22%2C%22img2%22%3A%22%22%2C%22url2%22%3A%22%22%7D">tumblr</option><option value="68" data-rule="%7B%22name%22%3A%22tuyansuo%25u56FE%25u7814%25u6240%22%2C%22img0%22%3A%22%22%2C%22img1%22%3A%22%2522/small/%2522%252C%2522/big/%2522%22%2C%22img2%22%3A%22%22%2C%22url2%22%3A%22%22%7D">tuyansuo图研所</option><option value="69" data-rule="%7B%22name%22%3A%22Twipic.me%22%2C%22img0%22%3A%22amazonaws%22%2C%22img1%22%3A%22/0_/%252C%25223_%2522%22%2C%22img2%22%3A%22%22%2C%22url2%22%3A%22%22%7D">Twipic.me</option><option value="70" data-rule="%7B%22name%22%3A%22Twitpic%22%2C%22img0%22%3A%22twitpicproxy%22%2C%22img1%22%3A%22%2522/mini/%2522%252C%2522/large/%2522%22%2C%22img2%22%3A%22%22%2C%22url2%22%3A%22%22%7D">Twitpic</option><option value="71" data-rule="%7B%22name%22%3A%22Wallpaperswide%22%2C%22img0%22%3A%22thumbs%22%2C%22img1%22%3A%22%22%2C%22img2%22%3A%22%2527@%2527.replace%2528%2527/thumbs/%2527%252C%2527/download/%2527%2529.replace%2528%2527-t1%2527%252C%2527-1280x800%2527%2529%22%2C%22url2%22%3A%22%22%7D">Wallpaperswide</option><option value="72" data-rule="%7B%22name%22%3A%22WeHeartIt%22%2C%22img0%22%3A%22images%22%2C%22img1%22%3A%22%2527_thumb%2527%252C%2527_large%2527%22%2C%22img2%22%3A%22%22%2C%22url2%22%3A%22%22%7D">WeHeartIt</option><option value="73" data-rule="%7B%22name%22%3A%22WordPress%22%2C%22img0%22%3A%22%22%2C%22img1%22%3A%22/jpg%255C%253Fw%253D%255Cd+%2528%2526h%253D%2529%253F%255Cd+%2524/%252C%2522jpg%2522%22%2C%22img2%22%3A%22%22%2C%22url2%22%3A%22%22%7D">WordPress</option><option value="74" data-rule="%7B%22name%22%3A%22wow%25u6DD8%25u5B9D%25u54C7%25u54E6%22%2C%22img0%22%3A%22_210x1000%22%2C%22img1%22%3A%22%2527_210x1000.jpg%2527%252C%2527%2527%22%2C%22img2%22%3A%22%22%2C%22url2%22%3A%22%22%7D">wow淘宝哇哦</option><option value="75" data-rule="%7B%22name%22%3A%22woxihuan%25u6211%25u559C%25u6B22%22%2C%22img0%22%3A%2265_105%22%2C%22img1%22%3A%22/192_.+65_105/%252C%2527680__90%2527%22%2C%22img2%22%3A%22%22%2C%22url2%22%3A%22%22%7D">woxihuan我喜欢</option><option value="76" data-rule="%7B%22name%22%3A%22xianguo%25u9C9C%25u679C%22%2C%22img0%22%3A%22%22%2C%22img1%22%3A%22%22%2C%22img2%22%3A%22%2527http%2527%2520+%2520unescape%2528%2527@%2527.split%2528%2527.php%253Fhttp%2527%2529%255B1%255D%2529%22%2C%22url2%22%3A%22%22%7D">xianguo鲜果</option><option value="77" data-rule="%7B%22name%22%3A%22xitek%25u8272%25u5F71%25u65E0%25u5FCC%22%2C%22img0%22%3A%22thumb_%22%2C%22img1%22%3A%22%2527thumb_%2527%252C%2527%2527%22%2C%22img2%22%3A%22%22%2C%22url2%22%3A%22%22%7D">xitek色影无忌</option></select></div>
+				<select id="rules"><option value="0">--My Image Rules--</option></select><span id="ruleSaveAs" class="SaveAs">SaveAs</span><span class="Autorun">set as default</span>
+                <div id="advRule">
+                    a) <span id="imgRule0" title="reset">URL filter rule</span><br>
+                    <textarea id="img0rule" placeholder="regexp" data-saveas="ruleSaveAs"></textarea><br><br>
+                    b) <span id="imgRule1" title="reset">URL substitution rule</span><br>
+                    <textarea id="img1rule" placeholder="regexp,replacement" data-saveas="ruleSaveAs"></textarea><br><br>
+                    c) <span id="imgRule2" title="reset">JS code</span>
+                    <label><input type="checkbox" id="ruleOnSrc" checked="checked">Applies to image url only</label><br>
+                    <textarea id="img2rule" placeholder="&#39;@&#39;:images[i].src (jQuery)" data-saveas="ruleSaveAs"></textarea>
+                    <textarea id="url2rule" placeholder="return url array" hidden="" data-saveas="ruleSaveAs" style="display: none;"></textarea>
+                    <p id="ruleAdv"> <input type="button" value="Import" id="ruleIn"><input type="button" value="Export" id="ruleOut"><input type="button" value="Set" id="ruleOpt"><input type="button" value="Need Help???" id="ruleVIP"></p></div>
+
+			</details>
+
+		</div></div>
+
+
+	<div id="upl" hidden="">
+		<div><img id="upldimg" class="upldimg" src="chrome-extension://gfjhimhkjmipphnaminnnnjpnlneeplk/img/Baidu.ico">
+			<select id="uplds"><option id="upld0" value="0" data-name="" data-id="" data-blog="bd_disk" data-token="" data-end="" data-info="" data-ico="Baidu.ico" selected="">Baidu Disk</option><option id="upld1" value="1" data-name="" data-id="" data-blog="g_drive" data-token="" data-end="" data-info="" data-ico="Gdrive.ico">Google Drive</option><option id="upld2" value="2" data-name="" data-id="" data-blog="renren" data-token="" data-end="" data-info="" data-ico="renren.ico">renren</option><option id="upld3" value="3" data-name="" data-id="" data-blog="fb" data-token="" data-end="" data-info="" data-ico="Facebook.png">Facebook</option></select>
+			<span id="upldPath" hidden="" title="Folder">upldPath</span>
+			<span id="upldCount" title="Count"> </span>
+			</div>
+		<div>Folder/<input id="uploadPath" type="text" list="uploadPathList">
+			<span id="upldClickOff" class="ClickOff" title="ClickOff">&nbsp;╳&nbsp;</span>
+			<datalist id="uploadPathList">
+				<option label="ZIG" value="ZIG">
+				</option><option label="ZIG" value="ZIG/2017-7-19">
+				</option><option label="ZIG" value="ZIG/ktwiz.co.kr">
+				</option><option label="ZIG" value="ZIG/[kt wiz] 감동을 주는 야구! 근성의 kt wiz! - player - 타자 - 외야수">
+
+				</option><option label="ZIG" value="zzllrr Imager Geek">
+				</option><option label="ZIG" value="zzllrr Imager Geek/2017-7-19">
+				</option><option label="ZIG" value="zzllrr Imager Geek/ktwiz.co.kr">
+				</option><option label="ZIG" value="zzllrr Imager Geek/[kt wiz] 감동을 주는 야구! 근성의 kt wiz! - player - 타자 - 외야수">
+				
+				</option><option label="Title" value="[kt wiz] 감동을 주는 야구! 근성의 kt wiz! - player - 타자 - 외야수">
+				</option><option label="Title" value="[kt wiz] 감동을 주는 야구! 근성의 kt wiz! - player - 타자 - 외야수/2017-7-19">
+				
+				</option><option label="Date" value="2017-7-19">
+				</option><option label="Date" value="2017-7-19/ktwiz.co.kr">
+				</option><option label="Date" value="2017-7-19/[kt wiz] 감동을 주는 야구! 근성의 kt wiz! - player - 타자 - 외야수">
+				
+				</option><option label="www" value="ktwiz.co.kr">
+				</option><option label="www" value="ktwiz.co.kr/2017-7-19">
+				</option><option label="www" value="ktwiz.co.kr/[kt wiz] 감동을 주는 야구! 근성의 kt wiz! - player - 타자 - 외야수">
+			</option></datalist>
+			</div>
+		<div id="upldNew"></div>
+		<input type="button" id="upldFile" value="+1">
+		<input type="button" id="upldFolder" value="+n">
+		<span id="upldLogout" title="Logout">↙</span><span id="upldRevoke" class="Revoke" title="Revoke Token">✖</span><span id="upldUrl" title="Visit URL">↗</span><span id="upldReload" title="Reload">♋</span><span id="upldOpt" title="Set">→</span>
+		</div>
+
+
+    <div id="rightBottom">
+    	
+        <div><input type="button" title="hotkey: Home" id="Top0" value="▲"></div>
+        <div><input type="button" title="hotkey: End" id="Top1" value="▼"></div>
+        
+		</div>
+
+
+
+
+    <div id="selector">
+    	<img src="chrome-extension://gfjhimhkjmipphnaminnnnjpnlneeplk/img/ZIGVIP.png" class="vipLogo" hidden="" style="display: inline;">
+        <select id="disp" hidden="" multiple="multiple" title="Ctrl" size="14" style="display: none;">
+            <option value="bar"> - </option>
+            <option value="no">No.</option>
+            <option value="w">Width</option>
+            <option value="h">Height</option>
+            <option value="s">Size</option>
+            <option value="e">Ext</option>
+            <option value="n">Image Name</option>
+            <option value="t">Image Title</option>
+            <option value="a">Alt</option>
+            <option value="l">Image URL</option>
+            <option value="l2">Link to</option>
+            <option value="renm">Rename</option>
+            <option value="Lnku">url of tab</option>
+            <option value="Lnkt">title of tab</option>
+        </select>
+
+		<table id="selectors" align="center" hidden="" style="display: table;"><tbody>
+			<tr>
+				<td class="bdrdashed">
+					<span id="count" title="hotkey: R">13/30</span>
+					</td>
+				<td>
+					<span id="lite" title="hotkey: Z">※</span>
+					<span id="btnReget" title="hotkey: L">734+</span>
+					<img id="close2" hidden="" title="Batch Close
+hotkeyB" src="chrome-extension://gfjhimhkjmipphnaminnnnjpnlneeplk/img/Close.gif" style="display: none;">
+					</td>
+				<td class="bdrdashed">
+					<select id="info">
+						<option value="info">-- info --</option>
+		                <option value="url">URL</option>
+		                <option value="ubb">UBB</option>
+		                <option value="html">HTML</option>
+		                <option value="xml">XML</option>
+		                <option value="zml" hidden="">ZML</option>
+		                <option value="picInf">CSV</option>
+		                <option value="exif" disabled="">Exif</option>
+		                <option value="tabInf">Selected tab info</option>
+		                <option value="pgInf">Page info</option>
+		                
+		                </select>
+					</td>
+				<td class="bdrdashed">
+					<span id="night">☽</span>
+					<label><input type="checkbox" id="imgrPreview" checked="checked">Preview</label>
+
+
+					<span id="Disp">Display</span>
+
+   					
+					<input type="button" title="Space" id="Play0" value="Show">
+					</td>
+				<td class="bdrdashed">
+					<select id="savType">
+			            <option value="jpeg">JPEG</option>
+			            <option value="png">PNG</option></select>
+        			<input type="number" id="savjpgQ" min="0" max="100" step="1" value="0" title="JPEG Quality">
+        			</td>
+
+        		<td class="bdrdashed"><img id="downloaded" src="chrome-extension://gfjhimhkjmipphnaminnnnjpnlneeplk/img/folder.png" title="Folder/">
+					<input id="downloadPath" type="text" list="downloadPathList" placeholder="Default">
+					<datalist id="downloadPathList">
+						<option label="ZIG" value="ZIG">
+						</option><option label="ZIG" value="ZIG/2017-7-19">
+						</option><option label="ZIG" value="ZIG/ktwiz.co.kr">
+						</option><option label="ZIG" value="ZIG/[kt wiz] 감동을 주는 야구! 근성의 kt wiz! - player &gt; 타자 &gt; 외야수">
+
+						</option><option label="ZIG" value="zzllrr Imager Geek">
+						</option><option label="ZIG" value="zzllrr Imager Geek/2017-7-19">
+						</option><option label="ZIG" value="zzllrr Imager Geek/ktwiz.co.kr">
+						</option><option label="ZIG" value="zzllrr Imager Geek/[kt wiz] 감동을 주는 야구! 근성의 kt wiz! - player &gt; 타자 &gt; 외야수">
+						
+						</option><option label="Title" value="[kt wiz] 감동을 주는 야구! 근성의 kt wiz! - player &gt; 타자 &gt; 외야수">
+						</option><option label="Title" value="[kt wiz] 감동을 주는 야구! 근성의 kt wiz! - player &gt; 타자 &gt; 외야수/2017-7-19">
+						
+						</option><option label="Date" value="2017-7-19">
+						</option><option label="Date" value="2017-7-19/ktwiz.co.kr">
+						</option><option label="Date" value="2017-7-19/[kt wiz] 감동을 주는 야구! 근성의 kt wiz! - player &gt; 타자 &gt; 외야수">
+						
+						</option><option label="www" value="ktwiz.co.kr">
+						</option><option label="www" value="ktwiz.co.kr/2017-7-19">
+						</option><option label="www" value="ktwiz.co.kr/[kt wiz] 감동을 주는 야구! 근성의 kt wiz! - player &gt; 타자 &gt; 외야수">
+					</option></datalist>
+        			</td>
+
+
+				<td rowspan="2" class="vipBtn">
+        			<input type="button" id="btnVIP" title="hotkey: P" value="Super VIP">
+					</td>
+				<td>
+        			<meter id="dldProg" min="0" max="100" low="100" optimum="100" value="0" title="Bulk Downolad Files
+hotkey J"></meter>
+					</td>
+
+
+				<td class="vipBtn">
+					<input type="button" id="btnUpload" title="hotkey: Shift + U" value="Upload">
+        			</td>
+
+				<td class="vipBtn">
+					<input type="button" id="btnBeautify" title="hotkey: B" class="btnEdit" value="Beautify">
+        			</td>
+
+				<td class="vipBtn">
+					<input type="button" id="Tile0" title="hotkey: T" value="Pin">
+					</td>
+
+					</tr>
+			<tr>
+				<td class="bdrdashed">
+					<span id="selAll" title="hotkey: A">All</span>
+					<span id="selToggle" title="hotkey: I">Inv</span>
+					</td>
+				<td>
+					<span id="selErr" title="hotkey: E">error</span>
+
+					<del id="selDel" title="hotkey: D" class="del">Delete</del>
+					</td>
+				<td class="bdrdashed">
+					<select id="sort">
+		                <option value="sort" selected="selected">-- sort --</option>
+		                <option value="w">Width</option>
+		                <option value="h">Height</option>
+						<option value="wxh">Width × Height</option>
+						<option value="w/h">Width ÷ Height</option>
+		                <option value="s">Size</option>
+		                <option value="e">Ext</option>
+		                <option value="n">Image Name</option>
+		                <option value="t">Image Title</option>
+		                <option value="a">Alt</option>
+		                <option value="l">Image URL</option>
+		                <option value="l2">Link to</option>
+		                <option value="renm">Rename</option>
+		                <option value="Lnku">url of tab</option>
+		                <option value="Lnkt">title of tab</option>
+		           </select>
+
+		            <select id="sortType" hidden="">
+		                <option value="up">▲</option>
+		                <option value="dn">▼</option>
+		                </select>
+					</td>
+				<td class="bdrdashed">
+					<input type="range" id="resize" min="0" max="950" step="1" value="54" title="hotkey: [+]zoomin [-]zoomout [0]Default Zoom Scale">
+					
+					</td>
+
+        		<td class="bdrdashed">
+        			
+        			<label id="SlashON" title="Set Slashes in filenames As Sub Folder Symbols">[/]<input type="checkbox" id="SlashOn"></label>
+					<input type="button" id="btnRenm" title="hotkey: C" value="Rename">
+					
+					</td>
+
+        		<td class="bdrdashed">
+        			<input type="button" id="btnSaveQ" value="Save">
+        			</td>
+
+				<td>
+        			<input type="button" id="btnSave" title="hotkey: S" value="Task">
+					</td>
+
+        		<td class="vipBtn">
+        			<input type="button" title="" id="btnClip" class="btnEdit" value="Clip">
+        			</td>
+
+				<td class="vipBtn">
+        			<input type="button" title="" id="btnScale" class="btnEdit" value="Scale">
+        			</td>
+
+				<td class="vipBtn">
+					<input type="button" title="" id="btnCut" class="btnEdit" value="Cut">
+        			
+        			</td>
+				</tr>
+				
+
+					</tbody></table>
+
+
+	</div>
+
+
+    <div id="dldManager" hidden="">
+    	<div id="dldURLs">
+    		<div id="dldURL">
+				<div id="dldURLfilter">URL
+					<span class="Y">include</span>
+					<input type="text" id="dldY" placeholder=".jpg">
+					<span class="N">exclude</span>
+					<input type="text" id="dldN" placeholder=".gif">
+					<span class="R">regExp</span>
+					<input type="text" id="dldR" placeholder=".(jpg|png)$">
+				</div>
+				<div id="URLRule1"><span id="DLD0"><span class="CODE0" data-code="%7B%22name%22%3A%22URL%22%2C%22code%22%3A%22return%2520urlArr%2528%2527a%255Bhref%255D%2527%2529%22%7D">URL</span><span class="CODE0" data-code="%7B%22name%22%3A%22src%22%2C%22code%22%3A%22return%2520urlArr%2528%2527%255Bsrc%255D%2527%252C%2527src%2527%2529.concat%2528urlArr%2528%2527%255Bdata-src%255D%2527%252C%2527data-src%2527%2529%252CurlArr%2528%2527%255Bdata-url%255D%2527%252C%2527data-url%2527%2529%2529%22%7D">src</span><span class="CODE0" data-code="%7B%22name%22%3A%22MP4%22%2C%22code%22%3A%22return%2520urlArr%2528%2527%255Bsrc*%253Dmp4%255D%2527%252C%2527src%2527%2529%22%7D">MP4</span><span class="CODE0" data-code="%7B%22name%22%3A%22MP3%22%2C%22code%22%3A%22return%2520urlArr%2528%2527%255Bsrc*%253Dmp3%255D%2527%252C%2527src%2527%2529%22%7D">MP3</span><span class="CODE0" data-code="%7B%22name%22%3A%22Image%2520urls%22%2C%22code%22%3A%22return%2520urlArr%2528%2527img%255Bsrc%255D%2527%252C%2527src%2527%2529%22%7D">Image</span><span class="CODE0" data-code="%7B%22name%22%3A%22Image%2520links%22%2C%22code%22%3A%22return%2520urlArr%2528%2527a%255Bhref%255D%253Ahas%2528img%2529%2527%2529%22%7D">Image links</span></span><input type="button" id="UrlRule1" value="Get URL"></div>
+				<textarea id="urlDld" placeholder="http://"></textarea>
+				</div>
+			<div id="dldCenter">
+				
+       			<h3><span id="bulk">Bulk Downolad Files</span>
+       				<span id="dldAddClickOff" class="ClickOff">&nbsp;╳&nbsp;</span></h3>
+       			<div><input type="button" id="add" value="Add Tasks"></div>
+	            <fieldset id="inputUrlsDld"><legend class="inputUrl">← enter the URL<mark title="API">[*xxx]</mark></legend>
+	            	<div class="hidden"><div>
+							<p><span class="urlTip">Please type one URL per line. Optional valid expressions: </span> <mark title="API">[*XXX]</mark></p>
+							<p><span class="multia">a) multi-selection separated by comma</span><br>http://..<mark title="API">[*1,6,8]</mark>.html</p>
+							<p><span class="multib">b) increasing numbers or characters, separated by hyphen</span><br>http://..<mark title="API">[*a-f]</mark>.html<br>
+							http://..<mark title="API">[*01-12]</mark>.html</p>
+							<p><span class="multic">c) composite operations</span><br>http://..<mark title="API">[*1,3-7,a-f]</mark>.html</p></div>
+							<div><input type="button" class="preview" value="preview"></div>
+						<textarea class="urlsPreview" placeholder="result" hidden=""></textarea></div></fieldset>
+					</div>
+			<div id="dldRENM">
+				<div>
+					<input type="text" id="dldr1" placeholder="&lt;No.&gt;&lt;No.1&gt;&lt;No.01&gt;&lt;name&gt;&lt;alt&gt;&lt;title&gt;&lt;fn&gt;&lt;date&gt;&lt;time&gt;&lt;date_time&gt;&lt;TITLE&gt;&lt;URL&gt;&lt;[jpg]&gt;&lt;jpg&gt;">
+					</div>
+				<div id="fileRenm">
+					<input type="button" id="dldRenm" value="Rename">
+					<span id="RENM1"><span class="RENM1" data-rule="%7B%22name%22%3A%22name%22%2C%22r0%22%3A%22%22%2C%22r1%22%3A%22%253Cname%253E%253C%255Bjpg%255D%253E%22%7D">name</span><span class="RENM1" data-rule="%7B%22name%22%3A%2201%22%2C%22r0%22%3A%22%22%2C%22r1%22%3A%22%253C01%253E%253C%255Bjpg%255D%253E%22%7D">01</span><span class="RENM1" data-rule="%7B%22name%22%3A%22prefix%22%2C%22r0%22%3A%22%22%2C%22r1%22%3A%22prefix-%253C01%253E%253C%255Bjpg%255D%253E%22%7D">prefix</span><span class="RENM1" data-rule="%7B%22name%22%3A%22surfix%22%2C%22r0%22%3A%22%22%2C%22r1%22%3A%22%253C01%253E-surfix%253C%255Bjpg%255D%253E%22%7D">surfix</span><span class="RENM1" data-rule="%7B%22name%22%3A%22TITLE%22%2C%22r0%22%3A%22%22%2C%22r1%22%3A%22%253CTITLE%253E/%253Cname%253E%253C%255Bjpg%255D%253E%22%7D">TITLE</span><span class="RENM1" data-rule="%7B%22name%22%3A%22date%22%2C%22r0%22%3A%22%22%2C%22r1%22%3A%22%253Cdate%253E_%253C01%253E%253C%255Bjpg%255D%253E%22%7D">date</span><span class="RENM1" data-rule="%7B%22name%22%3A%22time%22%2C%22r0%22%3A%22%22%2C%22r1%22%3A%22%253Ctime%253E_%253C01%253E%253C%255Bjpg%255D%253E%22%7D">time</span></span>
+					</div>
+
+				<textarea id="renmDld" placeholder="Rename"></textarea>
+    			</div>
+    		<div class="clear"></div>
+
+    			</div>
+		<div id="dldBtn" hidden="">
+			<div>
+				<span id="SelAll">All</span>
+				<span id="SelToggle">Inv</span>
+				
+				<input type="search" id="SelSearch" title="search | reload">
+				<input type="button" id="start" value="start">
+				<input type="button" id="pause" value="pause">
+				<input type="button" id="del" value="Delete">
+				</div>
+
+			<div><span id="remove" class="bold">Remove Tasks</span>
+				<del id="removecomplete">complete</del>
+				<del id="removedeleted">deleted</del>
+				<del id="removeerror">error</del>
+				<del id="removeinterrupted">interrupted</del>
+
+				<del id="removeduplicated">duplicated</del>
+				<del id="removepending">pending</del>
+				<del id="removepaused">paused</del>
+				<del id="removein_progress">downloading</del>
+				</div>
+			</div>
+        <table id="items" align="center"><tbody>
+        	<tr id="iH">
+	        	<th id="istate">state</th>
+	        	<th id="ifilename">filename</th>
+	        	<th id="iprogress">progress</th>
+	        	<th id="is">Size</th>
+	        	<th id="inote" hidden="">note</th>
+	        	<th id="iStartEnd">start/endTime</th>
+	        	<th id="iusedTime">usedTime</th>
+				<th id="iurl">URL</th>
+	        	<th id="iinfo">Safety/error</th>
+				<th id="ibyExtensionName" hidden="">byExtensionName</th>
+
+        	</tr></tbody></table>
+		</div>
+
+    <div id="bar" class="vipBG" title="Toggle View
+hotkey V">
+
+    	<span id="barLeft">
+        	<span id="zlrApp">
+                <img id="zzllrr" src="chrome-extension://gfjhimhkjmipphnaminnnnjpnlneeplk/img/z20.png" title="search zzllrr">
+                <span id="zlrApps">
+                	<img id="zR" src="chrome-extension://gfjhimhkjmipphnaminnnnjpnlneeplk/img/zR20.png" title="zzllrr RSS Reader">
+                    </span>
+
+                </span>
+            <span id="Share">
+                <img id="share" src="chrome-extension://gfjhimhkjmipphnaminnnnjpnlneeplk/img/Share.ico" title="share">
+                <span id="shares" hidden=""><img src="chrome-extension://gfjhimhkjmipphnaminnnnjpnlneeplk/img/weixin.ico" title="weixin" data-share="weixin"><img src="chrome-extension://gfjhimhkjmipphnaminnnnjpnlneeplk/img/Weibo.ico" title="Weibo" data-share="tsina"><img src="chrome-extension://gfjhimhkjmipphnaminnnnjpnlneeplk/img/tqq.gif" title="QQmb" data-share="tqq"><img src="chrome-extension://gfjhimhkjmipphnaminnnnjpnlneeplk/img/t163.gif" title="163mb" data-share="t163"><img src="chrome-extension://gfjhimhkjmipphnaminnnnjpnlneeplk/img/Douban.ico" title="douban" data-share="douban"><img src="chrome-extension://gfjhimhkjmipphnaminnnnjpnlneeplk/img/renren.ico" title="renren" data-share="renren"><img src="chrome-extension://gfjhimhkjmipphnaminnnnjpnlneeplk/img/Baidu.ico" title="baidu" data-share="baidu"><img src="chrome-extension://gfjhimhkjmipphnaminnnnjpnlneeplk/img/Facebook.png" title="Facebook" data-share="fb"><img src="chrome-extension://gfjhimhkjmipphnaminnnnjpnlneeplk/img/Twitter.gif" title="twitter" data-share="twitter"><img src="chrome-extension://gfjhimhkjmipphnaminnnnjpnlneeplk/img/g+.ico" title="googleplus" data-share="googleplus"><img src="chrome-extension://gfjhimhkjmipphnaminnnnjpnlneeplk/img/Gmail.ico" title="gmail" data-share="gmail"><img src="chrome-extension://gfjhimhkjmipphnaminnnnjpnlneeplk/img/Share.ico" title="more" data-share="more"></span>
+                </span>
+
+        	</span>
+        <span id="btnTip"><span class="donor" title="Donate zzllrr">Donor: <span class="country China" title="China">杨**</span><span class="donaInf"> - ￥35.88 - 非常方便的扩展 - 2013. 3. 11.</span></span></span>
+        <span id="barRight">
+        	<img id="flipy" src="chrome-extension://gfjhimhkjmipphnaminnnnjpnlneeplk/img/16.gif" title="Flip Horizontally">
+            <img id="flipx" src="chrome-extension://gfjhimhkjmipphnaminnnnjpnlneeplk/img/16.gif" title="Flip Vertically">
+            <img id="flip0" class="toggle" src="chrome-extension://gfjhimhkjmipphnaminnnnjpnlneeplk/img/16.gif" title="Normal">
+            <img id="rotate1" src="chrome-extension://gfjhimhkjmipphnaminnnnjpnlneeplk/img/16.gif" title="Rotate 90°Clockwise">
+            <img id="rotate2" src="chrome-extension://gfjhimhkjmipphnaminnnnjpnlneeplk/img/16.gif" title="Rotate 180°">
+            <img id="rotate3" src="chrome-extension://gfjhimhkjmipphnaminnnnjpnlneeplk/img/16.gif" title="Rotate 90°Counterclockwise">
+        	</span>
+    	</div>
+    <div id="codeClick" hidden="">
+		<span id="codeIt">
+			<label style="display: none;"><input type="radio" value="url" name="code">URL</label>
+			<label style="display: none;"><input type="radio" value="ubb" name="code">UBB</label>
+			<label style="display: none;"><input type="radio" value="html" name="code">HTML</label>
+            <label style="display: none;"><input type="radio" value="xml" name="code">XML</label>
+            <label style="display: none;"><input type="radio" value="zml" name="code">ZML</label>
+			<label style="display: none;"><input type="radio" value="picInf" name="code">CSV</label>
+			<label style="display: none;"><input type="radio" value="exif" name="code">Exif</label>
+			<label style="display: none;"><input type="radio" value="tabInf" name="code">Selected tab info</label>
+			<label id="btncss" style="display: none;"><input type="radio" value="pgInf" name="code">Page info</label>
+				<select id="pgInfs" hidden="" style="display: none;">
+					<option value="0">--</option>
+					<option value="1">URLs</option>
+					<option value="2">Titles</option>
+					<option value="3">Keywords</option>
+					<option value="4">Descriptions</option>
+					<option value="5">Pages</option>
+					<option value="6">CSS Links</option>
+					<option value="7">Fonts</option></select>
+
+			<label style="display: none;" class="hd2"><input type="radio" value="renm" checked="checked" name="code">Rename</label>
+				<span id="RENM0" style="display: inline;"><span class="RENM0" data-rule="%7B%22name%22%3A%22name%22%2C%22r0%22%3A%22%22%2C%22r1%22%3A%22%253Cname%253E%253C%255Bjpg%255D%253E%22%7D">name</span><span class="RENM0" data-rule="%7B%22name%22%3A%2201%22%2C%22r0%22%3A%22%22%2C%22r1%22%3A%22%253C01%253E%253C%255Bjpg%255D%253E%22%7D">01</span><span class="RENM0" data-rule="%7B%22name%22%3A%22prefix%22%2C%22r0%22%3A%22%22%2C%22r1%22%3A%22prefix-%253C01%253E%253C%255Bjpg%255D%253E%22%7D">prefix</span><span class="RENM0" data-rule="%7B%22name%22%3A%22surfix%22%2C%22r0%22%3A%22%22%2C%22r1%22%3A%22%253C01%253E-surfix%253C%255Bjpg%255D%253E%22%7D">surfix</span><span class="RENM0" data-rule="%7B%22name%22%3A%22alt%22%2C%22r0%22%3A%22%22%2C%22r1%22%3A%22%253Calt%253E%253C%255Bjpg%255D%253E%22%7D">alt</span><span class="RENM0" data-rule="%7B%22name%22%3A%22title%22%2C%22r0%22%3A%22%22%2C%22r1%22%3A%22%253Ctitle%253E%253C%255Bjpg%255D%253E%22%7D">title</span><span class="RENM0" data-rule="%7B%22name%22%3A%22TITLE%22%2C%22r0%22%3A%22%22%2C%22r1%22%3A%22%253CTITLE%253E/%253Cname%253E%253C%255Bjpg%255D%253E%22%7D">TITLE</span><span class="RENM0" data-rule="%7B%22name%22%3A%22date%22%2C%22r0%22%3A%22%22%2C%22r1%22%3A%22%253Cdate%253E_%253C01%253E%253C%255Bjpg%255D%253E%22%7D">date</span><span class="RENM0" data-rule="%7B%22name%22%3A%22time%22%2C%22r0%22%3A%22%22%2C%22r1%22%3A%22%253Ctime%253E_%253C01%253E%253C%255Bjpg%255D%253E%22%7D">time</span><span class="RENM0" data-rule="%7B%22name%22%3A%22fn%22%2C%22r0%22%3A%22%22%2C%22r1%22%3A%22%253Cfn%253E%253C%255Bjpg%255D%253E%22%7D">fn</span></span>
+				<select id="renms" style="display: inline-block;"><option value="0">--My Rename Rules--</option></select>
+				<span id="renmSaveAs" class="SaveAs" style="display: inline;">SaveAs</span>
+				<span class="Autorun" id="Autorun" style="display: inline;">set as default</span></span>
+
+
+
+		<div id="ren" style="display: block;">
+
+
+			<div id="advRenm">
+				a) <span id="R0">JS code</span><mark title="API">&lt;fn&gt;</mark><br>
+					<textarea id="r0" placeholder="&#39;@&#39;:images[i] (jQuery)" data-saveas="renmSaveAs"></textarea><br>
+				b) <span id="R1">Optional Parameters</span><mark title="Width">&lt;w&gt;</mark><mark title="Height">&lt;h&gt;</mark><mark title="wxh">&lt;wxh&gt;</mark><mark title="Size">&lt;sz&gt;</mark><mark title="Image" name="">&lt;name&gt;</mark><mark title="Image">&lt;title&gt;</mark><mark title="Alt">&lt;alt&gt;</mark><mark title="Image" url="">&lt;src&gt;</mark><mark title="Link" to="">&lt;link2&gt;</mark><mark title="Rename">&lt;fn&gt;</mark><mark title="url" of="" tab="">&lt;URL&gt;</mark><mark title="title" of="" tab="">&lt;TITLE&gt;</mark><br><mark title="API">&lt;No.&gt;</mark><mark title="API">&lt;No.1&gt;</mark><mark title="API">&lt;No.01&gt;</mark><mark title="API">&lt;date&gt;</mark><mark title="API">&lt;time&gt;</mark><mark title="API">&lt;date_time&gt;</mark><mark title="API">&lt;[jpg]&gt;</mark><mark title="API">&lt;jpg&gt;</mark>
+					<br>
+					<textarea id="r1" placeholder="&lt;No.&gt;&lt;No.1&gt;&lt;No.01&gt;&lt;name&gt;&lt;alt&gt;&lt;title&gt;&lt;fn&gt;&lt;date&gt;&lt;time&gt;&lt;date_time&gt;&lt;TITLE&gt;&lt;URL&gt;&lt;[jpg]&gt;&lt;jpg&gt;" data-saveas="renmSaveAs"></textarea>
+
+				<p id="renmAdv">
+					<span id="os"><label>Whole webpage saving <input type="checkbox" id="renmBeta"></label>
+						 <span id="OS" class="hidden">OS</span><select id="Os" class="hidden"><option value="Windows">Windows</option><option value="Other">Other</option></select>
+						 <span id="PATH" class="hidden">Folder</span><input type="text" id="Path" placeholder="D:\photos" class="hidden"></span>
+					<input type="button" id="renmPreview" title="N" value="Preview">
+					<input type="button" id="renmOK" hidden="" value="OK" style="display: none;">
+
+					<input type="button" value="Import" id="renmIn"><input type="button" value="Export" id="renmOut"><input type="button" value="Set" id="renmOpt"><input type="button" value="Need Help???" id="renmVIP"></p></div></div>
+		<div id="codetxt">
+			<textarea id="code" data-saveas="resultSave" data-renb=""></textarea>
+			<table align="center"><tbody><tr><td id="renTip" align="left"></td></tr></tbody></table>
+			</div>
+		
+		<div id="resultSav">
+			<input type="text" id="resultName" title="Rename">Name</input>
+			<span id="resultSave">Save</span>
+			<span id="codeClickOff" class="ClickOff">&nbsp;╳&nbsp;</span></div>
+			</div>
+
+	<div id="edit" hidden="" class="BGCap">
+
+		<img id="editImg" data-src="http://www.ktwiz.co.kr/sports/data/_up/player/11/53_이대형_on.jpg">
+		<div id="EditOpt">
+        	<div id="editBtn"><input type="button" id="editReset" value="Reset"><input type="button" id="editSave" class="vip" value="Save"></div>
+			<div id="editOpt">
+	            <div><span id="preview"> </span><span id="WH" title="Width x Height"> </span>
+	            	<span id="WH1" hidden="" title="clip➜ "> </span>
+	            	<span id="WH2" hidden="" data-scale="1,1" title="scale➜ "> </span>
+	            	<span id="WH3" hidden="" data-rotate="0" title="rotate➜ "> </span>
+	            	<span id="WH4" hidden="" data-shadow="0,0,0" title="dropShadow➜ "> </span>
+	            </div>
+				<details><summary id="BtnClip"><label>Clip<input type="checkbox" id="cssClip"></label></summary>
+			            <div id="CssClip"><img class="clip" src="chrome-extension://gfjhimhkjmipphnaminnnnjpnlneeplk/img/16.gif" title="reset"><span id="clip">clip</span>
+			            	<span>↦</span><input type="number" id="cssClipL" min="0" value="0">
+			            	<span>↤</span><input type="number" id="cssClipR" min="0" value="100"><br>
+			            	<span>↧</span><input type="number" id="cssClipT" min="0" value="0">
+			            	<span>↥</span><input type="number" id="cssClipB" min="0" value="100">
+			            </div>
+				</details>
+
+	            
+	            <details><summary id="BtnScale">Scale</summary>
+					<div id="CssTransform">
+
+		                <div id="CssScale"><img class="scale" src="chrome-extension://gfjhimhkjmipphnaminnnnjpnlneeplk/img/16.gif" title="reset"><span id="scale" title="reset">scale</span>
+		                	<span id="sW" title="reset">x</span><input type="number" id="cssScaleX" min="0" step=".1" value="1">
+		                	<span id="sH" title="reset">y</span><input type="number" id="cssScaleY" min="0" step=".1" value="1">
+		                	<span hidden="" title="reset">z</span><input type="number" id="cssScaleZ" min="0" step=".1" value="1" hidden=""></div>
+
+		                <div id="CssFixed">
+		                	<div><span id="fW">Width</span><input type="number" id="cssFixedW" min="0" value="0" title="px" disabled="">
+		                		<span id="fH">Height</span><input type="number" id="cssFixedH" min="0" value="0" title="px" disabled=""></div>
+		                	<div><span id="fWH">Width ÷ Height</span><input type="number" id="cssFixedWH" min="0.01" step=".1" value="1" disabled=""></div>
+
+		                	</div>
+		                <div id="CssRotate" hidden="">
+		                    <div id="CssRotate3"><img class="rotate1" src="chrome-extension://gfjhimhkjmipphnaminnnnjpnlneeplk/img/16.gif" title="reset"><span id="rotate" title="reset">rotate</span>
+		                		<span title="reset">x</span><input type="number" id="cssRotateX" value="0" title="deg" max="360">
+		                    	<span title="reset">y</span><input type="number" id="cssRotateY" value="0" title="deg" max="360">
+		                    	<span title="reset">z</span><input type="number" id="cssRotateZ" value="0" title="deg" max="360">
+		                    </div>
+
+		                </div>
+					</div>
+				</details>
+	            <details><summary id="BtnBeautify">Beautify</summary>
+		            <div id="CssFilter">
+		                <div id="CssOpa"><img class="btn1" src="chrome-extension://gfjhimhkjmipphnaminnnnjpnlneeplk/img/16.gif" title="reset"><span id="opa" title="reset">Opacity</span><input type="range" id="cssOpa" min="0" max="1" step=".1" value="1"><span class="rngv" title="Opacity">1</span></div>
+		                <div id="CssContrast"><img class="contrast" src="chrome-extension://gfjhimhkjmipphnaminnnnjpnlneeplk/img/16.gif" title="reset"><span id="contrast" title="reset">contrast</span><input type="range" id="cssContrast" max="2" min="0" step=".1" value="1"><span class="rngv" title="contrast">1</span></div>
+		                <div id="CssBright"><img class="bright" src="chrome-extension://gfjhimhkjmipphnaminnnnjpnlneeplk/img/16.gif" title="reset"><span id="bright" title="reset">bright</span><input type="range" id="cssBright" min="0" max="2" step=".1" value="1"><span class="rngv" title="bright">1</span></div>
+		                <div id="CssSaturate"><img class="saturate" src="chrome-extension://gfjhimhkjmipphnaminnnnjpnlneeplk/img/16.gif" title="reset"><span id="saturate" title="reset">saturate</span><input type="range" id="cssSaturate" min="0" max="20" step=".1" value="1"><span class="rngv" title="saturate">1</span></div>
+
+		                <div id="CssGrayscale"><img class="grayscale" src="chrome-extension://gfjhimhkjmipphnaminnnnjpnlneeplk/img/16.gif" title="reset"><span id="grayscale" title="reset">grayscale</span><input type="range" id="cssGrayscale" min="0" max="1" step=".1" value="0"><span class="rngv" title="grayscale">0</span></div>
+		                <div id="CssSepia"><img class="sepia" src="chrome-extension://gfjhimhkjmipphnaminnnnjpnlneeplk/img/16.gif" title="reset"><span id="sepia" title="reset">sepia</span><input type="range" id="cssSepia" min="0" max="1" step=".1" value="0"><span class="rngv" title="sepia">0</span></div>
+		                <div id="CssInvert"><img class="invert" src="chrome-extension://gfjhimhkjmipphnaminnnnjpnlneeplk/img/16.gif" title="reset"><span id="invert" title="reset">invert</span><input type="range" id="cssInvert" min="0" max="1" step=".1" value="0"><span class="rngv" title="invert">0</span></div>
+		                <div id="CssHueRotate" hidden=""><img class="hueRotate" src="chrome-extension://gfjhimhkjmipphnaminnnnjpnlneeplk/img/16.gif" title="reset"><span id="hueRotate" title="reset">hueRotate</span><input type="range" id="cssHueRotate" min="0" value="0" title="deg" max="360"><span class="rngv" title="deg">0</span></div>
+		                <div id="CssBlur" hidden=""><img class="blur" src="chrome-extension://gfjhimhkjmipphnaminnnnjpnlneeplk/img/16.gif" title="reset"><span id="blur" title="reset">blur</span><input type="range" id="cssBlur" min="0" step="1" value="0" title="px"><span class="rngv" title="px">0</span></div>
+
+		                <div id="CssDropShadow" hidden=""><img class="dropShadow" src="chrome-extension://gfjhimhkjmipphnaminnnnjpnlneeplk/img/16.gif" title="reset"><label><span id="dropShadow">dropShadow</span><input type="checkbox" id="cssDropShadow"></label>
+		                	<div hidden="" id="CssDropshadow"><span>x</span><input type="number" id="cssDropShadowX" value="2" title="px">
+		                    	<span>y</span><input type="number" id="cssDropShadowY" value="2" title="px">
+		                    	<span id="bLur">bLur</span><input type="number" id="cssDropShadowBlur" min="0" value="2" title="px">
+		                    	<div><input type="color" id="cssDropShadowColor" value="#000000"><input type="range" id="cssDropShadowOpac" min="0" max="1" step=".1" value=".5"><span class="rngv" title="">.5</span></div>
+							</div>
+		                </div>
+		           </div>
+				</details>
+				<details><summary id="BtnCut"><label>Cut<input type="checkbox" id="cssCut"></label></summary>
+		            <div id="CssCut"><img class="clip" src="chrome-extension://gfjhimhkjmipphnaminnnnjpnlneeplk/img/16.gif" title="reset"><span id="cut">cut</span>
+		            	<input type="number" id="cssCutR" min="1" value="1">
+		            	<span>x</span>
+		            	<input type="number" id="cssCutC" min="1" value="1">
+		            	<span id="bw">Border</span><input type="number" id="cssCutB" min="0" value="0">
+		            </div>
+				</details>
+		    </div>
+		</div>
+		<div class="clear"></div>
+
+	</div>
+	<div><div id="list"><label><input type="checkbox" checked="checked" id="picChk9"><span class="inf2"><span class="no">1</span><span class="bar"> - </span><span class="w">150</span>×<span class="h">148</span></span><div style="width: 234px;"><img hidden="" data-no="1" data-wxh="150×148" data-sz="" data-size="-1" data-src="http://www.ktwiz.co.kr/sports/data/_up/player/11/53_이대형_on.jpg" data-alt="53    이대형" data-title="" data-name="53_이대형_on.jpg" data-ext="jpg" data-link2="Img" data-r0="" data-base="http://www.ktwiz.co.kr/sports/site/baseball/player/outfielder.do" data-basetitle="[kt wiz] 감동을 주는 야구! 근성의 kt wiz! - player &gt; 타자 &gt; 외야수" title="53    이대형" id="pic9" src="./zzllrr Imager Geek(V2017.6.26.2)_files/53_이대형_on.jpg" data-rename="53_이대형_on.jpg" data-rename1="53_이대형_on.jpg" style="width: 100%; display: inline;"><span class="inf0">53    이대형</span><span class="inf1"><span class="wxh">150×148</span><span class="size"></span><span class="ext"> - jpg</span></span></div></label><label><input type="checkbox" checked="checked" id="picChk10"><span class="inf2"><span class="no">2</span><span class="bar"> - </span><span class="w">150</span>×<span class="h">148</span></span><div style="width: 234px;"><img hidden="" data-no="2" data-wxh="150×148" data-sz="" data-size="-1" data-src="http://www.ktwiz.co.kr/sports/data/_up/player/11/35_이진영_off_.jpg" data-alt="35    이진영" data-title="" data-name="35_이진영_off_.jpg" data-ext="jpg" data-link2="Img" data-r0="" data-base="http://www.ktwiz.co.kr/sports/site/baseball/player/outfielder.do" data-basetitle="[kt wiz] 감동을 주는 야구! 근성의 kt wiz! - player &gt; 타자 &gt; 외야수" title="35    이진영" id="pic10" src="./zzllrr Imager Geek(V2017.6.26.2)_files/35_이진영_off_.jpg" data-rename="35_이진영_off_.jpg" data-rename1="35_이진영_off_.jpg" style="width: 100%; display: inline;"><span class="inf0">35    이진영</span><span class="inf1"><span class="wxh">150×148</span><span class="size"></span><span class="ext"> - jpg</span></span></div></label><label><input type="checkbox" checked="checked" id="picChk11"><span class="inf2"><span class="no">3</span><span class="bar"> - </span><span class="w">150</span>×<span class="h">148</span></span><div style="width: 234px;"><img hidden="" data-no="3" data-wxh="150×148" data-sz="" data-size="-1" data-src="http://www.ktwiz.co.kr/sports/data/_up/player/11/61_유한준_off_.jpg" data-alt="61    유한준" data-title="" data-name="61_유한준_off_.jpg" data-ext="jpg" data-link2="Img" data-r0="" data-base="http://www.ktwiz.co.kr/sports/site/baseball/player/outfielder.do" data-basetitle="[kt wiz] 감동을 주는 야구! 근성의 kt wiz! - player &gt; 타자 &gt; 외야수" title="61    유한준" id="pic11" src="./zzllrr Imager Geek(V2017.6.26.2)_files/61_유한준_off_.jpg" data-rename="61_유한준_off_.jpg" data-rename1="61_유한준_off_.jpg" style="width: 100%; display: inline;"><span class="inf0">61    유한준</span><span class="inf1"><span class="wxh">150×148</span><span class="size"></span><span class="ext"> - jpg</span></span></div></label><label><input type="checkbox" checked="checked" id="picChk12"><span class="inf2"><span class="no">4</span><span class="bar"> - </span><span class="w">150</span>×<span class="h">148</span></span><div style="width: 234px;"><img hidden="" data-no="4" data-wxh="150×148" data-sz="" data-size="-1" data-src="http://www.ktwiz.co.kr/sports/data/_up/player/11/27_오정복_off_.jpg" data-alt="27    오정복" data-title="" data-name="27_오정복_off_.jpg" data-ext="jpg" data-link2="Img" data-r0="" data-base="http://www.ktwiz.co.kr/sports/site/baseball/player/outfielder.do" data-basetitle="[kt wiz] 감동을 주는 야구! 근성의 kt wiz! - player &gt; 타자 &gt; 외야수" title="27    오정복" id="pic12" src="./zzllrr Imager Geek(V2017.6.26.2)_files/27_오정복_off_.jpg" data-rename="27_오정복_off_.jpg" data-rename1="27_오정복_off_.jpg" style="width: 100%; display: inline;"><span class="inf0">27    오정복</span><span class="inf1"><span class="wxh">150×148</span><span class="size"></span><span class="ext"> - jpg</span></span></div></label><label><input type="checkbox" checked="checked" id="picChk13"><span class="inf2"><span class="no">5</span><span class="bar"> - </span><span class="w">150</span>×<span class="h">148</span></span><div style="width: 234px;"><img hidden="" data-no="5" data-wxh="150×148" data-sz="" data-size="-1" data-src="http://www.ktwiz.co.kr/sports/data/_up/player/11/54_전민수_off.jpg" data-alt="54    전민수" data-title="" data-name="54_전민수_off.jpg" data-ext="jpg" data-link2="Img" data-r0="" data-base="http://www.ktwiz.co.kr/sports/site/baseball/player/outfielder.do" data-basetitle="[kt wiz] 감동을 주는 야구! 근성의 kt wiz! - player &gt; 타자 &gt; 외야수" title="54    전민수" id="pic13" src="./zzllrr Imager Geek(V2017.6.26.2)_files/54_전민수_off.jpg" data-rename="54_전민수_off.jpg" data-rename1="54_전민수_off.jpg" style="width: 100%; display: inline;"><span class="inf0">54    전민수</span><span class="inf1"><span class="wxh">150×148</span><span class="size"></span><span class="ext"> - jpg</span></span></div></label><label><input type="checkbox" checked="checked" id="picChk14"><span class="inf2"><span class="no">6</span><span class="bar"> - </span><span class="w">150</span>×<span class="h">148</span></span><div style="width: 234px;"><img hidden="" data-no="6" data-wxh="150×148" data-sz="" data-size="-1" data-src="http://www.ktwiz.co.kr/sports/data/_up/player/11/31_하준호_off_.jpg" data-alt="31    하준호" data-title="" data-name="31_하준호_off_.jpg" data-ext="jpg" data-link2="Img" data-r0="" data-base="http://www.ktwiz.co.kr/sports/site/baseball/player/outfielder.do" data-basetitle="[kt wiz] 감동을 주는 야구! 근성의 kt wiz! - player &gt; 타자 &gt; 외야수" title="31    하준호" id="pic14" src="./zzllrr Imager Geek(V2017.6.26.2)_files/31_하준호_off_.jpg" data-rename="31_하준호_off_.jpg" data-rename1="31_하준호_off_.jpg" style="width: 100%; display: inline;"><span class="inf0">31    하준호</span><span class="inf1"><span class="wxh">150×148</span><span class="size"></span><span class="ext"> - jpg</span></span></div></label><label><input type="checkbox" checked="checked" id="picChk15"><span class="inf2"><span class="no">7</span><span class="bar"> - </span><span class="w">150</span>×<span class="h">148</span></span><div style="width: 234px;"><img hidden="" data-no="7" data-wxh="150×148" data-sz="" data-size="-1" data-src="http://www.ktwiz.co.kr/sports/data/_up/player/11/25_김사연_off_.jpg" data-alt="25    김사연" data-title="" data-name="25_김사연_off_.jpg" data-ext="jpg" data-link2="Img" data-r0="" data-base="http://www.ktwiz.co.kr/sports/site/baseball/player/outfielder.do" data-basetitle="[kt wiz] 감동을 주는 야구! 근성의 kt wiz! - player &gt; 타자 &gt; 외야수" title="25    김사연" id="pic15" src="./zzllrr Imager Geek(V2017.6.26.2)_files/25_김사연_off_.jpg" data-rename="25_김사연_off_.jpg" data-rename1="25_김사연_off_.jpg" style="width: 100%; display: inline;"><span class="inf0">25    김사연</span><span class="inf1"><span class="wxh">150×148</span><span class="size"></span><span class="ext"> - jpg</span></span></div></label><label><input type="checkbox" checked="checked" id="picChk16"><span class="inf2"><span class="no">8</span><span class="bar"> - </span><span class="w">150</span>×<span class="h">148</span></span><div style="width: 234px;"><img hidden="" data-no="8" data-wxh="150×148" data-sz="" data-size="-1" data-src="http://www.ktwiz.co.kr/sports/data/_up/player/11/08_김진곤_off_.jpg" data-alt="8     김진곤" data-title="" data-name="08_김진곤_off_.jpg" data-ext="jpg" data-link2="Img" data-r0="" data-base="http://www.ktwiz.co.kr/sports/site/baseball/player/outfielder.do" data-basetitle="[kt wiz] 감동을 주는 야구! 근성의 kt wiz! - player &gt; 타자 &gt; 외야수" title="8     김진곤" id="pic16" src="./zzllrr Imager Geek(V2017.6.26.2)_files/08_김진곤_off_.jpg" data-rename="08_김진곤_off_.jpg" data-rename1="08_김진곤_off_.jpg" style="width: 100%; display: inline;"><span class="inf0">8     김진곤</span><span class="inf1"><span class="wxh">150×148</span><span class="size"></span><span class="ext"> - jpg</span></span></div></label><label><input type="checkbox" checked="checked" id="picChk17"><span class="inf2"><span class="no">9</span><span class="bar"> - </span><span class="w">150</span>×<span class="h">148</span></span><div style="width: 234px;"><img hidden="" data-no="9" data-wxh="150×148" data-sz="" data-size="-1" data-src="http://www.ktwiz.co.kr/sports/data/_up/player/11/106_김종성_off_.jpg" data-alt="106   김종성" data-title="" data-name="106_김종성_off_.jpg" data-ext="jpg" data-link2="Img" data-r0="" data-base="http://www.ktwiz.co.kr/sports/site/baseball/player/outfielder.do" data-basetitle="[kt wiz] 감동을 주는 야구! 근성의 kt wiz! - player &gt; 타자 &gt; 외야수" title="106   김종성" id="pic17" src="./zzllrr Imager Geek(V2017.6.26.2)_files/106_김종성_off_.jpg" data-rename="106_김종성_off_.jpg" data-rename1="106_김종성_off_.jpg" style="width: 100%; display: inline;"><span class="inf0">106   김종성</span><span class="inf1"><span class="wxh">150×148</span><span class="size"></span><span class="ext"> - jpg</span></span></div></label><label><input type="checkbox" checked="checked" id="picChk18"><span class="inf2"><span class="no">10</span><span class="bar"> - </span><span class="w">150</span>×<span class="h">148</span></span><div style="width: 234px;"><img hidden="" data-no="10" data-wxh="150×148" data-sz="" data-size="-1" data-src="http://www.ktwiz.co.kr/sports/data/_up/player/11/107_배광환_off_.jpg" data-alt="107   배광환" data-title="" data-name="107_배광환_off_.jpg" data-ext="jpg" data-link2="Img" data-r0="" data-base="http://www.ktwiz.co.kr/sports/site/baseball/player/outfielder.do" data-basetitle="[kt wiz] 감동을 주는 야구! 근성의 kt wiz! - player &gt; 타자 &gt; 외야수" title="107   배광환" id="pic18" src="./zzllrr Imager Geek(V2017.6.26.2)_files/107_배광환_off_.jpg" data-rename="107_배광환_off_.jpg" data-rename1="107_배광환_off_.jpg" style="width: 100%; display: inline;"><span class="inf0">107   배광환</span><span class="inf1"><span class="wxh">150×148</span><span class="size"></span><span class="ext"> - jpg</span></span></div></label><label><input type="checkbox" checked="checked" id="picChk19"><span class="inf2"><span class="no">11</span><span class="bar"> - </span><span class="w">150</span>×<span class="h">148</span></span><div style="width: 234px;"><img hidden="" data-no="11" data-wxh="150×148" data-sz="" data-size="-1" data-src="http://www.ktwiz.co.kr/sports/data/_up/player/11/94_김민섭_off_.jpg" data-alt="94    김민섭" data-title="" data-name="94_김민섭_off_.jpg" data-ext="jpg" data-link2="Img" data-r0="" data-base="http://www.ktwiz.co.kr/sports/site/baseball/player/outfielder.do" data-basetitle="[kt wiz] 감동을 주는 야구! 근성의 kt wiz! - player &gt; 타자 &gt; 외야수" title="94    김민섭" id="pic19" src="./zzllrr Imager Geek(V2017.6.26.2)_files/94_김민섭_off_.jpg" data-rename="94_김민섭_off_.jpg" data-rename1="94_김민섭_off_.jpg" style="width: 100%; display: inline;"><span class="inf0">94    김민섭</span><span class="inf1"><span class="wxh">150×148</span><span class="size"></span><span class="ext"> - jpg</span></span></div></label><label><input type="checkbox" checked="checked" id="picChk20"><span class="inf2"><span class="no">12</span><span class="bar"> - </span><span class="w">150</span>×<span class="h">148</span></span><div style="width: 234px;"><img hidden="" data-no="12" data-wxh="150×148" data-sz="" data-size="-1" data-src="http://www.ktwiz.co.kr/sports/data/_up/player/11/24_멜로하스주니어_off.jpg" data-alt="24    멜 로하스 주니어" data-title="" data-name="24_멜로하스주니어_off.jpg" data-ext="jpg" data-link2="Img" data-r0="" data-base="http://www.ktwiz.co.kr/sports/site/baseball/player/outfielder.do" data-basetitle="[kt wiz] 감동을 주는 야구! 근성의 kt wiz! - player &gt; 타자 &gt; 외야수" title="24    멜 로하스 주니어" id="pic20" src="./zzllrr Imager Geek(V2017.6.26.2)_files/24_멜로하스주니어_off.jpg" data-rename="24_멜로하스주니어_off.jpg" data-rename1="24_멜로하스주니어_off.jpg" style="width: 100%; display: inline;"><span class="inf0">24    멜 로하스 주니어</span><span class="inf1"><span class="wxh">150×148</span><span class="size"></span><span class="ext"> - jpg</span></span></div></label><label><input type="checkbox" checked="checked" id="picChk21"><span class="inf2"><span class="no">13</span><span class="bar"> - </span><span class="w">150</span>×<span class="h">148</span></span><div style="width: 234px;"><img hidden="" data-no="13" data-wxh="150×148" data-sz="" data-size="-1" data-src="http://www.ktwiz.co.kr/sports/data/_up/player/11/5_홍현빈_off.jpg" data-alt="5     홍현빈" data-title="" data-name="5_홍현빈_off.jpg" data-ext="jpg" data-link2="Img" data-r0="" data-base="http://www.ktwiz.co.kr/sports/site/baseball/player/outfielder.do" data-basetitle="[kt wiz] 감동을 주는 야구! 근성의 kt wiz! - player &gt; 타자 &gt; 외야수" title="5     홍현빈" id="pic21" src="./zzllrr Imager Geek(V2017.6.26.2)_files/5_홍현빈_off.jpg" data-rename="5_홍현빈_off.jpg" data-rename1="5_홍현빈_off.jpg" style="width: 100%; display: inline;"><span class="inf0">5     홍현빈</span><span class="inf1"><span class="wxh">150×148</span><span class="size"></span><span class="ext"> - jpg</span></span></div></label><label><input type="checkbox" id="picChk22"><span class="inf2"><span class="no">14</span><span class="bar"> - </span><span class="w">900</span>×<span class="h">366</span></span><div style="width: 234px;"><img hidden="" data-no="14" data-wxh="900×366" data-sz="" data-size="-1" data-src="http://www.ktwiz.co.kr/sports/data/_up/player/11/53_이대형_profile(0).jpg" data-alt="53 이대형" data-title="" data-name="53_이대형_profile(0).jpg" data-ext="jpg" data-link2="Img" data-r0="" data-base="http://www.ktwiz.co.kr/sports/site/baseball/player/outfielder.do" data-basetitle="[kt wiz] 감동을 주는 야구! 근성의 kt wiz! - player &gt; 타자 &gt; 외야수" title="53 이대형" id="pic22" src="./zzllrr Imager Geek(V2017.6.26.2)_files/53_이대형_profile(0).jpg" data-rename="53_이대형_profile(0).jpg" data-rename1="53_이대형_profile(0).jpg" style="width: 100%; display: inline;"><span class="inf0">53 이대형</span><span class="inf1"><span class="wxh">900×366</span><span class="size"></span><span class="ext"> - jpg</span></span></div></label><label><input type="checkbox" id="picChk25"><span class="inf2"><span class="no">15</span><span class="bar"> - </span><span class="w">900</span>×<span class="h">366</span></span><div style="width: 234px;"><img hidden="" data-no="15" data-wxh="900×366" data-sz="" data-size="-1" data-src="http://www.ktwiz.co.kr/sports/data/_up/player/11/35_이진영_profile(0).jpg" data-alt="35 이진영" data-title="" data-name="35_이진영_profile(0).jpg" data-ext="jpg" data-link2="Img" data-r0="" data-base="http://www.ktwiz.co.kr/sports/site/baseball/player/outfielder.do" data-basetitle="[kt wiz] 감동을 주는 야구! 근성의 kt wiz! - player &gt; 타자 &gt; 외야수" title="35 이진영" id="pic25" src="./zzllrr Imager Geek(V2017.6.26.2)_files/35_이진영_profile(0).jpg" data-rename="35_이진영_profile(0).jpg" data-rename1="35_이진영_profile(0).jpg" style="width: 100%; display: inline;"><span class="inf0">35 이진영</span><span class="inf1"><span class="wxh">900×366</span><span class="size"></span><span class="ext"> - jpg</span></span></div></label><label><input type="checkbox" id="picChk26"><span class="inf2"><span class="no">16</span><span class="bar"> - </span><span class="w">900</span>×<span class="h">366</span></span><div style="width: 234px;"><img hidden="" data-no="16" data-wxh="900×366" data-sz="" data-size="-1" data-src="http://www.ktwiz.co.kr/sports/data/_up/player/11/61_유한준_profile.jpg" data-alt="61 유한준" data-title="" data-name="61_유한준_profile.jpg" data-ext="jpg" data-link2="Img" data-r0="" data-base="http://www.ktwiz.co.kr/sports/site/baseball/player/outfielder.do" data-basetitle="[kt wiz] 감동을 주는 야구! 근성의 kt wiz! - player &gt; 타자 &gt; 외야수" title="61 유한준" id="pic26" src="./zzllrr Imager Geek(V2017.6.26.2)_files/61_유한준_profile.jpg" data-rename="61_유한준_profile.jpg" data-rename1="61_유한준_profile.jpg" style="width: 100%; display: inline;"><span class="inf0">61 유한준</span><span class="inf1"><span class="wxh">900×366</span><span class="size"></span><span class="ext"> - jpg</span></span></div></label><label><input type="checkbox" id="picChk27"><span class="inf2"><span class="no">17</span><span class="bar"> - </span><span class="w">900</span>×<span class="h">366</span></span><div style="width: 234px;"><img hidden="" data-no="17" data-wxh="900×366" data-sz="" data-size="-1" data-src="http://www.ktwiz.co.kr/sports/data/_up/player/11/27_오정복_profile.jpg" data-alt="27 오정복" data-title="" data-name="27_오정복_profile.jpg" data-ext="jpg" data-link2="Img" data-r0="" data-base="http://www.ktwiz.co.kr/sports/site/baseball/player/outfielder.do" data-basetitle="[kt wiz] 감동을 주는 야구! 근성의 kt wiz! - player &gt; 타자 &gt; 외야수" title="27 오정복" id="pic27" src="./zzllrr Imager Geek(V2017.6.26.2)_files/27_오정복_profile.jpg" data-rename="27_오정복_profile.jpg" data-rename1="27_오정복_profile.jpg" style="width: 100%; display: inline;"><span class="inf0">27 오정복</span><span class="inf1"><span class="wxh">900×366</span><span class="size"></span><span class="ext"> - jpg</span></span></div></label><label><input type="checkbox" id="picChk28"><span class="inf2"><span class="no">18</span><span class="bar"> - </span><span class="w">900</span>×<span class="h">366</span></span><div style="width: 234px;"><img hidden="" data-no="18" data-wxh="900×366" data-sz="" data-size="-1" data-src="http://www.ktwiz.co.kr/sports/data/_up/player/11/54_전민수_profile(0).jpg" data-alt="54 전민수" data-title="" data-name="54_전민수_profile(0).jpg" data-ext="jpg" data-link2="Img" data-r0="" data-base="http://www.ktwiz.co.kr/sports/site/baseball/player/outfielder.do" data-basetitle="[kt wiz] 감동을 주는 야구! 근성의 kt wiz! - player &gt; 타자 &gt; 외야수" title="54 전민수" id="pic28" src="./zzllrr Imager Geek(V2017.6.26.2)_files/54_전민수_profile(0).jpg" data-rename="54_전민수_profile(0).jpg" data-rename1="54_전민수_profile(0).jpg" style="width: 100%; display: inline;"><span class="inf0">54 전민수</span><span class="inf1"><span class="wxh">900×366</span><span class="size"></span><span class="ext"> - jpg</span></span></div></label><label><input type="checkbox" id="picChk29"><span class="inf2"><span class="no">19</span><span class="bar"> - </span><span class="w">900</span>×<span class="h">366</span></span><div style="width: 234px;"><img hidden="" data-no="19" data-wxh="900×366" data-sz="" data-size="-1" data-src="http://www.ktwiz.co.kr/sports/data/_up/player/11/31_하준호_profile.jpg" data-alt="31 하준호" data-title="" data-name="31_하준호_profile.jpg" data-ext="jpg" data-link2="Img" data-r0="" data-base="http://www.ktwiz.co.kr/sports/site/baseball/player/outfielder.do" data-basetitle="[kt wiz] 감동을 주는 야구! 근성의 kt wiz! - player &gt; 타자 &gt; 외야수" title="31 하준호" id="pic29" src="./zzllrr Imager Geek(V2017.6.26.2)_files/31_하준호_profile.jpg" data-rename="31_하준호_profile.jpg" data-rename1="31_하준호_profile.jpg" style="width: 100%; display: inline;"><span class="inf0">31 하준호</span><span class="inf1"><span class="wxh">900×366</span><span class="size"></span><span class="ext"> - jpg</span></span></div></label><label><input type="checkbox" id="picChk30"><span class="inf2"><span class="no">20</span><span class="bar"> - </span><span class="w">900</span>×<span class="h">366</span></span><div style="width: 234px;"><img hidden="" data-no="20" data-wxh="900×366" data-sz="" data-size="-1" data-src="http://www.ktwiz.co.kr/sports/data/_up/player/11/25_김사연_profile(0).jpg" data-alt="25 김사연" data-title="" data-name="25_김사연_profile(0).jpg" data-ext="jpg" data-link2="Img" data-r0="" data-base="http://www.ktwiz.co.kr/sports/site/baseball/player/outfielder.do" data-basetitle="[kt wiz] 감동을 주는 야구! 근성의 kt wiz! - player &gt; 타자 &gt; 외야수" title="25 김사연" id="pic30" src="./zzllrr Imager Geek(V2017.6.26.2)_files/25_김사연_profile(0).jpg" data-rename="25_김사연_profile(0).jpg" data-rename1="25_김사연_profile(0).jpg" style="width: 100%; display: inline;"><span class="inf0">25 김사연</span><span class="inf1"><span class="wxh">900×366</span><span class="size"></span><span class="ext"> - jpg</span></span></div></label><label><input type="checkbox" id="picChk31"><span class="inf2"><span class="no">21</span><span class="bar"> - </span><span class="w">900</span>×<span class="h">366</span></span><div style="width: 234px;"><img hidden="" data-no="21" data-wxh="900×366" data-sz="" data-size="-1" data-src="http://www.ktwiz.co.kr/sports/data/_up/player/11/08_김진곤_profile.jpg.jpg" data-alt="8 김진곤" data-title="" data-name="08_김진곤_profile.jpg.jpg" data-ext="jpg" data-link2="Img" data-r0="" data-base="http://www.ktwiz.co.kr/sports/site/baseball/player/outfielder.do" data-basetitle="[kt wiz] 감동을 주는 야구! 근성의 kt wiz! - player &gt; 타자 &gt; 외야수" title="8 김진곤" id="pic31" src="./zzllrr Imager Geek(V2017.6.26.2)_files/08_김진곤_profile.jpg.jpg" data-rename="08_김진곤_profile.jpg.jpg" data-rename1="08_김진곤_profile.jpg.jpg" style="width: 100%; display: inline;"><span class="inf0">8 김진곤</span><span class="inf1"><span class="wxh">900×366</span><span class="size"></span><span class="ext"> - jpg</span></span></div></label><label><input type="checkbox" id="picChk32"><span class="inf2"><span class="no">22</span><span class="bar"> - </span><span class="w">900</span>×<span class="h">366</span></span><div style="width: 234px;"><img hidden="" data-no="22" data-wxh="900×366" data-sz="" data-size="-1" data-src="http://www.ktwiz.co.kr/sports/data/_up/player/11/106_김종성_profile.jpg" data-alt="106 김종성" data-title="" data-name="106_김종성_profile.jpg" data-ext="jpg" data-link2="Img" data-r0="" data-base="http://www.ktwiz.co.kr/sports/site/baseball/player/outfielder.do" data-basetitle="[kt wiz] 감동을 주는 야구! 근성의 kt wiz! - player &gt; 타자 &gt; 외야수" title="106 김종성" id="pic32" src="./zzllrr Imager Geek(V2017.6.26.2)_files/106_김종성_profile.jpg" data-rename="106_김종성_profile.jpg" data-rename1="106_김종성_profile.jpg" style="width: 100%; display: inline;"><span class="inf0">106 김종성</span><span class="inf1"><span class="wxh">900×366</span><span class="size"></span><span class="ext"> - jpg</span></span></div></label><label><input type="checkbox" id="picChk33"><span class="inf2"><span class="no">23</span><span class="bar"> - </span><span class="w">900</span>×<span class="h">366</span></span><div style="width: 234px;"><img hidden="" data-no="23" data-wxh="900×366" data-sz="" data-size="-1" data-src="http://www.ktwiz.co.kr/sports/data/_up/player/11/107_배광환_profile(0).jpg" data-alt="107 배광환" data-title="" data-name="107_배광환_profile(0).jpg" data-ext="jpg" data-link2="Img" data-r0="" data-base="http://www.ktwiz.co.kr/sports/site/baseball/player/outfielder.do" data-basetitle="[kt wiz] 감동을 주는 야구! 근성의 kt wiz! - player &gt; 타자 &gt; 외야수" title="107 배광환" id="pic33" src="./zzllrr Imager Geek(V2017.6.26.2)_files/107_배광환_profile(0).jpg" data-rename="107_배광환_profile(0).jpg" data-rename1="107_배광환_profile(0).jpg" style="width: 100%; display: inline;"><span class="inf0">107 배광환</span><span class="inf1"><span class="wxh">900×366</span><span class="size"></span><span class="ext"> - jpg</span></span></div></label><label><input type="checkbox" id="picChk34"><span class="inf2"><span class="no">24</span><span class="bar"> - </span><span class="w">900</span>×<span class="h">366</span></span><div style="width: 234px;"><img hidden="" data-no="24" data-wxh="900×366" data-sz="" data-size="-1" data-src="http://www.ktwiz.co.kr/sports/data/_up/player/11/94_김민섭_profile.jpg" data-alt="94 김민섭" data-title="" data-name="94_김민섭_profile.jpg" data-ext="jpg" data-link2="Img" data-r0="" data-base="http://www.ktwiz.co.kr/sports/site/baseball/player/outfielder.do" data-basetitle="[kt wiz] 감동을 주는 야구! 근성의 kt wiz! - player &gt; 타자 &gt; 외야수" title="94 김민섭" id="pic34" src="./zzllrr Imager Geek(V2017.6.26.2)_files/94_김민섭_profile.jpg" data-rename="94_김민섭_profile.jpg" data-rename1="94_김민섭_profile.jpg" style="width: 100%; display: inline;"><span class="inf0">94 김민섭</span><span class="inf1"><span class="wxh">900×366</span><span class="size"></span><span class="ext"> - jpg</span></span></div></label><label><input type="checkbox" id="picChk35"><span class="inf2"><span class="no">25</span><span class="bar"> - </span><span class="w">900</span>×<span class="h">366</span></span><div style="width: 234px;"><img hidden="" data-no="25" data-wxh="900×366" data-sz="" data-size="-1" data-src="http://www.ktwiz.co.kr/sports/data/_up/player/11/24_멜로하스주니어_profile.jpg" data-alt="24 멜 로하스 주니어" data-title="" data-name="24_멜로하스주니어_profile.jpg" data-ext="jpg" data-link2="Img" data-r0="" data-base="http://www.ktwiz.co.kr/sports/site/baseball/player/outfielder.do" data-basetitle="[kt wiz] 감동을 주는 야구! 근성의 kt wiz! - player &gt; 타자 &gt; 외야수" title="24 멜 로하스 주니어" id="pic35" src="./zzllrr Imager Geek(V2017.6.26.2)_files/24_멜로하스주니어_profile.jpg" data-rename="24_멜로하스주니어_profile.jpg" data-rename1="24_멜로하스주니어_profile.jpg" style="width: 100%; display: inline;"><span class="inf0">24 멜 로하스 주니어</span><span class="inf1"><span class="wxh">900×366</span><span class="size"></span><span class="ext"> - jpg</span></span></div></label><label><input type="checkbox" id="picChk36"><span class="inf2"><span class="no">26</span><span class="bar"> - </span><span class="w">900</span>×<span class="h">366</span></span><div style="width: 234px;"><img hidden="" data-no="26" data-wxh="900×366" data-sz="" data-size="-1" data-src="http://www.ktwiz.co.kr/sports/data/_up/player/11/5_홍현빈_profile(0).jpg" data-alt="5 홍현빈" data-title="" data-name="5_홍현빈_profile(0).jpg" data-ext="jpg" data-link2="Img" data-r0="" data-base="http://www.ktwiz.co.kr/sports/site/baseball/player/outfielder.do" data-basetitle="[kt wiz] 감동을 주는 야구! 근성의 kt wiz! - player &gt; 타자 &gt; 외야수" title="5 홍현빈" id="pic36" src="./zzllrr Imager Geek(V2017.6.26.2)_files/5_홍현빈_profile(0).jpg" data-rename="5_홍현빈_profile(0).jpg" data-rename1="5_홍현빈_profile(0).jpg" style="width: 100%; display: inline;"><span class="inf0">5 홍현빈</span><span class="inf1"><span class="wxh">900×366</span><span class="size"></span><span class="ext"> - jpg</span></span></div></label><label><input type="checkbox" id="picChk98"><span class="inf2"><span class="no">27</span><span class="bar"> - </span><span class="w">220</span>×<span class="h">220</span></span><div style="width: 234px;"><img hidden="" data-no="27" data-wxh="220×220" data-sz="" data-size="-1" data-src="http://www.ktwiz.co.kr/sports/site/baseball/images/layerpop_01.png" data-alt="준비중 입니다. 곧 업데이트 예정이니 잠시만 기다려주세요" data-title="" data-name="layerpop_01.png" data-ext="png" data-link2="Img" data-r0="" data-base="http://www.ktwiz.co.kr/sports/site/baseball/player/outfielder.do" data-basetitle="[kt wiz] 감동을 주는 야구! 근성의 kt wiz! - player &gt; 타자 &gt; 외야수" title="준비중 입니다. 곧 업데이트 예정이니 잠시만 기다려주세요" id="pic98" src="./zzllrr Imager Geek(V2017.6.26.2)_files/layerpop_01.png" data-rename="layerpop_01.png" data-rename1="layerpop_01.png" style="width: 100%; display: inline;"><span class="inf0">준비중 입니다. 곧 업데이트 예정이니 잠시만 기다려주세요</span><span class="inf1"><span class="wxh">220×220</span><span class="size"></span><span class="ext"> - png</span></span></div></label><label><input type="checkbox" id="picChk100"><span class="inf2"><span class="no">28</span><span class="bar"> - </span><span class="w">235</span>×<span class="h">236</span></span><div style="width: 234px;"><img hidden="" data-no="28" data-wxh="235×236" data-sz="" data-size="-1" data-src="http://www.ktwiz.co.kr/sports/site/baseball/images/photo_notice.png" data-alt="팬포토 선발전 지금 참여하세요!" data-title="" data-name="photo_notice.png" data-ext="png" data-link2="Img" data-r0="" data-base="http://www.ktwiz.co.kr/sports/site/baseball/player/outfielder.do" data-basetitle="[kt wiz] 감동을 주는 야구! 근성의 kt wiz! - player &gt; 타자 &gt; 외야수" title="팬포토 선발전 지금 참여하세요!" id="pic100" src="./zzllrr Imager Geek(V2017.6.26.2)_files/photo_notice.png" data-rename="photo_notice.png" data-rename1="photo_notice.png" style="width: 100%; display: inline;"><span class="inf0">팬포토 선발전 지금 참여하세요!</span><span class="inf1"><span class="wxh">235×236</span><span class="size"></span><span class="ext"> - png</span></span></div></label><label><input type="checkbox" id="picChk102"><span class="inf2"><span class="no">29</span><span class="bar"> - </span><span class="w">200</span>×<span class="h">200</span></span><div style="width: 234px;"><img hidden="" data-no="29" data-wxh="200×200" data-sz="" data-size="-1" data-src="http://www.ktwiz.co.kr/sports/_img/ktwiz_logo.png" data-alt="" data-title="" data-name="ktwiz_logo.png" data-ext="png" data-link2="Meta" data-r0="" data-base="http://www.ktwiz.co.kr/sports/site/baseball/player/outfielder.do" data-basetitle="[kt wiz] 감동을 주는 야구! 근성의 kt wiz! - player &gt; 타자 &gt; 외야수" title="Meta" id="pic102" src="./zzllrr Imager Geek(V2017.6.26.2)_files/ktwiz_logo.png" data-rename="ktwiz_logo.png" data-rename1="ktwiz_logo.png" style="width: 100%; display: inline;"><span class="inf0">ktwiz_logo.png</span><span class="inf1"><span class="wxh">200×200</span><span class="size"></span><span class="ext"> - png</span></span></div></label><label><input type="checkbox" id="picChk103"><span class="inf2"><span class="no">30</span><span class="bar"> - </span><span class="w">256</span>×<span class="h">256</span></span><div style="width: 234px;"><img hidden="" data-no="30" data-wxh="256×256" data-sz="" data-size="-1" data-src="http://www.ktwiz.co.kr/sports/site/baseball/images/favicon.ico" data-alt="" data-title="" data-name="favicon.ico" data-ext="ico" data-link2="Meta" data-r0="" data-base="http://www.ktwiz.co.kr/sports/site/baseball/player/outfielder.do" data-basetitle="[kt wiz] 감동을 주는 야구! 근성의 kt wiz! - player &gt; 타자 &gt; 외야수" title="Meta" id="pic103" src="./zzllrr Imager Geek(V2017.6.26.2)_files/favicon.ico" data-rename="favicon.ico" data-rename1="favicon.ico" style="width: 100%; display: inline;"><span class="inf0">favicon.ico</span><span class="inf1"><span class="wxh">256×256</span><span class="size"></span><span class="ext"> - ico</span></span></div></label></div><div id="origin" hidden=""></div></div>
+
+
+
+    </div>
+
+<div id="PLAY" hidden="">
+
+	<div id="play">
+		<input type="file" id="upImgsShow" webkitdirectory="" hidden="">
+        <input type="color" id="playBgColor" hidden="">
+        <select id="playType" hidden="" title="Toggle Type">
+            <option value="Center">Center</option>
+            <option value="Tile">Tile</option>
+            <option value="TileX">TileX</option>
+            <option value="TileY">TileY</option>
+            <option value="Stretch">Stretch</option>
+        </select>
+        <input type="range" id="playSpeed" min="500" max="8000" step="500" hidden="" title="Interval">
+        <input type="button" title="Set
+hotkeyO" id="playo" value="●">
+        <input type="button" title="hotkey: Ctrl + ←" id="playp" value="▐◄◄">
+        <input type="button" title="hotkey: ←" id="playq" value="◄◄">
+        <input type="button" title="hotkey: Space" id="play0" value="1" class="play0">
+        <input type="button" title="hotkey: Space" id="play3" value="▐ ▌">
+        <input type="button" title="hotkey: →" id="play_1" value="►►">
+        <input type="button" title="hotkey: Ctrl + →" id="play_2" value="►►▌">
+        <input type="button" title="hotkey: Esc" id="play_3" value="✖">
+        <input type="button" title="hotkey: Space" id="play1" value="0"></div></div>
+
+<div id="Tile" hidden="">
+	<table width="100%" border="0"><tbody><tr>
+        <td id="tileType" align="left" class="sideBarL">
+		<details><summary id="TileWH">
+        	<span class="W">Width</span>
+			<input type="number" id="tileW" title="px" min="0">
+            <span class="H">Height</span>
+			<span id="tileH" title="px">tileH</span>
+            <span id="bW">Border</span>
+            <input type="number" id="tilebW" title="px" min="0"></summary>
+			<select id="tileSort">
+                <option value="sort" selected="selected">-- sort --</option>
+                <option value="w">Width</option>
+                <option value="h">Height</option>
+				<option value="wxh">Width × Height</option>
+				<option value="w/h">Width ÷ Height</option>
+                <option value="s">Size</option>
+                <option value="e">Ext</option>
+                <option value="n">Image Name</option>
+                <option value="t">Image Title</option>
+                <option value="a">Alt</option>
+                <option value="l">Image URL</option>
+                <option value="l2">Link to</option>
+                <option value="renm">Rename</option>
+                <option value="Lnku">url of tab</option>
+                <option value="Lnkt">title of tab</option>
+                </select>
+			<span id="tileSort0">▲</span>
+			<span id="tileSort1">▼</span>
+			<span id="tileSort2">?</span></details>
+
+		<div id="shape">
+			<img src="chrome-extension://gfjhimhkjmipphnaminnnnjpnlneeplk/img/tile0.gif" id="tile0">
+			<img src="chrome-extension://gfjhimhkjmipphnaminnnnjpnlneeplk/img/tile1.gif" id="tile1">
+			<img src="chrome-extension://gfjhimhkjmipphnaminnnnjpnlneeplk/img/tile2.gif" id="tile2">
+			<img src="chrome-extension://gfjhimhkjmipphnaminnnnjpnlneeplk/img/tile3.gif" id="tile3">
+			<img src="chrome-extension://gfjhimhkjmipphnaminnnnjpnlneeplk/img/tile4.gif" id="tile4">
+			<img src="chrome-extension://gfjhimhkjmipphnaminnnnjpnlneeplk/img/tile5.gif" id="tile5"></div>
+		<div id="col2" hidden="">
+			<img src="chrome-extension://gfjhimhkjmipphnaminnnnjpnlneeplk/img/tile_5_2.gif" id="tile_2" title="reset">
+			<input type="number" id="tileCols2Min" min="1" value="1" hidden="">
+			<select id="tileCol2">
+				<option value="0" selected="selected">=</option>
+				<option value="1">≦</option>
+				<option value="2">≤</option>
+				</select>
+			<input type="number" id="tileCols2" min="1"></div>
+		<div id="row" hidden="">
+			<img src="chrome-extension://gfjhimhkjmipphnaminnnnjpnlneeplk/img/tile_5_1.gif" id="tile_1" title="reset">
+			<input type="number" id="tileRowsMin" min="1" value="1" hidden="">
+			<select id="tileRow">
+				<option value="0" selected="selected">=</option>
+				<option value="1">≦</option>
+				<option value="2">≤</option>
+				</select>
+			<input type="number" id="tileRows" min="1"></div>
+		<div id="col">
+			<img src="chrome-extension://gfjhimhkjmipphnaminnnnjpnlneeplk/img/tile_0.gif" id="tile_0" title="reset">
+			<input type="number" id="tileColsMin" min="1" value="1" hidden="">
+			<select id="tileCol">
+				<option value="0" selected="selected">=</option>
+				<option value="1">≦</option>
+				<option value="2">≤</option>
+				</select>
+			<input type="number" id="tileCols" min="1"></div>
+
+		<details id="desc" hidden="">
+			<summary><span id="TileFontOn">Caption</span><input type="checkbox" id="tileFontOn">
+            	<span id="FontSize">Font Size</span><input type="number" id="fontSize" min="12"></summary>
+			<table><tbody><tr><td>
+				<select id="tileDesc" multiple="multiple" title="Ctrl" size="12">
+					<option value="bar"> - </option>
+					<option value="no">No.</option>
+					<option value="w">Width</option>
+					<option value="h">Height</option>
+					<option value="s">Size</option>
+					<option value="e">Ext</option>
+					<option value="n">Image Name</option>
+					<option value="t">Image Title</option>
+					<option value="a">Alt</option>
+					<option value="l">Image URL</option>
+					<option value="l2">Link to</option>
+					<option value="renm">Rename</option></select></td>
+				<td>
+					<div><span class="tileFontPos">tileFontPos</span></div>
+					<div><img id="tileFontPos" src="chrome-extension://gfjhimhkjmipphnaminnnnjpnlneeplk/img/imgr.gif"></div>
+					<div><span class="tileFontPos">tileFontPos</span></div>
+					<div><input type="range" id="tileFontCenter" min="0" max="2" step="1" value="1"></div>
+                	<h2 id="Font">Font</h2>
+					<div id="tileFontCSS"><span class="bold">A</span><span class="italic">A</span><span class="underline">A</span><span class="overline">A</span><span class="though">A</span></div>
+					<div><input type="text" id="font"></div>
+				</td>
+			</tr></tbody></table></details>
+
+		<details id="Sign">
+        	<summary>Logo</summary>
+            <input type="file" id="upSign" accept="image/*">
+            <select id="signPos">
+                <option value="center center">⊹</option>
+                <option value="left top">↖</option>
+                <option value="right top">↗</option>
+                <option value="left bottom">↙</option>
+                <option value="right bottom">↘</option></select>
+			<div><textarea id="urlSign" placeholder="Drop file here, or paste image from clipboard(Ctrl+V), or enter URL[http://, data:image]"></textarea></div></details>
+
+
+		<details id="COLOR">
+			<summary>
+				<input type="text" id="color0" title="Snow" readonly="readonly">
+				<input type="text" id="color1" title="Blue Sky" readonly="readonly">
+				<input type="text" id="color2" title="Pink Girl" readonly="readonly">
+				<input type="text" id="color3" title="Black Rhythm" readonly="readonly">
+				<input type="text" id="color4" title="Red Charm" readonly="readonly">
+				<input type="text" id="color5" title="Random" value="??" readonly="readonly"></summary>
+            <div id="Color">
+                <input type="color" id="FGC" title="Font Color">
+                <input type="color" id="BGC1" title="Top Background Color">
+                <input type="color" id="BGC" title="Middle Background Color">
+                <input type="color" id="BGC2" title="Bottom Background Color"></div></details>
+
+		<div id="Local">
+            <label><input type="checkbox" id="tileLocal"></label>
+			<input type="file" id="upImgsTile" webkitdirectory="" hidden=""></div>
+		</td>
+
+        <td id="Tiles" align="center">
+        	<div id="tiles">
+				<table hidden=""><tbody><tr id="tilesTb" contenteditable="true"></tr></tbody></table>
+				</div>
+			</td>
+        <td id="tileTool" align="center" class="sideBarR">
+
+			<div>
+            	<div><input type="button" id="tileBack" title="hotkey: Backspace" value="Back">
+            		<img id="downloaded" src="chrome-extension://gfjhimhkjmipphnaminnnnjpnlneeplk/img/folder.png">
+					<input id="path_BtnTile" type="text"></div>
+            	<div><input type="text" id="tileRenm" title="Rename"><input type="button" id="tileSave" title="hotkey: S" class="vip" value="Save"></div>
+            	</div>
+
+            <details id="Weib">
+				<summary id="weib">
+                	<select id="tileImg">
+                        <option value="none">No image</option>
+                        <option value="tileImg" selected="">Share left image</option>
+                        <option value="other">other</option></select>
+                    <select id="capTypeTile">
+                        <option value="jpeg">JPEG</option>
+                        <option value="png">PNG</option></select>
+                    <input type="number" id="jpgQTile" min="1" max="100" step="1">
+					<div id="otherImg" hidden="">
+						<input type="file" id="upImg" accept="image/*">
+						<textarea id="urlImg" placeholder="Drop file here, or paste image from clipboard(Ctrl+V), or enter URL[http://, data:image]"></textarea></div></summary>
+				<div><img id="tileURL" title="http://www.ktwiz.co.kr/sports/site/baseball/player/outfielder.do"><b id="tileTitle" title="한국 야구의 10번째 심장 kt wiz 야구단 공식 홈페이지입니다.">[kt wiz] 감동을 주는 야구! 근성의 kt wiz! - player &gt; 타자 &gt; 외야수</b></div>
+				<textarea id="tileText"></textarea>
+				<div id="tileTextCnt">51[66]</div>
+				<details>
+					<summary><input type="text" placeholder="#zzllrrImager# @zzllrr" id="tileKWD">
+					<input type="submit" id="TileKWD" value="↑" title="#zzllrrImager# @zzllrr"></summary>
+					<div id="tileKwd"></div></details>
+
+				<div id="tileWeibResult"><h2 id="tileWeibResult0"></h2><h2 id="tileWeibResult1"></h2><h2 id="tileWeibResult2"></h2><h2 id="tileWeibResult3"></h2><h2 id="tileWeibResult4"></h2><h2 id="tileWeibResult5"></h2></div>
+				<div><input type="button" id="tileWeib" title="hotkey: W" class="vip" value="Publish"></div>
+				<div id="tileWeibs"><img title="Weibo" id="tileWeib0" data-name="" data-id="" data-blog="tsina" data-token="" data-end="" data-info="" class="toggle" src="chrome-extension://gfjhimhkjmipphnaminnnnjpnlneeplk/img/Weibo.ico"><img title="QQmb" id="tileWeib1" data-name="" data-id="" data-blog="tqq" data-token="" data-end="" data-info="" src="chrome-extension://gfjhimhkjmipphnaminnnnjpnlneeplk/img/tqq.gif"><img title="163mb" id="tileWeib2" data-name="" data-id="" data-blog="t163" data-token="" data-end="" data-info="" src="chrome-extension://gfjhimhkjmipphnaminnnnjpnlneeplk/img/t163.gif"><img title="douban" id="tileWeib3" data-name="" data-id="" data-blog="douban" data-token="" data-end="" data-info="" src="chrome-extension://gfjhimhkjmipphnaminnnnjpnlneeplk/img/Douban.ico"><img title="renren" id="tileWeib4" data-name="" data-id="" data-blog="renren" data-token="" data-end="" data-info="" src="chrome-extension://gfjhimhkjmipphnaminnnnjpnlneeplk/img/renren.ico"><img title="Facebook" id="tileWeib5" data-name="" data-id="" data-blog="fb" data-token="" data-end="" data-info="" src="chrome-extension://gfjhimhkjmipphnaminnnnjpnlneeplk/img/Facebook.png"></div>
+				<div id="wei"><span id="weibLogout" title="Logout">↙</span><span id="weibRevoke" class="Revoke" title="Revoke Token">✖</span><span id="weibUrl" title="Visit URL">↗</span><span id="weibReload" title="Reload">♋</span><span id="weibOpt" title="Set">→</span></div>
+				</details>
+			 <div id="VIP"><img src="chrome-extension://gfjhimhkjmipphnaminnnnjpnlneeplk/img/ZIGVIP.png" class="vipLogo" hidden="" style="display: inline;"></div>
+             <div id="copyright">Copyright &amp; Powered by zzllrr</div>
+        </td></tr></tbody></table></div>
+
+<div id="LocalTile" hidden=""></div>
+<div id="LocalShow" hidden=""></div>
+<div id="LocalImgr" hidden=""></div>
+<script async="" src="./zzllrr Imager Geek(V2017.6.26.2)_files/ga.js.다운로드"></script>
+
+
+</body></html>

@@ -1,0 +1,68 @@
+package kdata.project.dto;
+
+import java.sql.Date;
+
+public class Comments {
+	private int commentsNum;
+	private String id;
+	private String content;
+	private Date date;
+	private int num;
+	
+	public Comments(String id, String content, int num) {
+		super();
+		this.id = id;
+		this.content = content;
+		this.num = num;
+	}
+	
+	
+	public Comments(int commentsNum, String id, String content, Date date, int num) {
+		super();
+		this.commentsNum = commentsNum;
+		this.id = id;
+		this.content = content;
+		this.date = date;
+		this.num = num;
+	}
+
+
+	public Comments() {
+		super();
+	}
+
+	public int getCommentsNum() {
+		return commentsNum;
+	}
+	public void setCommentsNum(int commentsNum) {
+		this.commentsNum = commentsNum;
+	}
+	public String getId() {
+		return id;
+	}
+	public void setId(String id) {
+		this.id = id;
+	}
+	public String getContent() {
+		return content;
+	}
+	public void setContent(String content) {
+		this.content = content;
+	}
+	public Date getDate() {
+		return date;
+	}
+	public void setDate(Date date) {
+		this.date = date;
+	}
+	public int getNum() {
+		return num;
+	}
+	public void setNum(int num) {
+		this.num = num;
+	}
+	
+	
+	
+	
+}

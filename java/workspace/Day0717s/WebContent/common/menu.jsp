@@ -1,0 +1,18 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<ul>
+		<li><a href="<%= request.getContextPath() %>/user/register.jsp">회원가입</a>
+		<li><a href="login.jsp">로그인</a>
+		<!-- 데이터베이스를 바로 가야하니까 .kdata로가는 것이다.
+		데이터베이스에 접근하기위해서는 servlet을 걸쳐햐 함-->
+		<li><a href="<%= request.getContextPath() %>/list.kdata">회원리스트</a>
+	</ul>
+</body>
+</html>

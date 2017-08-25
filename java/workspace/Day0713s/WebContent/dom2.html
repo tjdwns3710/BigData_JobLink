@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script src="./js/jquery-3.2.1.js"></script>
+<script>
+	
+	$(function(){
+		/* 이렇게 따로 써도되고-1
+		$("img").on("mouseover", function(){
+			
+			$(this).attr("src","./images/1.jpg");
+		});
+		
+		$("img").on("mouseout",function(){
+			$(this).attr("src","./images/2.jpg");
+		}); */
+		
+		//붙여 써도됨
+		/* $("img").on("mouseover", function(){
+			$(this).attr("src","./images/1.jpg");
+		}).on("mouseout",function(){
+			$(this).attr("src","./images/2.jpg");
+		}); */
+		
+		
+		/*위의것과 같은 결과 - 2
+		$("img").mouseover(function(){
+			$(this).attr("src","./images/1.jpg");
+		});
+		$("img").mouseout(function(){
+			$(this).attr("src","./images/2.jpg");
+		}); */
+		
+		//---------------------------------------
+		//이미지 처리 이벤트 - 3
+		//---------------------------------------
+		$("img").on({
+			mouseover:function(){$(this).attr("src","./images/1.jpg");},
+			mouseout:function(){$(this).attr("src","./images/2.jpg");}
+		});
+		
+		
+		$("#all").click(function(){
+			//$("[type=checkbox]").attr("checked",true);
+			$("[type=checkbox]").prop("checked",$("#all").prop("checked"));
+		});
+		
+	});
+	
+</script>
+</head>
+<body>
+	<img src="./images/2.jpg"><br>
+	
+	<input type="checkbox" id="all">모두 선택<br>
+	
+	<input type="checkbox">1번
+	<input type="checkbox">2번
+	<input type="checkbox">3번
+
+</body>
+</html>

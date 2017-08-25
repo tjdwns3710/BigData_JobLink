@@ -1,0 +1,66 @@
+package project.baseball.dto;
+
+public class PlayerBallDTO {
+   private int gcode;
+   private int border;
+   private String bseatcode;
+   private String hf;
+   private int pnum;
+   private String pname;
+   
+   
+   public int getGcode() {
+      return gcode;
+   }
+   public void setGcode(int gcode) {
+      this.gcode = gcode;
+   }
+   public int getBorder() {
+      return border;
+   }
+   public void setBorder(int border) {
+      this.border = border;
+   }
+   public String getBseatcode() {
+      return bseatcode;
+   }
+   public void setBseatcode(String bseatcode) {
+      this.bseatcode = bseatcode;
+   }
+   public String getHf() {
+      return hf;
+   }
+   public void setHf(String hf) {
+      this.hf = hf;
+   }
+   public int getPnum() {
+      return pnum;
+   }
+   public void setPnum(int pnum) {
+      this.pnum = pnum;
+   }
+   public PlayerBallDTO(int gcode, int border, String bseatcode) {
+      super();
+      this.gcode = gcode;
+      this.border = border;
+      this.bseatcode = bseatcode;
+   }
+   public String getPname() {
+      return pname;
+   }
+   public void setPname(String pname) {
+      this.pname = pname;
+   }
+   public PlayerBallDTO(int gcode, int border, String bseatcode, String hf) {
+      super();
+      this.gcode = gcode;
+      this.border = border;
+      this.bseatcode = bseatcode;
+      this.hf = hf;
+   }
+   
+   
+   /*select b.gcode, b.border, b.bseatcode, b.hf
+   from player p join ballinfo b on p.pnum = b.pnum
+   where p.pname = '√÷¡§'*/
+}

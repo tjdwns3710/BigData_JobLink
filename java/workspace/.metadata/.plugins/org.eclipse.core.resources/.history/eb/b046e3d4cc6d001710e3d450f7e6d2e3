@@ -1,0 +1,67 @@
+package project.baseball.dao;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+
+import project.baseball.dto.PlayerBallDTO;
+import project.baseball.util.DBUtil;
+
+public class UserDAO {
+      // 싱글턴 패턴, 이 객체는 한 개만 만들어진다.-------------------
+      private static UserDAO dao = new UserDAO();
+      
+      //이 클래스 내부에서만 접근 가능
+      private UserDAO() {
+         
+      }
+      // 외부에서 부를 수 있게 static으로 만듬
+      public static UserDAO getInstance() {
+         return dao;
+      }
+   
+   public List<PlayerBallDTO> Search_Player_All_Ball(String player) throws SQLException{
+      System.out.println("3. Search_Player_All_Ball()");
+      Connection con = null;
+      PreparedStatement pstmt = null;
+      ResultSet rs = null;
+      List<PlayerBallDTO> list = new ArrayList<>();
+      
+      try {
+         try {
+            con = DBUtil.getConnection();
+         } catch (SQLException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+         }
+         String sql = "select b.gcode, b.border, b.bseatcode, b.hf" + 
+               "   from player p join ballinfo b on p.pnum = b.pnum" + 
+               "   where p.pname = ?";
+         //3. Statement 객체 생성
+         pstmt = con.prepareStatement(sql);
+         pstmt.setString(1, player);
+         // 4. SQL문 전송
+         rs = pstmt.executeQuery();
+         
+         // rs.으로 접근하면 테이블에 있는 행에 접근하는 것
+         while(rs.next()) {
+            PlayerBallDTO dto = new PlayerBallDTO(rs.getInt(1),
+                  rs.getInt(2),
+                  rs.getString("bseatcode"),
+                  rs.getString("hf"));
+            
+            list.add(dto);
+         }
+         
+      }finally {
+         DBUtil.close(rs, pstmt, con);
+      }
+      
+      return list; 
+      
+   }
+   
+}
