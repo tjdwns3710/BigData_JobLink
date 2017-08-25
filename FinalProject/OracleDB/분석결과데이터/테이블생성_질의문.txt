@@ -1,0 +1,77 @@
+/* result */
+CREATE TABLE result (
+	STDR_YM_CD varchar2(8) NOT NULL, /* 기준_년월_코드 */
+	TRDAR_CD VARCHAR2(10) NOT NULL, /* 상권코드 */
+	TRDAR_CD_NM varchar(90), /* 상권코드명 */
+	SVC_INDUTY_CD varchar2(10) NOT NULL, /* 서비스업종코드 */
+	SVC_INDUTY_CD_NM varchar2(30), /* 서비스업종명 */
+	CLSBIZ_RT NUMBER, /* 폐업률 */
+	TOT_FLPOP_CO NUMBER, /* 총유동인구 */
+	ML_FLPOP_CO NUMBER, /* 남성유동인구 */
+	FML_FLPOP_CO NUMBER, /* 여성유동인구 */
+	AGRDE_20_FLPOP_CO NUMBER, /* 20대유동인구 */
+	AGRDE_30_FLPOP_CO NUMBER, /* 30대유동인구 */
+	AGRDE_40_FLPOP_CO NUMBER, /* 40대유동인구 */
+	TMZON_2_FLPOP_CO NUMBER, /* 시간대2유동인구 */
+	TMZON_3_FLPOP_CO NUMBER, /* 시간대3유동인구 */
+	TMZON_4_FLPOP_CO NUMBER, /* 시간대4유동인구 */
+	TMZON_5_FLPOP_CO NUMBER, /* 시간대5유동인구 */
+	MON_FLPOP_CO NUMBER, /* 월요일유동인구 */
+	TUES_FLPOP_CO NUMBER, /* 화요일유동인구 */
+	WED_FLPOP_CO NUMBER, /* 수요일유동인구 */
+	THUR_FLPOP_CO NUMBER, /* 목요일유동인구 */
+	FRI_FLPOP_CO NUMBER, /* 금요일유동인구 */
+	BANK_CO NUMBER, /* 은행 */
+	SUPMK_CO NUMBER, /* 슈퍼마켓 */
+	DANGER NUMBER, /* 창업위험도 */
+	AVG_SALES NUMBER, /* 평균매출 */
+	SALES_DEGREE NUMBER /* 매출분위 */
+);
+
+CREATE UNIQUE INDEX PK_result
+	ON result (
+		STDR_YM_CD ASC,
+		TRDAR_CD ASC,
+		SVC_INDUTY_CD ASC
+	);
+
+ALTER TABLE result
+	ADD
+		CONSTRAINT PK_result
+		PRIMARY KEY (
+			STDR_YM_CD,
+			TRDAR_CD,
+			SVC_INDUTY_CD
+		);
+
+/* LOCATION */
+CREATE TABLE LOCATION (
+	TRDAR_CD VARCHAR2(10) NOT NULL, /* 상권코드 */
+	TRDAR_CD_NM VARCHAR2(90), /* 새 컬럼 */
+	ADSTRD_CD VARCHAR2(10), /* 새 컬럼2 */
+	ADSTRD_CD_NM VARCHAR2(30), /* 새 컬럼3 */
+	SIGNGU_CD VARCHAR2(5), /* 새 컬럼4 */
+	SIGNGU_CD_NM VARCHAR2(15) /* 구이름 */
+);
+
+CREATE UNIQUE INDEX PK_LOCATION
+	ON LOCATION (
+		TRDAR_CD ASC
+	);
+
+ALTER TABLE LOCATION
+	ADD
+		CONSTRAINT PK_LOCATION
+		PRIMARY KEY (
+			TRDAR_CD
+		);
+
+ALTER TABLE result
+	ADD
+		CONSTRAINT FK_LOCATION_TO_result
+		FOREIGN KEY (
+			TRDAR_CD
+		)
+		REFERENCES LOCATION (
+			TRDAR_CD
+		);

@@ -1,0 +1,23 @@
+--해당 서비스 업종이 있는 상권목록
+create or replace noforce view easy_idx
+as
+select r.stdr_ym_cd, r.trdar_cd, r.TRDAR_CD_NM,r.svc_induty_cd_nm, r.danger, r.avg_sales, r.SALES_DEGREE
+from result r inner join location l on r.trdar_cd = l.trdar_cd
+where r.svc_induty_cd = 'CS100009' and l.SIGNGU_CD = '11350'
+
+
+select * from easy_idx
+
+
+-- 해당 서비스 업종이 있는 상권목록 뷰로 만듬
+create or replace  noforce view view_idx
+as
+select distinct(trdar_cd)
+from easy_idx
+
+select * from view_idx
+
+-- 해당 상권과 서비스업종에 해당하는 3개월 평균 창업위험도와 평균 매출분위
+select round(avg(danger)), round(avg(sales_degree))
+from easy_idx
+where trdar_cd= 11956
